@@ -86,7 +86,9 @@
   table.matrix th{background:var(--bw-purple);color:#fff;padding:16px 14px;text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
   table.matrix th:first-child{text-align:left;min-width:220px}
   table.matrix td{border-top:1px solid var(--border);text-align:center;color:var(--text-muted)}
-  table.matrix td:first-child{text-align:left;font-weight:600;color:var(--bw-purple-deep);padding:14px 16px;}
+  table.matrix td:first-child{text-align:left;font-weight:600;color:var(--bw-purple-deep);padding:0;}
+  table.matrix td:first-child a{display:block;padding:14px 16px;color:inherit;text-decoration:none;transition:background 0.2s, color 0.2s;}
+  table.matrix td:first-child a:hover{background:var(--bw-purple-soft);color:var(--bw-purple);}
   table.matrix tr:nth-child(even) td{background:var(--bg-soft)}
   table.matrix td a {display:block;padding:14px 12px;text-decoration:none;transition:all 0.2s;}
   .yes a {color:var(--bw-purple);font-weight:800;font-size:16px}
@@ -447,7 +449,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="#" class="logo">
-      <img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets%2Fea6af760-0677-44c0-b7ae-50f3250a9d1f" alt="Brawijaya Hospital Logo">
+      <img src="logo.svg" alt="Brawijaya Hospital Logo">
     </a>
     <div class="header-cta">
       <a href="#kontak" class="btn btn-accent">Reservasi</a>
@@ -547,7 +549,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Spesialis Anak Umum</td>
+            <td><a href="#infeksi">Spesialis Anak Umum</a></td>
             <td class="yes"><a href="#infeksi" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="yes"><a href="#infeksi" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
@@ -556,7 +558,7 @@
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
           </tr>
           <tr>
-            <td>Neonatologi (Bayi Baru Lahir)</td>
+            <td><a href="#neo">Neonatologi (Bayi Baru Lahir)</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
@@ -565,7 +567,7 @@
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
           </tr>
           <tr>
-            <td>Tumbuh Kembang &amp; Saraf</td>
+            <td><a href="#tumbuh">Tumbuh Kembang &amp; Saraf</a></td>
             <td class="yes"><a href="#tumbuh" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
@@ -574,7 +576,7 @@
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
           </tr>
           <tr>
-            <td>Jantung Anak</td>
+            <td><a href="#jantung">Jantung Anak</a></td>
             <td class="yes"><a href="#jantung" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="yes"><a href="#jantung" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
@@ -583,7 +585,7 @@
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
           </tr>
           <tr>
-            <td>THT Anak</td>
+            <td><a href="#tht">THT Anak</a></td>
             <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
@@ -592,7 +594,7 @@
             <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
           </tr>
           <tr>
-            <td>Ortopedi Anak</td>
+            <td><a href="#ortopedi">Ortopedi Anak</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
             <td class="yes"><a href="#ortopedi" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
@@ -601,7 +603,7 @@
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
           </tr>
           <tr>
-            <td>Bedah Anak</td>
+            <td><a href="#bedah">Bedah Anak</a></td>
             <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
@@ -610,7 +612,7 @@
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
           </tr>
           <tr>
-            <td>Hormon &amp; Pertumbuhan</td>
+            <td><a href="#endokrin">Hormon &amp; Pertumbuhan</a></td>
             <td class="yes"><a href="#endokrin" title="Lihat Area Layanan">&#10003;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
             <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
