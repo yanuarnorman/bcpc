@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brawijaya Pediatric Center — Jaringan Layanan Kesehatan Anak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bw-purple:#5E2D79;--bw-purple-light:#7A4A95;--bw-purple-soft:#F4EEF8;--bw-purple-deep:#3F1C54;
+    --text-dark:#1F1F1F;--text-muted:#5A5A5A;--bg-soft:#FAFAFB;--border:#E8E4ED;--accent:#C9A227;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;color:var(--text-dark);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased;padding-top:80px}
+  h1,h2,h3,h4{font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:-0.01em;line-height:1.2}
+  img{max-width:100%;height:auto;display:block}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px}
+  .section{padding:80px 0}
+  .section-soft{background:var(--bg-soft)}
+  
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:50px;font-weight:600;font-size:14px;text-decoration:none;transition:all .3s ease;cursor:pointer}
+  .btn-primary{background:var(--bw-purple);color:#fff;box-shadow:0 8px 24px rgba(94,45,121,.25)}
+  .btn-primary:hover{background:var(--bw-purple-light);transform:translateY(-2px);box-shadow:0 12px 28px rgba(94,45,121,.35)}
+  .btn-white{background:#fff;color:var(--bw-purple);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.15)}
+  .btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(201,162,39,.25)}
+  .btn-accent:hover{background:#b38f20;transform:translateY(-2px)}
+  
+  /* TYPOGRAPHY */
+  .section-title{font-size:36px;text-align:center;margin-bottom:16px;color:var(--bw-purple-deep)}
+  .section-subtitle{text-align:center;color:var(--text-muted);max-width:770px;margin:0 auto 50px;font-size:17px}
+  .eyebrow{text-align:center;display:block;font-size:13px;letter-spacing:.16em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:12px}
+
+  /* HEADER NAVIGATION */
+  .site-header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.03)}
+  .header-inner{display:flex;justify-content:space-between;align-items:center;height:80px}
+  .logo img{height:44px}
+  
+  /* FLOATING WA */
+  .floating-wa{position:fixed;bottom:30px;right:30px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 10px 30px rgba(37,211,102,.3);z-index:999;transition:transform .3s;text-decoration:none}
+  .floating-wa:hover{transform:scale(1.1)}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,rgba(94,45,121,0.92) 0%,rgba(63,28,84,0.96) 100%),url('https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/RS-Brawijaya-Antasari-Orthopedic-Center.jpg') center/cover no-repeat;color:#fff;padding:90px 0 100px;position:relative}
+  .hero-content{max-width:810px;position:relative;z-index:1}
+  .hero-breadcrumb{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:20px;text-transform:uppercase;letter-spacing:0.05em;font-weight:600}
+  .hero-breadcrumb span{color:var(--accent)}
+  .hero h1{font-size:52px;line-height:1.1;margin-bottom:16px;color:#fff}
+  .hero-tagline{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:500;color:var(--accent);margin-bottom:20px;line-height:1.4}
+  .hero p{font-size:17px;color:rgba(255,255,255,.9);margin-bottom:32px;max-width:730px}
+  .hero-bullets{list-style:none;margin:24px 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;max-width:740px}
+  .hero-bullets li{padding:4px 0 4px 32px;position:relative;color:rgba(255,255,255,.95);font-size:15px;font-weight:500}
+  .hero-bullets li:before{content:"\2713";position:absolute;left:0;top:4px;color:var(--accent);font-weight:700;background:rgba(201,162,39,0.2);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* VALUE PROPS (Overlapping) */
+  .valueprops{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:-60px;position:relative;z-index:5}
+  .vp-card{background:#fff;border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 12px 40px rgba(94,45,121,.08);border:1px solid var(--border);transition:transform .3s}
+  .vp-card:hover{transform:translateY(-5px)}
+  .vp-icon-img{width:64px;height:64px;margin:0 auto 16px;background:var(--bw-purple-soft);border-radius:16px;display:flex;align-items:center;justify-content:center}
+  .vp-icon-img img{width:36px;height:36px;object-fit:contain}
+  .vp-tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+  .vp-card h3{font-size:20px;color:var(--bw-purple-deep)}
+
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat{text-align:center;padding:32px 16px;background:var(--bg-soft);border-radius:20px;border:1px solid var(--border)}
+  .stat-num{font-family:'DM Sans',sans-serif;font-size:46px;font-weight:800;color:var(--bw-purple);line-height:1;margin-bottom:8px}
+  .stat-label{color:var(--text-muted);font-size:14px;font-weight:600}
+
+  /* TRIAGE LAYER */
+  .triage-block {background:#fff;padding:48px 40px;border-radius:24px;margin-bottom:56px;border:1px solid var(--border);box-shadow:0 12px 40px rgba(94,45,121,.04);position:relative;overflow:hidden}
+  .triage-block::before{content:'';position:absolute;top:0;left:0;width:6px;height:100%;background:var(--accent)}
+  .triage-title {font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:var(--bw-purple-deep);text-align:center;margin-bottom:24px;}
+  .triage-grid {display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .triage-chip {display:inline-flex;align-items:center;background:var(--bg-soft);border:1px solid var(--border);color:var(--text-dark);padding:12px 24px;border-radius:50px;font-size:14.5px;font-weight:600;text-decoration:none;transition:all .2s;}
+  .triage-chip:hover {background:var(--bw-purple);color:#fff;border-color:var(--bw-purple);transform:translateY(-2px);box-shadow:0 6px 15px rgba(94,45,121,.15);}
+
+  /* COVERAGE MATRIX */
+  .matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.02)}
+  table.matrix{width:100%;border-collapse:collapse;font-size:14px;min-width:800px}
+  table.matrix th{background:var(--bw-purple);color:#fff;padding:16px 14px;text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
+  table.matrix th:first-child{text-align:left;min-width:220px}
+  table.matrix td{border-top:1px solid var(--border);text-align:center;color:var(--text-muted)}
+  table.matrix td:first-child{text-align:left;font-weight:600;color:var(--bw-purple-deep);padding:14px 16px;}
+  table.matrix tr:nth-child(even) td{background:var(--bg-soft)}
+  table.matrix td a {display:block;padding:14px 12px;text-decoration:none;transition:all 0.2s;}
+  .yes a {color:var(--bw-purple);font-weight:800;font-size:16px}
+  .yes a:hover {transform:scale(1.2);background:rgba(94,45,121,0.05);border-radius:8px}
+  .no a {color:#D1CBD7}
+  .no a:hover {color:var(--bw-purple);background:rgba(94,45,121,0.05);border-radius:8px}
+  .matrix-note{text-align:center;font-size:13.5px;color:var(--text-muted);margin-top:20px;font-style:italic}
+
+  /* AREA */
+  .area{padding:80px 0;border-bottom:1px solid var(--border)}
+  .area:nth-child(even){background:var(--bg-soft)}
+  .area-header{text-align:center;max-width:800px;margin:0 auto 48px}
+  .area-icon{width:80px;height:80px;background:var(--bw-purple-soft);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px;color:var(--bw-purple);box-shadow:0 8px 24px rgba(94,45,121,0.08)}
+  .area-header h2{font-size:32px;color:var(--bw-purple-deep);margin-bottom:12px}
+  .area-disc{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:6px 16px;border-radius:50px;margin-bottom:16px}
+  .area-header p{color:var(--text-muted);font-size:16.5px}
+  .area-locs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+  .loc-chip{font-size:12px;background:#fff;border:1.5px solid var(--border);color:var(--bw-purple);padding:6px 14px;border-radius:50px;font-weight:600}
+  
+  .area-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:48px}
+  .svc-list-title{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--border);color:var(--bw-purple-deep)}
+  .svc{padding:18px 0;border-bottom:1px solid var(--border)}
+  .svc:last-child{border-bottom:none}
+  .svc h4{font-size:16.5px;color:var(--bw-purple);margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+  .svc h4:before{content:"\25B8";color:var(--accent);font-weight:700;margin-top:2px}
+  .svc p{font-size:14.5px;color:var(--text-muted);line-height:1.6;padding-left:22px}
+
+  /* DOCTORS */
+  .docs-box{display:flex;flex-direction:column;gap:24px}
+  .doc{padding:32px;border:1px solid var(--border);border-radius:24px;background:#fff;transition:all .3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.02)}
+  .doc:hover{border-color:var(--bw-purple-light);box-shadow:0 12px 40px rgba(94,45,121,.08)}
+  .doc-layout{display:flex;gap:28px;align-items:flex-start}
+  .doc-avatar{width:140px;height:180px;border-radius:16px;background:linear-gradient(180deg,#E8DEF1,#D4C2E0);flex:0 0 140px;overflow:hidden;position:relative}
+  .doc-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .doc-right{flex-grow:1;min-width:0}
+  .doc-right h3{font-size:20px;color:var(--bw-purple-deep);margin:0 0 8px;line-height:1.3}
+  .doc-role-badge{display:inline-block;background:var(--bw-purple-soft);color:var(--bw-purple);font-size:11.5px;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:8px;letter-spacing:0.02em}
+  .doc-role-badge.anchor{background:var(--accent);color:#fff}
+  .doc-loc{font-size:13px;color:var(--text-muted);margin-bottom:14px;font-weight:500}
+  .doc-bio{font-size:14px;color:var(--text-muted);line-height:1.65;margin-bottom:20px}
+  
+  .doc-detail-box{background:var(--bg-soft);border-radius:16px;padding:20px 24px;border:1px solid var(--border)}
+  .doc-detail-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .ddl-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dark);margin-bottom:10px}
+  .ddl-text{font-size:13.5px;line-height:1.5;color:var(--text-muted)}
+  .sched-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13.5px;border-bottom:1px dashed var(--border)}
+  .sched-row:last-child{border-bottom:none;padding-bottom:0}
+  .sched-row span:first-child{font-weight:700;color:var(--bw-purple)}
+  .sched-row span:last-child{color:var(--text-muted)}
+  
+  .area-cta{margin-top:32px}
+  .area-cta .btn{width:100%;padding:16px;border-radius:16px;font-size:15.5px}
+
+  /* WHY IMAGES (Ortho Antasari Style) */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}
+  .why-card-img{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.06);border:1px solid var(--border);transition:transform .3s}
+  .why-card-img:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(94,45,121,.1)}
+  .why-img-wrap{height:200px;overflow:hidden;background:var(--bw-purple-soft)}
+  .why-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .why-card-img:hover .why-img-wrap img{transform:scale(1.05)}
+  .why-content{padding:28px}
+  .why-content h4{font-size:18px;color:var(--bw-purple-deep);margin-bottom:10px}
+  .why-content p{font-size:14.5px;color:var(--text-muted);line-height:1.6}
+
+  /* FINAL CTA */
+  .final-cta{background:linear-gradient(135deg,var(--bw-purple),var(--bw-purple-deep));text-align:center;padding:100px 24px;color:#fff;position:relative;overflow:hidden}
+  .final-cta::before{content:'';position:absolute;top:-50%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(201,162,39,0.15) 0%,transparent 70%);border-radius:50%}
+  .final-cta h2{font-size:36px;color:#fff;margin-bottom:20px;max-width:680px;margin-left:auto;margin-right:auto}
+  .final-cta p{color:rgba(255,255,255,.9);margin-bottom:40px;font-size:18px;max-width:720px;margin-left:auto;margin-right:auto}
+  .final-cta .btn-row{justify-content:center}
+  
+  footer{background:#1F1F1F;color:rgba(255,255,255,.6);text-align:center;padding:40px 24px;font-size:13.5px}
+  .anniversary-badge{display:inline-block;margin-top:16px;padding:6px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:50px;font-size:12px;letter-spacing:0.05em;color:var(--accent)}
+
+  @media (max-width:992px){
+    .area-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:768px){
+    .hero h1{font-size:38px}
+    .hero-bullets{grid-template-columns:1fr}
+    .valueprops{grid-template-columns:1fr;margin-top:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr}
+    .section-title,.area-header h2{font-size:28px}
+    .section,.area{padding:60px 0}
+  }
+  @media (max-width:576px){
+    .doc{padding:24px 20px}
+    .doc-layout{flex-direction:column;gap:20px}
+    .doc-avatar{width:100%;height:240px;flex:0 0 auto}
+    .doc-detail-cols{grid-template-columns:1fr}
+    .triage-block{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/logo-brawijaya-hospital.png" alt="Brawijaya Hospital Logo">
+    </a>
+    <div class="header-cta">
+      <a href="#kontak" class="btn btn-accent">Reservasi</a>
+    </div>
+  </div>
+</header>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20membuat%20janji%20temu%20di%20Brawijaya%20Pediatric%20Center" class="floating-wa" aria-label="WhatsApp Brawijaya">
+  <!-- Inline SVG for WhatsApp Icon -->
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-breadcrumb">Brawijaya Hospital &nbsp;/&nbsp; <span>Pediatric Center</span></div>
+      <h1>Brawijaya Pediatric Center</h1>
+      <div class="hero-tagline">Ahli untuk Setiap Kebutuhan Anak, Berbekal 2 Dekade Pengalaman.</div>
+      <p>Kesehatan anak jarang berhenti di satu bidang keahlian. Dengan rekam jejak 20 tahun menemani dari napas pertama hingga setiap detak jantung pasien kecil kami, Brawijaya Pediatric Center menyatukan spesialis anak, subspesialis neonatologi, kardiologi, ortopedi, THT, hingga bedah anak &mdash; tersebar di enam rumah sakit dengan satu alur rujukan terintegrasi.</p>
+      <ul class="hero-bullets">
+        <li>Pengalaman 20 tahun melayani kesehatan ibu dan anak</li>
+        <li>Subspesialis Neonatologi, Kardiologi, Ortopedi &amp; Bedah Anak</li>
+        <li>Delapan area layanan terintegrasi di 6 lokasi</li>
+        <li>Didukung NICU &amp; PICU dengan teknologi terkini</li>
+      </ul>
+      <div class="btn-row">
+        <a href="#kontak" class="btn btn-accent">Buat Janji Temu</a>
+        <a href="#cakupan" class="btn btn-white">Cek Layanan per Lokasi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPS -->
+<section class="section" style="padding-top:0;padding-bottom:48px">
+  <div class="container">
+    <div class="valueprops">
+      <div class="vp-card">
+        <div class="vp-icon-img"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2024/02/icon-cross-specialty.png" alt="Icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUUyRDc5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIyIDEybC0xMC0xMEwyIDEybDEwIDEwbDEwLTEweiIvPjwvc3ZnPg=='"></div>
+        <div class="vp-tag">Cross-Specialty</div><h3>Lintas Keahlian</h3>
+      </div>
+      <div class="vp-card">
+        <div class="vp-icon-img"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2024/02/icon-expert-team.png" alt="Icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUUyRDc5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDJhNSA1IDAgMSAwIDAgMTAgNSA1IDAgMSAwIDAtMTB6TTIxIDIwdjFIM3YtMWE3IDcgMCAwIDEgNy03aDRhNyA3IDAgMCAxIDcgN3oiLz48L3N2Zz4='"></div>
+        <div class="vp-tag">Expert Team</div><h3>Subspesialis Anak</h3>
+      </div>
+      <div class="vp-card">
+        <div class="vp-icon-img"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2024/02/icon-network.png" alt="Icon" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUUyRDc5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDJhOCA4IDAgMCAwLTggOGMwIDUuNCA4IDEyIDggMTJzOC02LjYgOC0xMmE4IDggMCAwIDAtOC04eiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTAiIHI9IjMiLz48L3N2Zz4='"></div>
+        <div class="vp-tag">Network Access</div><h3>Enam Lokasi</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="padding-top:24px">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Area Layanan Kesehatan Anak</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Dokter Subspesialis &amp; Konsultan Anak</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Lokasi di Jakarta, Depok &amp; Tangerang</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Dukungan NICU &amp; PICU</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE MATRIX & TRIAGE -->
+<section class="section section-soft" id="cakupan">
+  <div class="container">
+    
+    <!-- Triage Layer -->
+    <div class="triage-block">
+      <h3 class="triage-title">Apa keluhan si kecil?</h3>
+      <div class="triage-grid">
+        <a href="#infeksi" class="triage-chip">Demam & Batuk Berulang</a>
+        <a href="#tumbuh" class="triage-chip">Telat Bicara / Jalan</a>
+        <a href="#tht" class="triage-chip">Tidur Mendengkur</a>
+        <a href="#ortopedi" class="triage-chip">Kaki Bentuk O / X</a>
+        <a href="#infeksi" class="triage-chip">Berat Badan Sulit Naik</a>
+        <a href="#neo" class="triage-chip">Bayi Kuning / Prematur</a>
+        <a href="#jantung" class="triage-chip">Jantung Anak Berdebar</a>
+        <a href="#bedah" class="triage-chip">Sakit Perut / Hernia</a>
+      </div>
+    </div>
+
+    <span class="eyebrow">Direktori & Navigasi</span>
+    <h2 class="section-title">Layanan Anak di Setiap Lokasi</h2>
+    <p class="section-subtitle">Klik tanda centang untuk melompat ke profil layanan & dokter, atau klik tanda strip untuk rujukan ke lokasi terdekat melalui layanan pelanggan kami.</p>
+    
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Area Layanan</th>
+            <th>Antasari</th><th>Saharjo</th><th>Duren Tiga</th><th>Taman Mini</th><th>Depok</th><th>Tangerang</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spesialis Anak Umum</td>
+            <td class="yes"><a href="#infeksi" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#infeksi" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="yes"><a href="#infeksi" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#infeksi" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+          <tr>
+            <td>Neonatologi (Bayi Baru Lahir)</td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="yes"><a href="#neo" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+          <tr>
+            <td>Tumbuh Kembang &amp; Saraf</td>
+            <td class="yes"><a href="#tumbuh" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+          <tr>
+            <td>Jantung Anak</td>
+            <td class="yes"><a href="#jantung" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#jantung" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+          <tr>
+            <td>THT Anak</td>
+            <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#tht" title="Lihat Area Layanan">&#10003;</a></td>
+          </tr>
+          <tr>
+            <td>Ortopedi Anak</td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="yes"><a href="#ortopedi" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+          <tr>
+            <td>Bedah Anak</td>
+            <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="yes"><a href="#bedah" title="Lihat Area Layanan">&#10003;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+          <tr>
+            <td>Hormon &amp; Pertumbuhan</td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+            <td class="no"><a href="#kontak" title="Rujuk lewat tim kami">&ndash;</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 1. NEONATOLOGI ===== -->
+<div class="area" id="neo">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#128118;</div>
+      <div class="area-disc">Subspesialis Neonatologi</div>
+      <h2>Bayi Baru Lahir &amp; Perawatan Neonatal</h2>
+      <p>Jam-jam pertama kehidupan adalah masa paling menentukan. Bayi prematur, berat lahir rendah, atau dengan kelainan bawaan memerlukan penanganan dokter dengan subspesialisasi neonatologi dan dukungan unit perawatan intensif neonatal.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Taman Mini</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Bayi Prematur &amp; Berat Lahir Rendah</h4><p>Perawatan intensif bayi yang lahir sebelum waktunya, dengan pemantauan fungsi vital menyeluruh.</p></div>
+        <div class="svc"><h4>Neonatus dengan Kondisi Kritis</h4><p>Evaluasi dan tata laksana terarah sejak jam-jam pertama kehidupan di ruang NICU.</p></div>
+        <div class="svc"><h4>Kelainan Bawaan pada Bayi Baru Lahir</h4><p>Deteksi dan penanganan kelainan yang memerlukan perawatan intensif dan koordinasi lintas spesialis.</p></div>
+        <div class="svc"><h4>Ikterus (Kuning) pada Bayi</h4><p>Evaluasi dan penanganan bayi kuning, termasuk terapi sinar bila diperlukan.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/236eb6ce-dd8d-4d7b-aea3-45b02f4fe367?width=600&quality=75&fit=cover&format=webp" alt="dr. Marlina Tanjung, Sp.A, Subsp.Neo"></div>
+              <div class="doc-right">
+                <h3>dr. Marlina Tanjung, Sp.A, Subsp.Neo</h3>
+                <span class="doc-role-badge anchor">Subspesialis Neonatologi</span>
+                <div class="doc-loc">&#128205; Taman Mini</div>
+                <p class="doc-bio">Dokter Spesialis Anak dengan subspesialis Neonatologi yang berfokus pada penanganan komprehensif bayi baru lahir &mdash; khususnya neonatus kritis, prematur, berat badan lahir rendah, dan kelainan bawaan yang memerlukan perawatan intensif. Berpengalaman merawat bayi di NICU dengan pendekatan yang berorientasi pada perkembangan optimal jangka panjang, serta pendampingan dan edukasi bagi keluarga.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Neonatus kritis, bayi prematur &amp; BBLR, kelainan bawaan, perawatan NICU.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Taman Mini</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 2. TUMBUH KEMBANG ===== -->
+<div class="area" id="tumbuh">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#127793;</div>
+      <div class="area-disc">Spesialis Anak</div>
+      <h2>Tumbuh Kembang &amp; Saraf Anak</h2>
+      <p>Setiap anak punya ritmenya sendiri, namun ada tahapan yang perlu dipantau agar keterlambatan dikenali sedini mungkin. Area ini menggabungkan pemantauan pertumbuhan rutin dengan evaluasi perkembangan otak dan sistem saraf anak.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Antasari</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Pemantauan Tumbuh Kembang Rutin</h4><p>Evaluasi berkala tinggi, berat, lingkar kepala, dan pencapaian milestone sesuai usia.</p></div>
+        <div class="svc"><h4>Keterlambatan Bicara &amp; Perkembangan</h4><p>Anak belum bicara sesuai usia, belum berjalan, atau tertinggal dari tahapan seharusnya.</p></div>
+        <div class="svc"><h4>Gangguan Perkembangan Otak Anak</h4><p>Evaluasi perkembangan otak usia dini, termasuk kondisi terkait kesehatan neuroimun.</p></div>
+        <div class="svc"><h4>Kejang &amp; Gangguan Saraf Anak</h4><p>Kejang demam, kejang berulang, dan keluhan saraf yang memerlukan evaluasi khusus.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/7ef5722a-4b8a-41e2-bb2e-04c1bf26a07d?width=600&quality=75&fit=cover&format=webp" alt="dr. Attila Dewanti, Sp.A(K)"></div>
+              <div class="doc-right">
+                <h3>dr. Attila Dewanti, Sp.A(K)</h3>
+                <span class="doc-role-badge anchor">Konsultan Anak</span>
+                <div class="doc-loc">&#128205; Antasari</div>
+                <p class="doc-bio">Spesialis anak dengan pengalaman klinis lebih dari 20 tahun. Dikenal karena sikapnya yang tenang, pengetahuan mendalam, dan komunikasi yang kuat dengan orang tua. Aktif dalam edukasi publik mengenai perkembangan otak anak usia dini dan kesehatan neuroimun.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Perkembangan otak anak usia dini, kesehatan neuroimun, evaluasi tumbuh kembang.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Antasari</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/5ca10e74-3042-4cb0-a5db-0cbd9ca24795?width=600&quality=75&fit=cover&format=webp" alt="dr. Lindana Sastra, Sp.A"></div>
+              <div class="doc-right">
+                <h3>dr. Lindana Sastra, Sp.A</h3>
+                <span class="doc-role-badge">Spesialis Anak</span>
+                <div class="doc-loc">&#128205; Antasari</div>
+                <p class="doc-bio">Dokter Spesialis Anak dengan jam terbang lebih dari 30 tahun. Dicintai keluarga dan anak-anak karena kehangatan dan pendekatannya yang berorientasi pada komunitas. Memberikan perawatan holistik dari pencegahan, pemantauan tumbuh kembang, hingga penanganan penyakit.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Perawatan anak holistik, pencegahan, pemantauan tumbuh kembang.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Sel, Jum, Sab</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 3. INFEKSI, GIZI & ALERGI ===== -->
+<div class="area" id="infeksi">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#129440;</div>
+      <div class="area-disc">Spesialis Anak</div>
+      <h2>Infeksi, Gizi &amp; Alergi Anak</h2>
+      <p>Demam berulang, batuk tak kunjung sembuh, berat badan sulit naik, atau reaksi alergi yang mengganggu &mdash; keluhan yang paling sering membawa orang tua ke dokter anak. Penanganannya memerlukan diagnosis teliti agar terapi tidak berhenti pada meredakan gejala.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Antasari</span><span class="loc-chip">&#128205; Saharjo</span><span class="loc-chip">&#128205; Taman Mini</span><span class="loc-chip">&#128205; Depok</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Infeksi Saluran Pernapasan (ISPA &amp; Pneumonia)</h4><p>Batuk, pilek, sesak, dan demam berulang &mdash; dari infeksi ringan hingga pneumonia.</p></div>
+        <div class="svc"><h4>Infeksi Telinga &amp; Kulit</h4><p>Infeksi telinga berulang, ruam, dan infeksi kulit yang umum pada anak.</p></div>
+        <div class="svc"><h4>Malnutrisi &amp; Masalah Gizi</h4><p>Berat badan sulit naik, gagal tumbuh, dan penilaian status gizi menyeluruh.</p></div>
+        <div class="svc"><h4>Diare &amp; Gangguan Pencernaan</h4><p>Diare akut maupun berulang, muntah, sembelit, dan keluhan pencernaan lain.</p></div>
+        <div class="svc"><h4>Alergi pada Anak</h4><p>Alergi makanan, alergi kulit, dan reaksi berulang yang memerlukan evaluasi pemicu.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/dfd45603-62dc-4c25-b50f-811b96e9a3c2?width=600&quality=75&fit=cover&format=webp" alt="dr. Gladys Rasidy, Sp.A"></div>
+              <div class="doc-right">
+                <h3>dr. Gladys Rasidy, Sp.A</h3>
+                <span class="doc-role-badge">Spesialis Anak</span>
+                <div class="doc-loc">&#128205; Antasari &middot; Saharjo &middot; Taman Mini</div>
+                <p class="doc-bio">Dokter Spesialis Anak lulusan Universitas Indonesia yang berfokus pada diagnosis, pengobatan, dan pencegahan masalah kesehatan pada bayi, anak, dan remaja. Menangani penyakit infeksi, masalah gizi, gangguan pencernaan, alergi, hingga penanganan awal kondisi kompleks.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Infeksi anak, malnutrisi &amp; gizi, diare, alergi, penanganan awal kondisi kompleks.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>3 lokasi</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets/0c4b89fc-a18c-4c80-ac6c-9fca9ac06be8&width=600&quality=50&fit=cover&format=webp" alt="dr. Alinda Rubiati Wibowo, Sp.A(K)"></div>
+              <div class="doc-right">
+                <h3>dr. Alinda Rubiati Wibowo, Sp.A(K)</h3>
+                <span class="doc-role-badge anchor">Konsultan Anak</span>
+                <div class="doc-loc">&#128205; Depok</div>
+                <p class="doc-bio">Spesialis Anak Konsultan yang menangani beragam kondisi kesehatan anak di Brawijaya Hospital Depok. Menghadirkan pendekatan komprehensif untuk mendukung tumbuh kembang dan imunitas pasien anak.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Layanan kesehatan anak terintegrasi, spesialisasi lanjutan.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Depok</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 4. JANTUNG ANAK ===== -->
+<div class="area" id="jantung">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#10084;&#65039;</div>
+      <div class="area-disc">Subspesialis Kardiologi Anak</div>
+      <h2>Jantung Anak</h2>
+      <p>Kelainan jantung pada anak dapat muncul sejak lahir maupun berkembang kemudian. Penanganannya memerlukan dokter dengan subspesialisasi khusus, karena anatomi dan dinamika jantung anak berbeda dari orang dewasa.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Antasari</span><span class="loc-chip">&#128205; Saharjo</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Penyakit Jantung Bawaan</h4><p>Kelainan struktur jantung sejak lahir, termasuk deteksi dini pada bayi baru lahir.</p></div>
+        <div class="svc"><h4>Penyakit Jantung Didapat pada Anak</h4><p>Kondisi jantung yang berkembang setelah lahir, termasuk akibat infeksi atau penyakit lain.</p></div>
+        <div class="svc"><h4>Bising Jantung (Murmur) pada Anak</h4><p>Evaluasi bunyi jantung tidak normal yang ditemukan saat pemeriksaan rutin.</p></div>
+        <div class="svc"><h4>Pemantauan Jantung Bayi hingga Remaja</h4><p>Pengelolaan berkelanjutan kondisi jantung anak sepanjang masa pertumbuhan.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/55ffd104-2fa9-4880-89d2-dacec6a8ecbc?width=600&quality=75&fit=cover&format=webp" alt="dr. Sarah Rafika Nursyirwan, Sp.A, Subsp.Kardio"></div>
+              <div class="doc-right">
+                <h3>dr. Sarah Rafika Nursyirwan, Sp.A, Subsp.Kardio</h3>
+                <span class="doc-role-badge anchor">Subspesialis Kardiologi Anak</span>
+                <div class="doc-loc">&#128205; Antasari</div>
+                <p class="doc-bio">Dokter Spesialis Anak dengan subspesialisasi Kardiologi Anak, lulusan Universitas Indonesia. Berfokus pada diagnosis dan penanganan kondisi jantung bawaan maupun didapat pada anak, dari bayi hingga remaja. Aktif terlibat dalam riset ilmiah sebagai penulis pendamping publikasi.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Jantung bawaan &amp; didapat pada anak, pengelolaan bayi hingga remaja.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Antasari</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://braveheart.co.id/wp-content/uploads/2023/10/Anisa-Rahmadhany.jpg" alt="dr. Anisa Rahmadhany, Sp.A(K)" onerror="this.src='https://via.placeholder.com/140x180?text=Photo'"></div>
+              <div class="doc-right">
+                <h3>dr. Anisa Rahmadhany, Sp.A(K)</h3>
+                <span class="doc-role-badge anchor">Subspesialis Kardiologi Anak</span>
+                <div class="doc-loc">&#128205; Saharjo</div>
+                <p class="doc-bio">Dokter Spesialis Anak Konsultan Kardiologi yang berpraktik di Brawijaya Hospital Saharjo. Berfokus pada penanganan komprehensif untuk berbagai kondisi kelainan jantung pada pasien anak.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Kardiologi anak, penyakit jantung bawaan dan didapat.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Saharjo</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 5. THT ANAK ===== -->
+<div class="area" id="tht">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#128066;</div>
+      <div class="area-disc">Spesialis THT-KL</div>
+      <h2>THT Anak</h2>
+      <p>Infeksi telinga berulang, amandel yang membuat anak mendengkur, atau kecurigaan gangguan pendengaran &mdash; keluhan THT pada anak memerlukan pendekatan pemeriksaan yang berbeda dari dewasa. Ini adalah area dengan cakupan lokasi terluas di jaringan kami.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Antasari</span><span class="loc-chip">&#128205; Saharjo</span><span class="loc-chip">&#128205; Duren Tiga</span><span class="loc-chip">&#128205; Taman Mini</span><span class="loc-chip">&#128205; Depok</span><span class="loc-chip">&#128205; Tangerang</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Infeksi Telinga Berulang pada Anak</h4><p>Anak rewel, menarik telinga, demam berulang. Otoskopi, terapi, hingga pemasangan grommet bila berulang.</p></div>
+        <div class="svc"><h4>Amandel &amp; Adenoid Anak</h4><p>Anak mendengkur, napas lewat mulut, tidur gelisah. Tonsilektomi &amp; adenoidektomi dengan anestesi aman untuk anak.</p></div>
+        <div class="svc"><h4>Gangguan Pendengaran Anak (Deteksi Dini)</h4><p>Anak terlambat bicara atau tidak merespons suara. OAE, BERA, dan audiometri anak.</p></div>
+        <div class="svc"><h4>Benda Asing di Telinga/Hidung/Tenggorokan</h4><p>Anak memasukkan benda kecil atau tertelan. Ekstraksi aman dengan peralatan endoskopik.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/25d951a5-5bc1-466c-8424-875035e25643?width=600&quality=75&fit=cover&format=webp" alt="dr. Fairuz Balfas, Sp.THT-KL"></div>
+              <div class="doc-right">
+                <h3>dr. Fairuz Balfas, Sp.THT-KL</h3>
+                <span class="doc-role-badge">THT Dewasa &amp; Anak</span>
+                <div class="doc-loc">&#128205; Antasari &middot; Taman Mini</div>
+                <p class="doc-bio">Dokter Spesialis THT-KL dengan pengalaman 13+ tahun dan lebih dari 5.000 kasus THT anak dan dewasa. Dikenal dengan pendekatan komunikatif dan lembut, khususnya dalam menangani pasien anak.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Otitis media, tonsilitis &amp; adenoid, rinitis alergi, endoskopi THT anak.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div>
+                    <div class="sched-row"><span>Sel, Kam</span><span>16:00&ndash;18:00</span></div>
+                    <div class="sched-row"><span>Rab, Jum</span><span>09:30&ndash;11:00</span></div>
+                  </div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/916c735b-9ce2-4f8e-9c85-c2416c73caa7?width=600&quality=75&fit=cover&format=webp" alt="dr. Tara Candida Mariska, Sp.THTBKL"></div>
+              <div class="doc-right">
+                <h3>dr. Tara Candida Mariska, Sp.THTBKL</h3>
+                <span class="doc-role-badge">THT Dewasa &amp; Anak</span>
+                <div class="doc-loc">&#128205; Duren Tiga</div>
+                <p class="doc-bio">Dokter Spesialis THT-KL yang dikenal sangat memperhatikan detail dan kenyamanan pasien. Terampil menggunakan teknologi diagnostik terkini dalam penanganan kondisi THT dewasa dan anak.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">THT anak, infeksi telinga, tonsilitis, endoskopi THT.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Duren Tiga</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/63c08699-12b9-4608-9b6d-d3f8be358923?width=600&quality=75&fit=cover&format=webp" alt="dr. Fezzan Athama Fuadi, Sp.THT-KL, FICS"></div>
+              <div class="doc-right">
+                <h3>dr. Fezzan Athama Fuadi, Sp.THT-KL, FICS</h3>
+                <span class="doc-role-badge">THT Umum</span>
+                <div class="doc-loc">&#128205; Depok</div>
+                <p class="doc-bio">Dokter Spesialis THT-KL dengan sertifikasi internasional Fellow of the International College of Surgeons (FICS). Memberikan pelayanan THT komprehensif dengan standar bedah internasional.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Hidung &amp; sinus, bedah THT, penanganan THT anak dan dewasa.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Depok</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/d087882b-9772-4dda-a85a-b57d76b8aa4d?width=600&quality=75&fit=cover&format=webp" alt="dr. Farryanto Kusulistyo, Sp.THT-KL"></div>
+              <div class="doc-right">
+                <h3>dr. Farryanto Kusulistyo, Sp.THT-KL</h3>
+                <span class="doc-role-badge">THT Umum</span>
+                <div class="doc-loc">&#128205; Tangerang</div>
+                <p class="doc-bio">Dokter Spesialis THT-KL yang melayani pasien dewasa dan anak di Brawijaya Hospital Tangerang dengan pendekatan yang cermat dan komunikatif.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Telinga &amp; pendengaran, tenggorokan, THT anak dan dewasa.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Tangerang</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 6. ORTOPEDI ANAK ===== -->
+<div class="area" id="ortopedi">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#129460;</div>
+      <div class="area-disc">Subspesialis Ortopedi Anak</div>
+      <h2>Tulang &amp; Gerak Anak</h2>
+      <p>Kaki berbentuk O atau X, cara berjalan yang tidak biasa, atau patah tulang akibat terjatuh &mdash; kelainan muskuloskeletal pada anak memengaruhi tumbuh kembangnya. Penanganannya memerlukan dokter dengan subspesialisasi ortopedi anak, karena tulang anak masih dalam masa pertumbuhan.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Saharjo</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Kelainan Bentuk Kaki &amp; Cara Berjalan</h4><p>Kaki O, kaki X, dan gangguan berjalan pada anak yang memerlukan evaluasi struktur tulang.</p></div>
+        <div class="svc"><h4>Displasia Panggul &amp; Kelainan Bawaan Tulang</h4><p>Kelainan bentuk panggul dan deformitas ekstremitas sejak lahir, termasuk rekonstruksi.</p></div>
+        <div class="svc"><h4>Patah Tulang pada Anak</h4><p>Penanganan fraktur anak dengan mempertimbangkan lempeng pertumbuhan tulang.</p></div>
+        <div class="svc"><h4>Skoliosis &amp; Kelainan Tulang Belakang Anak</h4><p>Evaluasi kelengkungan tulang belakang yang muncul pada masa pertumbuhan.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://dte49v1irn0nj.cloudfront.net/assets/f83fae86-615d-4273-8896-037d1b4db73f?width=600&quality=75&fit=cover&format=webp" alt="dr. M. Deryl Ivansyah, Sp.OT, Subsp.A"></div>
+              <div class="doc-right">
+                <h3>dr. M. Deryl Ivansyah, Sp.OT, Subsp.A</h3>
+                <span class="doc-role-badge anchor">Subspesialis Ortopedi Anak</span>
+                <div class="doc-loc">&#128205; Saharjo</div>
+                <p class="doc-bio">Dokter Spesialis Bedah Ortopedi dan Traumatologi dengan gelar Konsultan di bidang Ortopedi Anak. Berfokus pada cedera dan kelainan muskuloskeletal pada bayi, anak, dan remaja. Keahlian utamanya adalah rekonstruksi deformitas ekstremitas anak dan penanganan patah tulang anak, serta aktif dalam penelitian termasuk penggunaan sel punca untuk kelainan tulang bawaan.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Rekonstruksi deformitas ekstremitas anak, patah tulang anak, kelainan tulang bawaan.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Saharjo</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 7. BEDAH ANAK ===== -->
+<div class="area" id="bedah">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#129657;</div>
+      <div class="area-disc">Subspesialis Bedah Anak</div>
+      <h2>Bedah Anak</h2>
+      <p>Anak bukan orang dewasa berukuran kecil &mdash; anatomi dan responsnya terhadap pembedahan sangat berbeda. Tindakan bedah pada anak ditangani dokter dengan subspesialisasi bedah anak, mengutamakan kenyamanan, keamanan, dan presisi di sepanjang proses perawatan.</p>
+      <div class="area-locs"><span class="loc-chip">&#128205; Antasari</span><span class="loc-chip">&#128205; Saharjo</span><span class="loc-chip">&#128205; Duren Tiga</span><span class="loc-chip">&#128205; Depok</span></div>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Kelainan Bawaan (Kongenital)</h4><p>Penanganan cacat lahir pada saluran cerna, dinding perut, dan organ dalam lainnya.</p></div>
+        <div class="svc"><h4>Bedah Saluran Cerna Anak</h4><p>Usus buntu (apendisitis) pada anak, hernia, dan penyumbatan usus.</p></div>
+        <div class="svc"><h4>Urologi Anak</h4><p>Kelainan saluran kemih dan organ reproduksi, termasuk testis yang tidak turun.</p></div>
+        <div class="svc"><h4>Kegawatdaruratan Bedah Anak</h4><p>Kasus kegawatdaruratan saluran cerna yang memerlukan tindakan bedah segera.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets/3fe17052-f4f4-4bd6-9a89-7d2855c64cf1&width=600&quality=50&fit=cover&format=webp" alt="dr. Hardian Gunardi, Sp.B, Subsp.Ped(K)"></div>
+              <div class="doc-right">
+                <h3>dr. Hardian Gunardi, Sp.B, Subsp.Ped(K)</h3>
+                <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
+                <div class="doc-loc">&#128205; Antasari</div>
+                <p class="doc-bio">Dokter Spesialis Bedah Umum dengan subspesialisasi dan gelar konsultan di bidang Bedah Anak, dengan pelatihan dari Universitas Indonesia. Menangani spektrum penuh kasus bedah pediatrik &mdash; dari kelainan kongenital sederhana hingga kegawatdaruratan saluran cerna yang kompleks pada anak.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Kelainan kongenital, bedah saluran cerna anak, kegawatdaruratan bedah pediatrik.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Antasari</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets/69b9bf88-d02e-4ab6-9955-b6e73cc102d5&width=600&quality=50&fit=cover&format=webp" alt="dr. Riana Pauline Tamba, Sp.B (K) BA"></div>
+              <div class="doc-right">
+                <h3>dr. Riana Pauline Tamba, Sp.B (K) BA</h3>
+                <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
+                <div class="doc-loc">&#128205; Saharjo</div>
+                <p class="doc-bio">Dokter Spesialis Bedah dengan subspesialisasi di bidang Bedah Anak yang menangani masalah pembedahan pada bayi, anak-anak, dan remaja secara aman dan presisi. Keahliannya mencakup prosedur minimal invasif seperti Laparoskopi Apendektomi, penanganan luka infeksi dan trauma, perbaikan hernia (herniotomi dan hernioplasti), serta berbagai prosedur penanganan kelainan bawaan (kongenital) pada anak.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Laparoskopi apendektomi, perbaikan hernia, penanganan infeksi & trauma, bedah kongenital.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Saharjo</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets/5d883ab5-ab4a-4e2c-a9d3-f0686478d142&width=600&quality=50&fit=cover&format=webp" alt="dr. Dina Perdanasari, Sp.BA"></div>
+              <div class="doc-right">
+                <h3>dr. Dina Perdanasari, Sp.BA</h3>
+                <span class="doc-role-badge">Spesialis Bedah Anak</span>
+                <div class="doc-loc">&#128205; Duren Tiga</div>
+                <p class="doc-bio">Dokter Spesialis Bedah Anak dengan keahlian khusus menangani pembedahan dari usia bayi baru lahir (neonatus) hingga remaja. Berfokus pada penanganan kelainan bawaan (kongenital), tumor pada anak, kondisi darurat medis, koreksi saluran pencernaan, pembedahan urologi anak, serta trauma dengan mengutamakan teknik minimal invasif untuk kenyamanan dan pemulihan cepat.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Kelainan kongenital, tumor anak, koreksi saluran cerna, bedah urologi, trauma anak.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Duren Tiga</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+          <div class="doc">
+            <div class="doc-layout">
+              <div class="doc-avatar"><img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets/213aef8d-9ca8-4576-94b7-c4eee8103add&width=600&quality=50&fit=cover&format=webp" alt="dr. Rahmayani Effendi, Sp.BA"></div>
+              <div class="doc-right">
+                <h3>dr. Rahmayani Effendi, Sp.BA</h3>
+                <span class="doc-role-badge">Spesialis Bedah Anak</span>
+                <div class="doc-loc">&#128205; Depok</div>
+                <p class="doc-bio">Dokter Spesialis Bedah Anak yang melakukan intervensi pembedahan pada bayi hingga remaja, baik untuk kondisi bedah bawaan (kongenital) maupun yang didapat. Layanannya mencakup diagnosis dan koreksi kelainan organ dalam, kasus kegawatdaruratan pada anak, serta perbaikan kelainan fisik dengan mempertimbangkan aspek anatomi dan fisiologi anak yang khas demi pemulihan optimal.</p>
+                <div class="doc-detail-box"><div class="doc-detail-cols">
+                  <div><div class="ddl-label">Fokus Layanan</div><div class="ddl-text">Bedah kongenital & didapat, kelainan organ dalam, kegawatdaruratan anak, koreksi fisik.</div></div>
+                  <div><div class="ddl-label">Jadwal Praktik</div><div class="sched-row"><span>Depok</span><span>Hubungi reservasi</span></div></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 8. ENDOKRIN ===== -->
+<div class="area" id="endokrin">
+  <div class="container">
+    <div class="area-header">
+      <div class="area-icon">&#9878;&#65039;</div>
+      <div class="area-disc">Endokrinologi Anak</div>
+      <h2>Hormon &amp; Pertumbuhan Anak</h2>
+      <p>Perawakan pendek, pubertas yang datang terlalu dini atau terlambat, dan berat badan berlebih pada anak sering kali berkaitan dengan sistem hormon. Evaluasi yang tepat membantu memastikan anak bertumbuh sesuai potensinya.</p>
+    </div>
+    <div class="area-grid">
+      <div>
+        <div class="svc-list-title">Yang Kami Tangani</div>
+        <div class="svc"><h4>Perawakan Pendek (Short Stature)</h4><p>Evaluasi anak yang tinggi badannya tertinggal dari kurva pertumbuhan seusianya.</p></div>
+        <div class="svc"><h4>Pubertas Dini &amp; Pubertas Terlambat</h4><p>Tanda pubertas yang muncul terlalu awal atau belum muncul pada usia yang seharusnya.</p></div>
+        <div class="svc"><h4>Obesitas pada Anak</h4><p>Penilaian berat badan berlebih dan risiko metabolik yang menyertainya.</p></div>
+        <div class="svc"><h4>Diabetes &amp; Gangguan Tiroid pada Anak</h4><p>Penanganan gangguan hormon yang memerlukan pemantauan jangka panjang.</p></div>
+      </div>
+      <div>
+        <div class="docs-title">Dokter yang Menangani</div>
+        <div class="docs-box">
+          <!-- TODO: belum ada dokter endokrin anak terkonfirmasi di jaringan. Isi atau hapus area ini sebelum publish. -->
+          <div class="doc">
+            <div class="doc-right" style="width:100%">
+              <h3>[Slot Dokter Endokrinologi Anak]</h3>
+              <span class="doc-role-badge">Belum Dikonfirmasi</span>
+              <p class="doc-bio">Area ini disiapkan sebagai bagian dari model jaringan. Isi dengan dokter endokrin anak bila tersedia, atau hapus area ini sebelum publish.</p>
+            </div>
+          </div>
+        </div>
+        <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY SECTION (Ortho Antasari Design Approach) -->
+<section class="section section-soft">
+  <div class="container">
+    <span class="eyebrow">Tentang Kami</span>
+    <h2 class="section-title">Mengapa Memilih Brawijaya Hospital?</h2>
+    <p class="section-subtitle">Didukung oleh tim medis terkemuka, fasilitas berstandar tinggi, dan pengalaman dua dekade, kami berdedikasi memberikan perawatan terbaik bagi anak Anda.</p>
+    
+    <div class="why-grid">
+      <!-- Menggunakan aset ilustratif dari domain referensi Brawijaya -->
+      <div class="why-card-img">
+        <div class="why-img-wrap"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/Tim-Dokter-Brawijaya-Hospital-Antasari.jpg" alt="Tim Dokter Terdepan" onerror="this.src='https://via.placeholder.com/400x200/5E2D79/FFFFFF?text=Tim+Dokter'"></div>
+        <div class="why-content">
+          <h4>Tim Dokter Terdepan</h4>
+          <p>600+ dokter terkurasi ketat melalui proses credentialing dengan pendekatan Evidence-Based Medicine.</p>
+        </div>
+      </div>
+      <div class="why-card-img">
+        <div class="why-img-wrap"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/Fasilitas-Brawijaya-Hospital-Antasari.jpg" alt="Teknologi Medis Mutakhir" onerror="this.src='https://via.placeholder.com/400x200/7A4A95/FFFFFF?text=Fasilitas+Mutakhir'"></div>
+        <div class="why-content">
+          <h4>Teknologi Medis Mutakhir</h4>
+          <p>Didukung fasilitas diagnostik mutakhir dan instalasi khusus NICU/PICU untuk penanganan optimal.</p>
+        </div>
+      </div>
+      <div class="why-card-img">
+        <div class="why-img-wrap"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/Pelayanan-Brawijaya-Hospital-Antasari.jpg" alt="Pelayanan Berbasis H.E.A.R.T" onerror="this.src='https://via.placeholder.com/400x200/5E2D79/FFFFFF?text=Pelayanan+HEART'"></div>
+        <div class="why-content">
+          <h4>Pelayanan Berbasis H.E.A.R.T.</h4>
+          <p>Lebih dari 1.000 perawat dan staf medis terlatih melayani pasien dengan cepat, ramah, dan penuh empati.</p>
+        </div>
+      </div>
+      <div class="why-card-img">
+        <div class="why-img-wrap"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/RS-Brawijaya-Antasari-Orthopedic-Center.jpg" alt="Jaringan Strategis" onerror="this.src='https://via.placeholder.com/400x200/7A4A95/FFFFFF?text=Jaringan+RS'"></div>
+        <div class="why-content">
+          <h4>Jaringan Strategis</h4>
+          <p>Dapat diakses mudah melalui 6 lokasi rumah sakit strategis yang mencakup area Jakarta, Depok, dan Tangerang.</p>
+        </div>
+      </div>
+      <div class="why-card-img">
+        <div class="why-img-wrap"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/Akreditasi-Brawijaya-Hospital-Antasari.png" alt="Akreditasi Paripurna" onerror="this.src='https://via.placeholder.com/400x200/5E2D79/FFFFFF?text=Akreditasi+Paripurna'"></div>
+        <div class="why-content">
+          <h4>Akreditasi Paripurna</h4>
+          <p>Diakui melalui akreditasi bintang 5 LAM-KPRS dan berbagai penghargaan nasional dalam mutu layanan kesehatan.</p>
+        </div>
+      </div>
+      <div class="why-card-img">
+        <div class="why-img-wrap"><img src="https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/Ibu-dan-Anak-Brawijaya-Hospital-Antasari.jpg" alt="Warisan Ibu & Anak" onerror="this.src='https://via.placeholder.com/400x200/7A4A95/FFFFFF?text=Warisan+Ibu+%26+Anak'"></div>
+        <div class="why-content">
+          <h4>Warisan Perawatan Ibu & Anak</h4>
+          <p>Lahir dan berkembang dari akar kuat layanan prima kesehatan ibu dan anak sejak dua dekade silam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="kontak">
+  <h2>Konsultasikan Kesehatan Anak Anda</h2>
+  <p>Apa pun keluhan si kecil, tim Brawijaya Pediatric Center akan mengarahkan Anda ke dokter dengan keahlian yang paling sesuai &mdash; di lokasi terdekat dari Anda.</p>
+  <div class="btn-row">
+    <a href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20membuat%20janji%20temu%20di%20Brawijaya%20Pediatric%20Center" class="btn btn-white">WhatsApp Reservasi</a>
+    <a href="tel:150160" class="btn btn-accent">Halo Brawijaya 150-160</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Copyright &copy; 2026 Brawijaya Hospital. All Rights Reserved.</p>
+    <div class="anniversary-badge">Merayakan 20 Tahun Melayani Sepenuh Hati</div>
+  </div>
+</footer>
+
+</body>
+</html>
