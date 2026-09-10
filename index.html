@@ -42,7 +42,8 @@
   .header-inner{display:flex;justify-content:space-between;align-items:center;height:80px}
   .logo img{height:44px;object-fit:contain}
   
-  .sticky-subnav {position:fixed;top:80px;left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.03);display:flex;justify-content:center;overflow-x:auto;padding:0 24px;}
+  .sticky-subnav {position:fixed;top:80px;left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.03);display:flex;justify-content:center;overflow-x:auto;padding:0 24px; flex-direction: column; align-items: center;}
+  .subnav-toggle {display: none;}
   .subnav-inner {display:flex;gap:32px;white-space:nowrap;}
   .subnav-inner a {display:inline-block;padding:16px 0;color:var(--text-muted);font-weight:600;font-size:13.5px;text-decoration:none;border-bottom:3px solid transparent;transition:all .2s ease;}
   .subnav-inner a:hover {color:var(--bw-purple);}
@@ -85,7 +86,7 @@
   .stat-num{font-family:'DM Sans',sans-serif;font-size:46px;font-weight:800;color:var(--bw-purple);line-height:1;margin-bottom:8px}
   .stat-label{color:var(--text-muted);font-size:14px;font-weight:600}
 
-  /* COVERAGE MATRIX (SIMPLIFIED TO CLUSTERS) */
+  /* COVERAGE MATRIX */
   .matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.02)}
   table.matrix{width:100%;border-collapse:collapse;font-size:14px;min-width:860px}
   table.matrix th{background:var(--bw-purple);color:#fff;padding:16px 14px;text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
@@ -109,24 +110,10 @@
     transition:all 0.25s ease;
     box-shadow:0 2px 6px rgba(0,0,0,0.02);
   }
-  table.matrix td:first-child a::after{
-    content:'↓';
-    color:var(--accent);
-    font-weight:800;
-    font-size:14px;
-    transition:transform 0.25s;
-  }
-  table.matrix td:first-child a:hover{
-    background:var(--bw-purple);
-    color:#fff;
-    border-color:var(--bw-purple);
-    box-shadow:0 6px 16px rgba(94,45,121,0.15);
-    transform:translateY(-1px);
-  }
-  table.matrix td:first-child a:hover::after{
-    transform:translateY(2px);
-  }
-
+  table.matrix td:first-child a::after{content:'↓';color:var(--accent);font-weight:800;font-size:14px;transition:transform 0.25s;}
+  table.matrix td:first-child a:hover{background:var(--bw-purple);color:#fff;border-color:var(--bw-purple);box-shadow:0 6px 16px rgba(94,45,121,0.15);transform:translateY(-1px);}
+  table.matrix td:first-child a:hover::after{transform:translateY(2px);}
+  
   table.matrix td.yes a.y {display:block;padding:14px 12px;color:var(--bw-purple);font-weight:800;font-size:16px;text-decoration:none;transition:all 0.2s;}
   table.matrix td.yes a.y:hover {transform:scale(1.2);background:rgba(94,45,121,0.05);border-radius:8px}
   table.matrix td.na {color:#D1CBD7;padding:14px 12px;font-size:16px;}
@@ -205,7 +192,7 @@
   .card-title {color: var(--bw-purple-deep);font-size: 16px;font-weight: 700;line-height: 1.4;margin: 0;}
 
   /* AWARDS & WHY CHOOSE (BRSC) */
-  .brsc-inst, .brsc-oot {--brand:#5E2D79; --bl:#8B5AA6; --bs:#F4EEF8; --ba:#C9A8DB; --ink:#1F1F1F; --is:#5A5A5A; --line:#E8E4ED; --bg:#fff; --ba2:#FAFAFB; --gold:#C9A227; --r:20px; --rl:24px; --sh:0 12px 40px rgba(94,45,121,.08);font-family:'Inter', sans-serif;line-height:1.65;}
+  .brsc-inst, .brsc-oot {--brand:#5E2D79; --bl:#8B5AA6; --bs:#F4EEF8; --ba:#C9A8DB; --ink:#1F1F1F; --is:#5A5A5A; --line:#E8E4ED; --bg:#fff; --ba2:#FAFAFB; --gold:#C9A227; --r:20px; --rl:24px; --sh:0 12px 40px rgba(94,45,121,.08);font-family:'Inter', sans-serif;line-height:1.65;box-sizing:border-box;}
   .brsc-inst {color:var(--ink)}
   .brsc-inst h2, .brsc-inst h3, .brsc-inst h4, .brsc-oot h2, .brsc-oot h3, .brsc-oot h4 {font-family:'DM Sans', sans-serif; font-weight:700; line-height:1.2; letter-spacing:-.01em;}
   .brsc-inst h2, .brsc-oot h2 {font-size:clamp(1.8rem, 3vw, 2.25rem)}
@@ -264,7 +251,7 @@
   /* MAPS LOCATION GRID */
   .section-locations {font-family: 'Inter', sans-serif;color: var(--text-dark);line-height: 1.65;max-width: 1188px;margin: 0 auto;padding: 0 24px 80px 24px;}
   .loc-header {text-align: center;max-width: 740px;margin: 0 auto 44px;}
-  .loc-icon {width: 72px;height: 72px;background: var(--bw-purple-soft);border-radius: 20px;display: flex;align-items: center;justify-content: center;font-size: 34px;margin: 0 auto 20px;box-shadow: 0 8px 24px rgba(94,45,121,0.08);}
+  .loc-icon {width: 64px;height: 64px;background: var(--bw-purple-soft);border-radius: 20px;display: flex;align-items: center;justify-content: center;margin: 0 auto 20px;box-shadow: 0 8px 24px rgba(94,45,121,0.08);}
   .loc-header h2 {font-family: 'DM Sans', sans-serif;font-size: 32px;color: var(--bw-purple-deep);margin-bottom: 12px;font-weight: 700;}
   .loc-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 24px;}
   .loc-card {background: #fff;border: 1px solid var(--border);border-radius: 24px;overflow: hidden;box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);display: flex;flex-direction: column;align-items: center;padding: 0 0 28px 0;text-align: center;transition: transform .3s, box-shadow .3s;}
@@ -309,10 +296,22 @@
     .stats{grid-template-columns:repeat(2,1fr)}
     .section-title,.cluster-header h2{font-size:28px}
     .cluster,.section{padding:60px 0}
-    .sticky-subnav {top:70px;}
+    
+    .sticky-subnav {padding:0; align-items:stretch;}
+    .subnav-toggle {display:flex; justify-content:space-between; align-items:center; width:100%; padding:14px 24px; background:#fff; color:var(--bw-purple-deep); border:none; font-family:'Inter',sans-serif; font-weight:700; font-size:14.5px; border-bottom:1px solid var(--border); cursor:pointer;}
+    .subnav-inner {display:none; flex-direction:column; gap:0; width:100%; position:absolute; top:100%; left:0; background:#fff; box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+    .subnav-inner.open {display:flex;}
+    .subnav-inner a {border-bottom:1px solid var(--bg-soft); padding:14px 24px; white-space:normal;}
+    .subnav-inner a:hover, .subnav-inner a:active {background:var(--bw-purple-soft); color:var(--bw-purple);}
+    
     .site-header .header-inner {height:70px;}
     body {padding-top: 70px;}
     .hero-img-wrap img{max-width:100%;}
+    
+    /* Responsive Horizontal Tabs */
+    .tab-nav {flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; padding-bottom:10px; margin-bottom:24px; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;}
+    .tab-nav::-webkit-scrollbar {display:none;}
+    .tab-btn {flex:0 0 auto; width:auto; white-space:nowrap;}
   }
   @media (max-width:640px){
     .loc-grid {grid-template-columns:1fr}
@@ -321,7 +320,6 @@
   @media (max-width:576px){
     .doc-lay{flex-direction:column;gap:16px; align-items:center; text-align:center;}
     .doc-r{width:100%;}
-    .tab-btn{width:100%; text-align:center;}
     .brsc-inst__why {grid-template-columns:1fr}
     .brsc-inst__aws {grid-template-columns:repeat(2, 1fr)}
     .brsc-inst__ts {grid-template-columns:1fr}
@@ -350,12 +348,15 @@
 
 <!-- STICKY SUB-NAV -->
 <div class="sticky-subnav">
-  <div class="subnav-inner">
-    <a href="#c-dasar">Kesehatan Dasar & Pertumbuhan</a>
-    <a href="#c-indera">Panca Indera & Kulit</a>
-    <a href="#c-bedah">Bedah & Tulang</a>
-    <a href="#c-organ">Subspesialis Organ Dalam</a>
-    <a href="#c-nicu">Perawatan Kritis (NICU)</a>
+  <button class="subnav-toggle" onclick="toggleSubnav()">
+    Kategori Layanan <span id="subnav-chevron">▼</span>
+  </button>
+  <div class="subnav-inner" id="subnavMenu">
+    <a href="#c-dasar" onclick="closeSubnav()">Kesehatan Dasar & Pertumbuhan</a>
+    <a href="#c-indera" onclick="closeSubnav()">Panca Indera & Kulit</a>
+    <a href="#c-bedah" onclick="closeSubnav()">Bedah & Tulang</a>
+    <a href="#c-organ" onclick="closeSubnav()">Subspesialis Organ Dalam</a>
+    <a href="#c-nicu" onclick="closeSubnav()">Perawatan Kritis (NICU)</a>
   </div>
 </div>
 
@@ -371,11 +372,11 @@
       <div class="hero-content">
         <div class="hero-breadcrumb">Brawijaya Hospital &nbsp;/&nbsp; <span>Comprehensive Pediatric Center</span></div>
         <h1>Brawijaya Comprehensive Pediatric Center</h1>
-        <div class="hero-tagline">Pendamping Kesehatan Anak, Sejak Lahir hingga Remaja.</div>
-        <p>Bukan hanya tempat datang ketika anak sakit. Kami mendampingi perjalanan pertumbuhan si kecil &mdash; dari imunisasi rutin dan pemantauan perkembangan, hingga penanganan oleh subspesialis ketika dibutuhkan &mdash; di enam rumah sakit Brawijaya.</p>
+        <div class="hero-tagline">Pusat Pelayanan Anak dengan Tim Multispesialis Terintegrasi, Berpengalaman Lebih dari 20 Tahun.</div>
+        <p>Lebih dari dua dekade mendampingi tumbuh kembang anak Indonesia, yang didukung dokter anak subspesialis multidisiplin yang bekerja dalam satu alur penanganan.</p>
         <ul class="hero-bullets">
           <li>Subspesialis Kardiologi, Ortopedi, Endokrin, hingga Bedah Anak</li>
-          <li>Layanan preventif, pertumbuhan, hingga tindakan khusus</li>
+          <li>Layanan preventif, tumbuh kembang, hingga tindakan khusus</li>
           <li>Enam lokasi di Jakarta, Depok, dan Tangerang</li>
           <li>Didukung NICU &amp; PICU dengan teknologi terkini</li>
         </ul>
@@ -440,6 +441,7 @@
           <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-3">Kejang</a>
           <a href="#c-bedah" class="chip triage-chip" data-tab="tab-bedah-2">Kaki bentuk O / X</a>
           <a href="#c-bedah" class="chip triage-chip" data-tab="tab-bedah-1">Benjolan / hernia</a>
+          <a href="#c-organ" class="chip triage-chip" data-tab="tab-organ-3">Kelainan darah / tumor</a>
         </div>
       </div>
     </div>
@@ -463,7 +465,7 @@
   <div class="container">
     <span class="eyebrow">Peta Keahlian</span>
     <h2 class="section-title">Seluruh Layanan Anak Kami</h2>
-    <p class="section-subtitle">Pilih kelompok area layanan untuk melihat profil dokter, atau klik tanda strip untuk rujukan ke lokasi terdekat melalui layanan pelanggan kami. Detail ketersediaan dokter dapat dilihat di dalam masing-masing tab layanan.</p>
+    <p class="section-subtitle">Pilih area layanan spesifik untuk melihat profil dokter, atau klik tanda strip untuk panduan rujukan ke lokasi terdekat melalui layanan pelanggan kami.</p>
     
     <div class="matrix-wrap">
       <table class="matrix">
@@ -475,47 +477,137 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#c-dasar">Kesehatan Dasar & Pertumbuhan</a></td>
-            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y">&#10003;</a></td>
+            <td><a href="#c-dasar" data-tab="tab-dasar-1" class="triage-chip">Imunisasi &amp; Vaksinasi</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-indera">Panca Indera & Kulit Anak</a></td>
-            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y">&#10003;</a></td>
-          </tr>
-          <tr>
-            <td><a href="#c-bedah">Bedah & Tulang Anak</a></td>
-            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y">&#10003;</a></td>
-          </tr>
-          <tr>
-            <td><a href="#c-organ">Subspesialis Organ Dalam</a></td>
-            <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y">&#10003;</a></td>
+            <td><a href="#c-dasar" data-tab="tab-dasar-2" class="triage-chip">Nutrisi, Infeksi &amp; Alergi</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
             <td class="na">&ndash;</td>
           </tr>
           <tr>
-            <td><a href="#c-nicu">Perawatan Kritis (NICU)</a></td>
+            <td><a href="#c-dasar" data-tab="tab-dasar-3" class="triage-chip">Tumbuh Kembang &amp; Saraf</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y">&#10003;</a></td>
-            <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-dasar" data-tab="tab-dasar-4" class="triage-chip">Screening &amp; MCU Anak</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#c-dasar" data-tab="tab-dasar-5" class="triage-chip">Hormon &amp; Pertumbuhan (Endokrin)</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-indera" data-tab="tab-indera-1" class="triage-chip">THT Anak</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#c-indera" data-tab="tab-indera-2" class="triage-chip">Kulit &amp; Alergi Anak</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-indera" data-tab="tab-indera-3" class="triage-chip">Mata Anak</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#c-indera" data-tab="tab-indera-4" class="triage-chip">Gigi Anak</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-bedah" data-tab="tab-bedah-1" class="triage-chip">Bedah Anak</a></td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+          </tr>
+          <tr>
+            <td><a href="#c-bedah" data-tab="tab-bedah-2" class="triage-chip">Tulang &amp; Gerak Anak (Ortopedi)</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-organ" data-tab="tab-organ-1" class="triage-chip">Jantung Anak</a></td>
+            <td class="yes"><a href="#c-organ" data-tab="tab-organ-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-organ" data-tab="tab-organ-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-organ" data-tab="tab-organ-2" class="triage-chip">Paru &amp; Pernapasan Anak</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-organ" data-tab="tab-organ-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-organ" data-tab="tab-organ-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-organ" data-tab="tab-organ-3" class="triage-chip">Hematologi Onkologi Anak</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-organ" data-tab="tab-organ-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+            <td class="na">&ndash;</td>
+          </tr>
+          <tr>
+            <td><a href="#c-nicu" data-tab="tab-nicu-1" class="triage-chip">Bayi Baru Lahir (NICU)</a></td>
+            <td class="na">&ndash;</td>
+            <td class="yes"><a href="#c-nicu" data-tab="tab-nicu-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-nicu" data-tab="tab-nicu-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-nicu" data-tab="tab-nicu-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
             <td class="na">&ndash;</td>
           </tr>
@@ -1197,7 +1289,7 @@
     <div class="tab-nav">
       <button class="tab-btn active" onclick="openTab(event, 'tab-organ-1')">Jantung Anak</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-organ-2')">Paru & Respirologi</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab-organ-4')">Hematologi Onkologi</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-organ-3')">Hematologi Onkologi</button>
     </div>
 
     <!-- TAB 1: JANTUNG -->
@@ -1265,7 +1357,7 @@
           <div class="docs-box">
             <div class="doc">
                 <div class="doc-lay">
-                  <div class="doc-ph"><img src="" alt="Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
+                  <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="Dr. dr. Budi Rahmat" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
                   <div class="doc-r">
                     <h3>Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)</h3>
                     <span class="doc-role-badge anchor">Konsultan Bedah Jantung Anak &amp; Kongenital</span>
@@ -1305,8 +1397,8 @@
       </div>
     </div>
 
-    <!-- TAB 4: HEMATOLOGI ONKOLOGI -->
-    <div class="tab-pane" id="tab-organ-4">
+    <!-- TAB 3: HEMATOLOGI ONKOLOGI -->
+    <div class="tab-pane" id="tab-organ-3">
       <div class="pane-grid">
         <div>
           <div class="svc-list-title">Yang Kami Tangani</div>
@@ -1326,7 +1418,7 @@
                   <h3>dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Hematologi Onkologi Anak</span>
                   <div class="doc-loc">&#128205; Saharjo</div>
-                  <p class="doc-bio">Dokter Spesialis Anak Konsultan Hematologi Onkologi yang berdedikasi khusus pada penanganan kasus kanker dan kelainan darah pada anak-anak. Layanan beliau berfokus pada tata laksana komprehensif untuk kanker darah (leukemia) dan kanker padat (seperti kanker otak, tulang, dan otot). Beliau juga menyediakan layanan tindakan kemoterapi anak, edukasi skrining deteksi dini gejala kanker pada anak, serta manajemen nutrisi spesifik bagi pasien anak dalam masa terapi.</p>
+                  <p class="doc-bio">dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K) adalah Dokter Spesialis Anak Konsultan Hematologi Onkologi yang berdedikasi khusus pada penanganan kasus kanker dan kelainan darah pada anak-anak. Layanan beliau berfokus pada tata laksana komprehensif untuk kanker darah (leukemia) dan kanker padat (seperti kanker otak, tulang, dan otot). Beliau juga menyediakan layanan tindakan kemoterapi anak, edukasi skrining deteksi dini gejala kanker pada anak, serta manajemen nutrisi spesifik bagi pasien anak dalam masa terapi.</p>
                   <div class="doc-detail-box"><div class="doc-detail-cols" style="grid-template-columns:1fr;">
                     <div><div class="ddl-label">Jadwal Praktik Saharjo</div><div class="sched-row" style="border:none;"><span>Sel, Kam: 16.00-18.00 <br>Sab: 10.00-12.00</span></div></div>
                   </div></div>
@@ -1411,33 +1503,39 @@
 <div class="brawijaya-grid-wrapper">
   <div class="b-grid">
     <div class="b-card">
-      <div class="video-frame"><iframe src="https://www.youtube.com/embed/_pkzLfT23FU" title="Patient Story : Tasya Kamila" allowfullscreen></iframe></div>
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/mhXdPP1jJH8" title="Kata Dokter: Apa Itu Ikterus Neonatorum" allowfullscreen></iframe></div>
       <div class="card-content">
-        <span class="cat-label">Patient Story</span><h3 class="card-title">Pengalaman Pelayanan Kesehatan Bersama Tasya Kamila</h3>
+        <span class="cat-label">Edukasi Neonatus</span><h3 class="card-title">Kata Dokter: Apa Itu Ikterus Neonatorum (Bayi Kuning)? - dr. Attila Dewanti, Sp.A(K)</h3>
+      </div>
+    </div>
+    <div class="b-card">
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/cc0sTWtq4d0" title="Operasi Patah Tulang Anak" allowfullscreen></iframe></div>
+      <div class="card-content">
+        <span class="cat-label">Ortopedi Anak</span><h3 class="card-title">Pengalaman Menjalani Operasi Patah Tulang Anak dengan dr. M. Deryl Ivansyah, Sp.OT(K)</h3>
+      </div>
+    </div>
+    <div class="b-card">
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/vrRih_cLVe0" title="Atasi Demam pada Anak" allowfullscreen></iframe></div>
+      <div class="card-content">
+        <span class="cat-label">Edukasi Anak</span><h3 class="card-title">Tips & Pertolongan Pertama Mengatasi Demam pada Anak - dr. Nathalia Ningrum, Sp.A</h3>
+      </div>
+    </div>
+    <div class="b-card">
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/Wjr2AyBG7GA" title="Anak Susah BAB" allowfullscreen></iframe></div>
+      <div class="card-content">
+        <span class="cat-label">Bedah Anak</span><h3 class="card-title">Kata Dokter: Anak Susah BAB Kok Dibawa Ke Dokter Bedah? - dr. Hardian Gunardi, Sp.B, Subsp.Ped(K)</h3>
+      </div>
+    </div>
+    <div class="b-card">
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/_ersdpPRAdo" title="Pengalaman THT Anak" allowfullscreen></iframe></div>
+      <div class="card-content">
+        <span class="cat-label">Patient Story</span><h3 class="card-title">Akhirnya Arthur Bisa Nyaman Membersihkan Telinga Bersama dr. Fairuz, Sp.THT-KL</h3>
       </div>
     </div>
     <div class="b-card">
       <div class="video-frame"><iframe src="https://www.youtube.com/embed/LHNWhio49fE" title="Leukimia pada Anak" allowfullscreen></iframe></div>
       <div class="card-content">
-        <span class="cat-label">Edukasi Anak</span><h3 class="card-title">Leukimia (Kanker Darah) pada Anak Jangan Abaikan Tandanya!</h3>
-      </div>
-    </div>
-    <div class="b-card">
-      <div class="video-frame"><iframe src="https://www.youtube.com/embed/mhXdPP1jJH8" title="Neonatal Jaundice" allowfullscreen></iframe></div>
-      <div class="card-content">
-        <span class="cat-label">Neonatologi</span><h3 class="card-title">Kata Dokter: Apa Itu Ikterus Neonatorum (Bayi Kuning)?</h3>
-      </div>
-    </div>
-    <div class="b-card">
-      <div class="video-frame"><iframe src="https://www.youtube.com/embed/vrRih_cLVe0" title="Atasi Demam" allowfullscreen></iframe></div>
-      <div class="card-content">
-        <span class="cat-label">Edukasi Anak</span><h3 class="card-title">Pertolongan Pertama: Cara Cepat Mengatasi Demam pada Anak!</h3>
-      </div>
-    </div>
-    <div class="b-card">
-      <div class="video-frame"><iframe src="https://www.youtube.com/embed/IOjPTfw217U" title="Anak Puasa" allowfullscreen></iframe></div>
-      <div class="card-content">
-        <span class="cat-label">Pertumbuhan</span><h3 class="card-title">Kapan Anak Anda Siap Diajarkan Berpuasa?</h3>
+        <span class="cat-label">Hematologi Onkologi</span><h3 class="card-title">Leukimia pada Anak Bisa Terlambat Terdeteksi. Jangan Abaikan Tandanya! - dr. Catur Sapariyanto</h3>
       </div>
     </div>
   </div>
@@ -1534,15 +1632,20 @@
 <!-- MAPS LOKASI -->
 <div class="section-locations">
   <div class="loc-header">
+    <div class="loc-icon" style="background:transparent; box-shadow:none;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--bw-purple);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+    </div>
     <h2>Lokasi Cabang & Rumah Sakit</h2>
   </div>
   <div class="loc-grid">
     <div class="loc-card">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0476497129243!2d106.8049320108789!3d-6.257453693704912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f178154d6131%3A0xe7b8b4d2224dd2ff!2sBrawijaya%20Hospital%20-%20Antasari!5e0!3m2!1sen!2sid!4v1781021243684!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
-        <div><span class="loc-pin">
+        <div>
+          <span class="loc-pin">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </span></div>
+          </span>
+        </div>
         <h3>Brawijaya Hospital<br>Antasari</h3>
         <p class="loc-address">Jl. Pangeran Antasari No.1A, RT.3/RW.1, Cipete Utara, Kec. Kebayoran Baru, Kota Jakarta Selatan, DKI Jakarta 12150</p>
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Antasari" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
@@ -1551,9 +1654,11 @@
     <div class="loc-card">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.296532465174!2d106.84533031087862!3d-6.224576793737477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3215b75cf25%3A0xe1fecf66ecaccfe9!2sBrawijaya%20Hospital%20-%20Saharjo!5e0!3m2!1sen!2sid!4v1781021259115!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
-        <div><span class="loc-pin">
+        <div>
+          <span class="loc-pin">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </span></div>
+          </span>
+        </div>
         <h3>Brawijaya Hospital<br>Saharjo</h3>
         <p class="loc-address">Jl. Dr. Saharjo No.199, RT.1/RW.1, Tebet Barat, Kec. Tebet, Kota Jakarta Selatan, DKI Jakarta 12810</p>
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Saharjo" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
@@ -1562,9 +1667,11 @@
     <div class="loc-card">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7965111980693!2d106.87769261087934!3d-6.290455093672298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f31406db8a6f%3A0x36452fd0e564d58b!2sBrawijaya%20Hospital%20-%20Taman%20Mini!5e0!3m2!1sen!2sid!4v1781021278923!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
-        <div><span class="loc-pin">
+        <div>
+          <span class="loc-pin">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </span></div>
+          </span>
+        </div>
         <h3>Brawijaya Clinic<br>Taman Mini</h3>
         <p class="loc-address">Jl. Raya Tembakau Tambun No.1, RT.4/RW.2, Pinang Ranti, Kec. Makasar, Kota Jakarta Timur, DKI Jakarta 13560</p>
         <a href="https://maps.google.com/?q=Brawijaya+Clinic+Taman+Mini" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
@@ -1573,9 +1680,11 @@
     <div class="loc-card">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.079346398817!2d106.83853261087884!3d-6.253276193709037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3ca08d09b6d%3A0x7ef3282dd7f49210!2sBrawijaya%20Hospital%20-%20Duren%20Tiga!5e0!3m2!1sen!2sid!4v1781021302419!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
-        <div><span class="loc-pin">
+        <div>
+          <span class="loc-pin">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </span></div>
+          </span>
+        </div>
         <h3>Brawijaya Hospital<br>Duren Tiga</h3>
         <p class="loc-address">Jl. Duren Tiga Raya No.28, RT.4/RW.1, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan, DKI Jakarta 12760</p>
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Duren+Tiga" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
@@ -1584,9 +1693,11 @@
     <div class="loc-card">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0067385318494!2d106.74046341088005!3d-6.393131193570673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e8b771b6bbd7%3A0x811223612e5c10ef!2sBrawijaya%20Hospital%20-%20Depok!5e0!3m2!1sen!2sid!4v1781021314314!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
-        <div><span class="loc-pin">
+        <div>
+          <span class="loc-pin">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </span></div>
+          </span>
+        </div>
         <h3>Brawijaya Hospital<br>Depok</h3>
         <p class="loc-address">Jl. Raya Jakarta-Bogor No.KM.37, Jatijajar, Kec. Tapos, Kota Depok, Jawa Barat 16416</p>
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Depok" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
@@ -1595,9 +1706,11 @@
     <div class="loc-card">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2779853337665!2d106.68092371087874!3d-6.227032793735041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa2d00298dcb%3A0xab0f66fdd045589c!2sBrawijaya%20Hospital%20-%20Tangerang!5e0!3m2!1sen!2sid!4v1781021332090!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
-        <div><span class="loc-pin">
+        <div>
+          <span class="loc-pin">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </span></div>
+          </span>
+        </div>
         <h3>Brawijaya Hospital<br>Tangerang</h3>
         <p class="loc-address">Jl. KH. Hasyim Ashari No.24, RT.001/RW.004, Buaran Indah, Kec. Tangerang, Kota Tangerang, Banten 15119</p>
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Tangerang" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
@@ -1644,6 +1757,26 @@
     tabPane.classList.add('active');
   }
 
+  // SUBNAV DROPDOWN TOGGLE (MOBILE)
+  function toggleSubnav() {
+    const menu = document.getElementById("subnavMenu");
+    const chevron = document.getElementById("subnav-chevron");
+    if (menu.classList.contains("open")) {
+      menu.classList.remove("open");
+      chevron.innerHTML = "▼";
+    } else {
+      menu.classList.add("open");
+      chevron.innerHTML = "▲";
+    }
+  }
+
+  function closeSubnav() {
+    if(window.innerWidth <= 768) {
+      document.getElementById("subnavMenu").classList.remove("open");
+      document.getElementById("subnav-chevron").innerHTML = "▼";
+    }
+  }
+
   // INTERNAL ANCHOR SMOOTH SCROLLING ROUTER
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -1658,7 +1791,7 @@
       
       if(targetEl) {
         e.preventDefault();
-        const headerOffset = 140; // Main header + Subnav height offset
+        const headerOffset = window.innerWidth <= 768 ? 120 : 140; // Adjust offset based on screen size
         const elementPosition = targetEl.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         window.scrollTo({
@@ -1680,7 +1813,7 @@
       
       const clusterEl = document.querySelector(targetClusterId);
       if(clusterEl) {
-        const headerOffset = 140; 
+        const headerOffset = window.innerWidth <= 768 ? 120 : 140; 
         const elementPosition = clusterEl.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         window.scrollTo({
