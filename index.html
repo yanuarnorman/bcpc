@@ -11,13 +11,14 @@
   :root{
     --bw-purple:#5E2D79;--bw-purple-light:#7A4A95;--bw-purple-soft:#F4EEF8;--bw-purple-deep:#3F1C54;
     --text-dark:#1F1F1F;--text-muted:#5A5A5A;--bg-soft:#FAFAFB;--border:#E8E4ED;--accent:#C9A227;
+    --header-h:80px;--subnav-h:53px;--gutter:24px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth; scroll-padding-top: 140px;}
-  body{font-family:'Inter',-apple-system,sans-serif;color:var(--text-dark);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased;padding-top:80px}
+  html{scroll-behavior:smooth; scroll-padding-top: calc(var(--header-h) + var(--subnav-h) + 16px);}
+  body{font-family:'Inter',-apple-system,sans-serif;color:var(--text-dark);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased;padding-top:var(--header-h);overflow-x:hidden}
   h1,h2,h3,h4{font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:-0.01em;line-height:1.2}
   img{max-width:100%;height:auto;display:block}
-  .container{max-width:1140px;margin:0 auto;padding:0 24px}
+  .container{max-width:1140px;margin:0 auto;padding:0 var(--gutter)}
   .section{padding:80px 0}
   .section-soft{background:var(--bg-soft)}
   
@@ -39,10 +40,10 @@
 
   /* HEADER & STICKY SUBNAV */
   .site-header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1001;border-bottom:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,0.03)}
-  .header-inner{display:flex;justify-content:space-between;align-items:center;height:80px}
+  .header-inner{display:flex;justify-content:space-between;align-items:center;height:var(--header-h);gap:12px}
   .logo img{height:44px;object-fit:contain}
-  
-  .sticky-subnav {position:fixed;top:80px;left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.03);display:flex;justify-content:center;overflow-x:auto;padding:0 24px; flex-direction: column; align-items: center;}
+
+  .sticky-subnav {position:fixed;top:var(--header-h);left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.03);display:flex;justify-content:center;overflow-x:auto;padding:0 24px; flex-direction: column; align-items: center;}
   .subnav-toggle {display: none;}
   .subnav-inner {display:flex;gap:32px;white-space:nowrap;}
   .subnav-inner a {display:inline-block;padding:16px 0;color:var(--text-muted);font-weight:600;font-size:13.5px;text-decoration:none;border-bottom:3px solid transparent;transition:all .2s ease;}
@@ -135,7 +136,7 @@
 
   /* DOCTOR CARDS GRID */
   .docs-title {font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--border);color:var(--bw-purple-deep)}
-  .docs-box {display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:20px;}
+  .docs-box {display:grid;grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));gap:20px;}
   .doc{padding:24px;border:1px solid var(--border);border-radius:20px;background:#fff;transition:all .3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.02);display:flex;flex-direction:column;}
   .doc:hover{border-color:var(--bw-purple-light);box-shadow:0 12px 40px rgba(94,45,121,.08)}
   .doc-lay{display:flex;gap:20px;align-items:flex-start;margin-bottom:20px;}
@@ -149,6 +150,7 @@
   .doc-bio{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:20px;flex-grow:1;}
   
   .doc-detail-box{background:var(--bg-soft);border-radius:12px;padding:16px;border:1px solid var(--border);margin-top:auto;}
+  .doc-detail-cols{display:grid;gap:14px}
   .ddl-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dark);margin-bottom:6px}
   .ddl-text{font-size:13px;line-height:1.5;color:var(--text-muted);margin-bottom:12px;}
   .sched-row{display:flex;justify-content:space-between;padding:4px 0;font-size:12.5px;border-bottom:1px dashed var(--border)}
@@ -167,7 +169,7 @@
 
   /* VIDEO GRID SYSTEM */
   .brawijaya-grid-wrapper {width: 100%;max-width: 1188px;margin: 0 auto;padding: 80px 24px;box-sizing: border-box;}
-  .b-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 25px;}
+  .b-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));gap: 25px;}
   .b-card {background: #FFFFFF;border-radius: 20px;overflow: hidden;box-shadow: 0 10px 30px rgba(94, 45, 121, 0.08);border: 1px solid var(--border);transition: transform 0.3s ease, box-shadow 0.3s ease;display: flex;flex-direction: column;}
   .b-card:hover {transform: translateY(-5px);box-shadow: 0 15px 40px rgba(94, 45, 121, 0.15);border-color: var(--bw-purple);}
   .video-frame {position: relative;width: 100%;padding-bottom: 56.25%;background: #000;}
@@ -249,6 +251,9 @@
   .loc-btn {display: inline-flex;align-items: center;justify-content: center;gap: 8px;padding: 12px 24px;border: 1.5px solid var(--bw-purple);border-radius: 12px;color: var(--bw-purple);font-size: 14.5px;font-weight: 600;text-decoration: none;background: transparent;transition: all 0.2s ease;}
   .loc-btn:hover {background: var(--bw-purple-soft);transform: translateY(-1px);}
 
+  /* FACILITIES GRID */
+  .fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
   /* FINAL CTA */
   .final-cta{background:linear-gradient(135deg,var(--bw-purple),var(--bw-purple-deep));text-align:center;padding:100px 24px;color:#fff;position:relative;overflow:hidden}
   .final-cta::before{content:'';position:absolute;top:-50%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(201,162,39,0.15) 0%,transparent 70%);border-radius:50%}
@@ -259,10 +264,16 @@
   footer{background:#1F1F1F;color:rgba(255,255,255,.6);text-align:center;padding:40px 24px;font-size:13.5px}
   .anniversary-badge{display:inline-block;margin-top:16px;padding:6px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:50px;font-size:12px;letter-spacing:0.05em;color:var(--accent)}
 
+  /* MATRIX LEGEND (mobile only) */
+  .matrix-legend{display:none;margin-top:16px;font-size:13px;line-height:1.6;color:var(--text-muted);text-align:center}
+  .matrix-legend .ml-yes{color:var(--bw-purple);font-weight:800}
+  .matrix-legend .ml-na{color:#B0A8BA;font-weight:700}
+
   /* MEDIA QUERIES */
   @media (max-width:1000px){
     .brsc-inst__why {grid-template-columns:repeat(3, 1fr)}
     .brsc-inst__aws {grid-template-columns:repeat(3, 1fr)}
+    .fac-grid {grid-template-columns:repeat(2, 1fr)}
   }
   @media (max-width:992px){
     .pane-grid{grid-template-columns:1fr}
@@ -274,46 +285,184 @@
     .brsc-oot__cs {grid-template-columns:1fr; max-width:480px}
     .loc-grid {grid-template-columns:repeat(2, 1fr)}
   }
+
+  /* ============ MOBILE ============ */
   @media (max-width:768px){
-    .hero h1{font-size:38px}
-    .hero-bullets{grid-template-columns:1fr; gap:8px;}
-    .stats{grid-template-columns:repeat(2,1fr)}
-    .section-title,.cluster-header h2{font-size:28px}
-    .cluster,.section{padding:60px 0}
-    
-    .sticky-subnav {padding:0; align-items:stretch;}
-    .subnav-toggle {display:flex; justify-content:space-between; align-items:center; width:100%; padding:14px 24px; background:#fff; color:var(--bw-purple-deep); border:none; font-family:'Inter',sans-serif; font-weight:700; font-size:14.5px; border-bottom:1px solid var(--border); cursor:pointer;}
-    .subnav-inner {display:none; flex-direction:column; gap:0; width:100%; position:absolute; top:100%; left:0; background:#fff; box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+    :root{--header-h:64px;--subnav-h:52px;--gutter:18px;}
+    body{padding-top:calc(var(--header-h) + var(--subnav-h));}
+    .section,.cluster{padding:56px 0}
+    .section-title,.cluster-header h2{font-size:clamp(22px,6vw,28px);line-height:1.25}
+    .section-subtitle,.cluster-header p{font-size:15px;margin-bottom:32px}
+    .eyebrow{font-size:11.5px;letter-spacing:.12em}
+
+    /* HEADER */
+    .logo img{height:34px}
+    .header-cta .btn{padding:11px 18px;font-size:13px}
+
+    /* STICKY SUBNAV */
+    .sticky-subnav {padding:0; align-items:stretch; overflow:visible;}
+    .subnav-toggle {display:flex; justify-content:space-between; align-items:center; gap:12px; width:100%; min-height:var(--subnav-h); padding:0 var(--gutter); background:#fff; color:var(--bw-purple-deep); border:none; font-family:'Inter',sans-serif; font-weight:700; font-size:14.5px; text-align:left; border-bottom:1px solid var(--border); cursor:pointer; -webkit-tap-highlight-color:transparent;}
+    .subnav-toggle span{color:var(--accent);font-size:11px;transition:transform .25s ease}
+    .subnav-inner {display:none; flex-direction:column; gap:0; width:100%; position:absolute; top:100%; left:0; background:#fff; box-shadow:0 16px 32px rgba(0,0,0,0.12); border-bottom:1px solid var(--border); max-height:calc(100vh - var(--header-h) - var(--subnav-h) - 16px); overflow-y:auto;}
     .subnav-inner.open {display:flex;}
-    .subnav-inner a {border-bottom:1px solid var(--bg-soft); padding:14px 24px; white-space:normal;}
-    .subnav-inner a:hover, .subnav-inner a:active {background:var(--bw-purple-soft); color:var(--bw-purple);}
-    
-    .site-header .header-inner {height:70px;}
-    body {padding-top: 70px;}
-    .hero-img-wrap img{max-width:100%;}
-    
-    /* Responsive Horizontal Tabs */
-    .tab-nav {flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; padding-bottom:10px; margin-bottom:24px; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;}
+    .subnav-inner a {display:flex; align-items:center; min-height:52px; border-bottom:1px solid var(--bg-soft); border-left:3px solid transparent; padding:12px var(--gutter); white-space:normal; font-size:14.5px;}
+    .subnav-inner a:hover, .subnav-inner a:active {background:var(--bw-purple-soft); color:var(--bw-purple); border-left-color:var(--accent);}
+
+    /* HERO */
+    .hero{padding:44px 0 56px}
+    .hero:after{width:320px;height:320px;top:-10%}
+    .hero-layout{gap:32px}
+    .hero h1{font-size:clamp(27px,7.4vw,36px);line-height:1.2}
+    .hero-tagline{font-size:16.5px;margin-bottom:16px}
+    .hero p{font-size:15px;margin-bottom:24px}
+    .hero-breadcrumb{font-size:11.5px;margin-bottom:14px}
+    .hero-bullets{gap:10px;margin:20px 0 28px}
+    .hero-bullets li{font-size:14.5px;padding-left:30px;max-width:100%}
+    .hero-img-wrap img{max-width:100%;border-radius:18px}
+
+    /* BUTTON ROWS → FULL WIDTH STACK */
+    .btn{padding:15px 24px;min-height:50px;width:100%}
+    .btn-row{flex-direction:column;gap:10px;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+    .header-cta .btn{width:auto;min-height:0}
+
+    /* NEEDS / TRIAGE */
+    .needs{padding:32px var(--gutter);border-radius:20px;margin-top:-36px}
+    .needs::before{width:100%;height:5px;border-radius:20px 20px 0 0}
+    .needs h2{font-size:22px;line-height:1.3}
+    .needs > p{font-size:14.5px;margin-bottom:24px}
+    .chip-group{margin-bottom:20px}
+    .chips{gap:8px;justify-content:flex-start}
+    .chip{font-size:14px;padding:11px 16px;min-height:44px;display:inline-flex;align-items:center}
+    .cg-label{text-align:left}
+
+    /* STATS */
+    .stats{grid-template-columns:repeat(2,1fr);gap:12px}
+    .stat{padding:22px 12px;border-radius:16px}
+    .stat-num{font-size:34px}
+    .stat-label{font-size:12.5px;line-height:1.4}
+
+    /* COVERAGE MATRIX → STACKED CARDS */
+    .matrix-wrap{overflow:visible;border:none;background:transparent;box-shadow:none;border-radius:0}
+    table.matrix{min-width:0;width:100%;display:block;border-collapse:separate}
+    table.matrix thead{display:none}
+    table.matrix tbody{display:block}
+    table.matrix tr{display:flex;flex-wrap:wrap;gap:8px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:0 4px 16px rgba(94,45,121,.05)}
+    table.matrix tr:nth-child(even) td{background:none}
+    table.matrix td{display:flex;align-items:center;border-top:none;padding:0;text-align:left}
+    table.matrix td:first-child{flex:0 0 100%;padding:0;margin-bottom:2px}
+    table.matrix td:first-child a{display:flex;width:100%;justify-content:space-between;align-items:center;min-height:50px;padding:12px 16px;font-size:15px;background:var(--bw-purple-soft);border-color:transparent;box-shadow:none;color:var(--bw-purple-deep)}
+    table.matrix td:not(:first-child){flex:0 0 auto;gap:6px;min-height:36px;padding:7px 13px;border-radius:50px;font-size:12.5px;font-weight:700;line-height:1}
+    table.matrix td::before{font-size:12.5px;font-weight:700;letter-spacing:.01em}
+    table.matrix tbody td:nth-child(2)::before{content:"Antasari"}
+    table.matrix tbody td:nth-child(3)::before{content:"Saharjo"}
+    table.matrix tbody td:nth-child(4)::before{content:"Duren Tiga"}
+    table.matrix tbody td:nth-child(5)::before{content:"Taman Mini"}
+    table.matrix tbody td:nth-child(6)::before{content:"Depok"}
+    table.matrix tbody td:nth-child(7)::before{content:"Tangerang"}
+    table.matrix td.yes{background:rgba(94,45,121,.08);color:var(--bw-purple);position:relative}
+    table.matrix td.yes a.y{order:-1;display:block;padding:0;font-size:13px;line-height:1}
+    table.matrix td.yes a.y:hover{transform:none;background:none}
+    table.matrix td.yes a.y::after{content:'';position:absolute;inset:0;border-radius:50px}
+    table.matrix tr td.na{background:var(--bg-soft);color:#B0A8BA;font-size:0;padding:7px 13px}
+    .matrix-legend{display:block}
+
+    /* CLUSTER TABS — horizontal scroller with edge padding */
+    .tab-nav {flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; gap:8px; padding:0 var(--gutter) 10px; margin:0 calc(-1 * var(--gutter)) 24px; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; scroll-snap-type:x proximity;}
     .tab-nav::-webkit-scrollbar {display:none;}
-    .tab-btn {flex:0 0 auto; width:auto; white-space:nowrap;}
+    .tab-nav {-webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 26px),transparent 100%); mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 26px),transparent 100%);}
+    .tab-btn {flex:0 0 auto; width:auto; white-space:nowrap; min-height:44px; padding:11px 18px; font-size:13.5px; scroll-snap-align:start;}
+
+    /* DOCTOR CARDS */
+    .doc{padding:20px;border-radius:18px}
+    .doc-lay{gap:16px;margin-bottom:16px}
+    .svc-list-title,.docs-title{margin-bottom:18px;font-size:12px}
+    .sched-row{gap:12px;flex-wrap:wrap}
+    .sched-row span:last-child{text-align:right;flex:1}
+    .loc-badges{margin-top:18px;padding-top:16px}
+    .area-cta{margin-top:32px;padding-top:24px}
+
+    /* VIDEO / FACILITIES / WHY-CHOOSE / TESTIMONIALS */
+    .brawijaya-grid-wrapper{padding:56px var(--gutter)}
+    .b-grid{gap:18px}
+    .card-content{padding:20px}
+    .fac-grid{grid-template-columns:1fr;gap:14px}
+    .brsc-inst__sec, .brsc-inst__sec--alt{padding:56px var(--gutter)}
+    .brsc-inst__head{margin-bottom:32px}
+    .brsc-inst__head p{font-size:15px}
+    .brsc-inst__at{margin:40px 0 20px;font-size:20px}
+    /* "Why choose us" → compact media rows instead of five tall image cards */
+    .brsc-inst__why{grid-template-columns:1fr;gap:12px}
+    .brsc-inst__wc{display:flex;align-items:center;gap:14px;padding:12px;border-radius:16px}
+    .brsc-inst__wci{width:84px;height:84px;flex:0 0 84px;aspect-ratio:1;border-radius:12px}
+    .brsc-inst__wcb{padding:0;flex:1;min-width:0}
+    .brsc-inst__wc h3{font-size:15px;margin-bottom:4px}
+    .brsc-inst__wc p{font-size:13px;line-height:1.55}
+    .brsc-inst__aws{grid-template-columns:repeat(2, 1fr);gap:12px}
+    .brsc-inst__awb{padding:12px 14px 16px}
+    .brsc-inst__aw h4{font-size:12.5px}
+    .brsc-inst__tc{padding:26px 22px}
+    .brsc-oot{padding:56px 20px;margin:0 var(--gutter) 56px;border-radius:20px}
+    .brsc-oot__hd{margin-bottom:32px}
+    .brsc-oot__hd p{font-size:15px}
+    .brsc-oot__cs{gap:16px}
+
+    /* LOCATIONS */
+    .section-locations{padding:0 var(--gutter) 56px}
+    .loc-header{margin-bottom:28px}
+    .loc-map-container{height:150px}
+    .loc-content{padding:20px 20px 0}
+    .loc-card{padding-bottom:22px;border-radius:20px}
+    .loc-btn{width:100%;min-height:48px}
+
+    /* FINAL CTA + FOOTER */
+    .final-cta{padding:64px var(--gutter)}
+    .final-cta h2{font-size:clamp(24px,6.4vw,30px)}
+    .final-cta p{font-size:16px;margin-bottom:28px}
+    .final-cta .btn-row{align-items:stretch}
+    footer{padding:32px var(--gutter) 96px}
+
+    /* FLOATING WHATSAPP */
+    .floating-wa{width:54px;height:54px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 6px 20px rgba(37,211,102,.4)}
+    .floating-wa svg{width:28px;height:28px}
   }
+
   @media (max-width:640px){
     .loc-grid {grid-template-columns:1fr}
-    .loc-header h2 {font-size:26px}
+    .loc-header h2 {font-size:clamp(21px,5.8vw,26px)}
   }
+
   @media (max-width:576px){
-    .doc-lay{flex-direction:column;gap:16px; align-items:center; text-align:center;}
+    .doc-lay{flex-direction:column;gap:14px; align-items:center; text-align:center;}
     .doc-r{width:100%;}
-    .tab-btn{width:100%; text-align:center;}
+    .doc-ph{width:78px;height:78px;flex:0 0 78px}
     .brsc-inst__why {grid-template-columns:1fr}
     .brsc-inst__aws {grid-template-columns:repeat(2, 1fr)}
     .brsc-inst__ts {grid-template-columns:1fr}
-    .area-cta{flex-direction:column}
+    .area-cta{flex-direction:column;gap:10px}
     .area-cta .btn, .area-cta .btn-back{max-width:100%; width:100%;}
-    .mcu-banner {padding:32px 20px; margin-top:40px;}
-    .mcu-banner h3 {font-size:22px;}
-    .mcu-box {padding:24px 16px; font-size:14px;}
+    .mcu-banner {padding:28px 18px; margin-top:32px; border-radius:20px;}
+    .mcu-banner h3 {font-size:20px;}
+    .mcu-banner p {font-size:14.5px;}
+    .mcu-box {padding:22px 16px; font-size:14px;}
   }
+
+  /* Very small phones (≤380px) */
+  @media (max-width:380px){
+    :root{--gutter:14px;}
+    .needs{padding:28px 16px}
+    .chip{font-size:13.5px;padding:10px 14px}
+    .stats{gap:10px}
+    .stat-num{font-size:30px}
+    .brsc-inst__aw h4{font-size:12px}
+    .brsc-inst__wci{width:72px;height:72px;flex:0 0 72px}
+    table.matrix td:not(:first-child){font-size:12px;padding:7px 11px}
+    table.matrix td::before{font-size:12px}
+  }
+
+  @media (hover:none){
+    .btn-primary:hover,.btn-white:hover,.btn-accent:hover,.chip:hover,.doc:hover,.b-card:hover,.loc-card:hover,.brsc-inst__wc:hover,.brsc-inst__aw:hover,.brsc-inst__tc:hover,.brsc-oot__c:hover,.floating-wa:hover{transform:none}
+  }
+
   .sched-todo{color:#9A7B1A;font-style:italic;font-size:12px}
 </style>
 </head>
@@ -509,6 +658,7 @@
         </tbody>
       </table>
     </div>
+    <p class="matrix-legend"><span class="ml-yes">&#10003;</span> Tersedia di lokasi ini &nbsp;&middot;&nbsp; <span class="ml-na">Abu-abu</span> belum tersedia. Ketuk nama kelompok layanan untuk melihat dokter dan jadwalnya.</p>
   </div>
 </section>
 
@@ -606,7 +756,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Dina Muktiarti, Sp.A, Subsp.AI" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/cf8963da-27a9-4be3-98f1-cb7bc2d2a367?width=600&quality=75&fit=cover&format=webp" alt="dr. Dina Muktiarti, Sp.A, Subsp.AI" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Dina Muktiarti, Sp.A, Subsp.AI</h3>
                   <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
@@ -676,7 +826,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Alinda Rubiari, Sp.A(K)" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/0c4b89fc-a18c-4c80-ac6c-9fca9ac06be8?width=600&quality=75&fit=cover&format=webp" alt="dr. Alinda Rubiari, Sp.A(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Alinda Rubiari, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Neurologi Anak</span>
@@ -688,8 +838,8 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Lestaria Aryanti, Sp.KFR.Ped(K)" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
-                <div class="doc-right">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/0663c400-4bf5-481b-9592-a2f7e4b4da2b?width=600&quality=75&fit=cover&format=webp" alt="dr. Lestaria Aryanti, Sp.KFR.Ped(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                   <h3>dr. Lestaria Aryanti, Sp.KFR.Ped(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Rehab Anak</span>
                   <div class="doc-loc">&#128205; Depok</div>
@@ -747,7 +897,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Andi"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/c07d980c-1fb1-4065-a970-ef6582574ed2?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Andi Nanis S., Sp.A(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>Dr. dr. Andi Nanis S., Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Endokrinologi</span>
@@ -861,31 +1011,47 @@
             </div>
             <!-- Smaller entries for the rest to save space -->
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/03c649bf-1e2b-4501-9735-49dc6c6a9841?width=600&quality=75&fit=cover&format=webp" alt="dr. Hamida Hayati Faisal, Sp.THT-BKL" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Hamida Hayati Faisal, Sp.THT-BKL</h3>
                 <span class="doc-role-badge">THT Anak</span>
                 <div class="doc-loc">&#128205; Saharjo</div>
+                  <p class="doc-bio">Menangani infeksi telinga, masalah sinus, dan alergi hidung pada anak, dengan fokus menjaga fungsi pendengaran, penciuman, dan pernapasan tetap optimal.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/086804b7-e245-4787-a21c-91a75900d95f?width=600&quality=75&fit=cover&format=webp" alt="dr. Lidya Sabig, Sp.THT-KL" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Lidya Sabig, Sp.THT-KL</h3>
                 <span class="doc-role-badge">THT Anak</span>
                 <div class="doc-loc">&#128205; Saharjo, Duren Tiga, Depok</div>
+                  <p class="doc-bio">Diagnosis dan penanganan kondisi THT anak, mulai dari infeksi telinga dan masalah sinus hingga gangguan menelan dan suara.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/9ad55b14-1a49-414c-8faa-f27bfd23852c?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Fauziah Fardizza Sp.THT-BKL(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>Dr. dr. Fauziah Fardizza Sp.THT-BKL(K)</h3>
                 <span class="doc-role-badge anchor">Konsultan Laringo Faringologi</span>
                 <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <p class="doc-bio">Konsultan Laring-Faring. Menangani gangguan suara (foniatri) dan gangguan menelan (disfagia), termasuk endoskopi laring dan rehabilitasi suara.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/cf5d0d31-b763-48dd-aef3-1c739c255b3b?width=600&quality=75&fit=cover&format=webp" alt="dr. Sandhi Ari Susanti, Sp.THT-KL" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Sandhi Ari Susanti, Sp.THT-KL</h3>
                 <span class="doc-role-badge">THT Anak</span>
                 <div class="doc-loc">&#128205; Depok</div>
+                  <p class="doc-bio">Berfokus pada gangguan pendengaran, sinusitis, alergi pernapasan, serta keluhan tenggorokan dan suara pada anak.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
@@ -916,7 +1082,7 @@
           <div class="docs-box">
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Keiko Yolanda"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/7d3d649e-85dd-42b8-906f-7ab41ba6b290?width=600&quality=75&fit=cover&format=webp" alt="dr. Keiko Yolanda Gunardi, Sp.DVE" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Keiko Yolanda Gunardi, Sp.DVE</h3>
                   <span class="doc-role-badge">Spesialis Kulit</span>
@@ -928,7 +1094,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Vidyani"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/6d755a29-7c2f-4330-bbe5-1ead3b7b10cc?width=600&quality=75&fit=cover&format=webp" alt="dr. Vidyani Adiningtyas, Sp.DV" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Vidyani Adiningtyas, Sp.DV</h3>
                   <span class="doc-role-badge">Spesialis Kulit</span>
@@ -940,7 +1106,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Rizqi"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/20ada649-dc52-4ae1-8ef7-e929b69cbf7a?width=600&quality=75&fit=cover&format=webp" alt="dr. Rizqi Amalia, Sp.A, Subsp.A.I" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Rizqi Amalia, Sp.A, Subsp.A.I</h3>
                   <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
@@ -971,7 +1137,7 @@
           <div class="docs-box">
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Akbar"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/fdaa0d84-caf8-402a-956d-5f6564e57623?width=600&quality=75&fit=cover&format=webp" alt="dr. M. Akbar Wicaksana, Sp.M" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. M. Akbar Wicaksana, Sp.M</h3>
                   <span class="doc-role-badge">Spesialis Mata</span>
@@ -983,7 +1149,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Puti"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/70733336-e588-47d9-a574-9d2d9d14d8fb?width=600&quality=75&fit=cover&format=webp" alt="dr. Puti Ayu Tiara, Sp.M" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Puti Ayu Tiara, Sp.M</h3>
                   <span class="doc-role-badge">Spesialis Mata</span>
@@ -1070,54 +1236,80 @@
           <div class="docs-title">Dokter yang Menangani</div>
           <div class="docs-box">
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/3fe17052-f4f4-4bd6-9a89-7d2855c64cf1?width=600&quality=75&fit=cover&format=webp" alt="dr. Hardian Gunardi, Sp.B, Subsp.Ped(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Hardian Gunardi, Sp.B, Subsp.Ped(K)</h3>
                 <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
                 <div class="doc-loc">&#128205; Antasari</div>
                 <p class="doc-bio">Menangani spektrum penuh bedah pediatrik, dari kelainan bawaan hingga gawat darurat.</p>
               </div>
+              </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/69b9bf88-d02e-4ab6-9955-b6e73cc102d5?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Riana Pauline Tamba, Sp.B, Subsp.Ped(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>Dr. dr. Riana Pauline Tamba, Sp.B, Subsp.Ped(K)</h3>
                 <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
                 <div class="doc-loc">&#128205; Saharjo</div>
                 <p class="doc-bio">Keahlian prosedur minimal invasif (laparoskopi), hernia, dan trauma.</p>
               </div>
+              </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/fa0190f4-472f-4edb-9d0a-bc7ce52f3dc9?width=600&quality=75&fit=cover&format=webp" alt="dr. Wulan Ayudyasari, Sp.B, Subsp.Ped(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Wulan Ayudyasari, Sp.B, Subsp.Ped(K)</h3>
                 <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
                 <div class="doc-loc">&#128205; Saharjo</div>
+                  <p class="doc-bio">Prosedur minimal invasif seperti laparoskopi apendektomi, penanganan hernia, luka infeksi dan trauma, hingga koreksi kelainan bawaan.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/84b99a19-b217-43fe-810f-2b58153b5641?width=600&quality=75&fit=cover&format=webp" alt="dr. Alifi Maulidyan, Sp.BA, Subsp.BA DA(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Alifi Maulidyan, Sp.BA, Subsp.BA DA(K)</h3>
                 <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
                 <div class="doc-loc">&#128205; Taman Mini</div>
+                  <p class="doc-bio">Menangani tindakan bedah anak dari bayi baru lahir hingga remaja &mdash; apendektomi, herniotomi, sirkumsisi, serta bedah saluran cerna dan organ dalam.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/5d883ab5-ab4a-4e2c-a9d3-f0686478d142?width=600&quality=75&fit=cover&format=webp" alt="dr. Dina Perdanasari, Sp.BA" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Dina Perdanasari, Sp.BA</h3>
                 <span class="doc-role-badge">Spesialis Bedah Anak</span>
                 <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <p class="doc-bio">Bedah anak untuk kelainan bawaan, tumor pada anak, dan kondisi darurat, termasuk koreksi saluran cerna, urologi anak, dan trauma.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/213aef8d-9ca8-4576-94b7-c4eee8103add?width=600&quality=75&fit=cover&format=webp" alt="dr. Rahmayeni Effendi, Sp.BA" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Rahmayeni Effendi, Sp.BA</h3>
                 <span class="doc-role-badge">Spesialis Bedah Anak</span>
                 <div class="doc-loc">&#128205; Depok</div>
+                  <p class="doc-bio">Menangani kondisi bedah bawaan maupun didapat pada anak: kelainan organ dalam, kegawatdaruratan, dan koreksi kelainan fisik tertentu.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/a10df778-17d9-4a3f-9c5f-aacca9dc72bb?width=600&quality=75&fit=cover&format=webp" alt="dr. Fransisca Stefanie, Sp.BA" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Fransisca Stefanie, Sp.BA</h3>
                 <span class="doc-role-badge">Spesialis Bedah Anak</span>
                 <div class="doc-loc">&#128205; Tangerang</div>
+                  <p class="doc-bio">Evaluasi dan tindakan bedah anak untuk kelainan bawaan, gangguan saluran cerna dan saluran kemih, benjolan, dan trauma &mdash; dari pemeriksaan awal hingga pemantauan pascaoperasi.</p>
+              </div>
               </div>
             </div>
           </div>
@@ -1153,7 +1345,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Paramita"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/272566ce-40dc-4510-b0de-97c66e2f7c8c?width=600&quality=75&fit=cover&format=webp" alt="dr. Paramita, Sp.OT" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Paramita, Sp.OT</h3>
                   <span class="doc-role-badge">Spesialis Bedah Ortopedi</span>
@@ -1223,7 +1415,7 @@
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Winda"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/16811148-6017-4107-b10a-3614dea983b7?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Winda Azwani, Sp.A, Subsp.Kardio" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>Dr. dr. Winda Azwani, Sp.A, Subsp.Kardio</h3>
                   <span class="doc-role-badge anchor">Subspesialis Kardiologi</span>
@@ -1252,7 +1444,7 @@
           <div class="docs-box">
             <div class="doc">
                 <div class="doc-lay">
-                  <div class="doc-ph"><img src="" alt="Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
+                  <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/26530213-5b1d-4e60-b0ba-f26427b27964?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                   <div class="doc-r">
                     <h3>Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)</h3>
                     <span class="doc-role-badge anchor">Konsultan Bedah Jantung Anak &amp; Kongenital</span>
@@ -1263,11 +1455,14 @@
                 <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
               </div>
               <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/c30319b7-3efa-4c2d-958b-d7f763b64994?width=600&quality=75&fit=cover&format=webp" alt="dr. Rifan Fauzi, Sp.A(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Rifan Fauzi, Sp.A(K)</h3>
                 <span class="doc-role-badge anchor">Konsultan Paru & Pernapasan</span>
                 <div class="doc-loc">&#128205; Saharjo</div>
                 <p class="doc-bio">Berfokus pada asma dan batuk kronis agar anak bisa aktif tanpa sesak.</p>
+              </div>
               </div>
             </div>
             <div class="doc">
@@ -1279,11 +1474,14 @@
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/2c86a028-100c-4ab9-a631-3881007b7b51?width=600&quality=75&fit=cover&format=webp" alt="dr. Barry Army Bakry, Sp. A, Subsp.GH" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Barry Army Bakry, Sp. A, Subsp.GH</h3>
                 <span class="doc-role-badge anchor">Subspesialis Gastrohepatologi</span>
                 <div class="doc-loc">&#128205; Taman Mini</div>
                 <p class="doc-bio">Evaluasi klinis menyeluruh pada anak dengan komplikasi penyakit sistemik dan cerna.</p>
+              </div>
               </div>
             </div>
           </div>
@@ -1307,9 +1505,9 @@
           <div class="docs-title">Dokter yang Menangani</div>
           <div class="docs-box">
             <div class="doc">
-              <div class="doc-layout">
-                <div class="doc-avatar"><img src="https://brawijayahospital.com/api/proxy?service=internal&path=assets/c5a1df47-6e6b-4e08-9df5-6f6a5b6c7b8e&width=600&quality=50&fit=cover&format=webp" alt="dr. Catur Sapariyanto" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
-                <div class="doc-right">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/13dca0fc-d77e-4be1-a039-899fa36748fe?width=600&quality=75&fit=cover&format=webp" alt="dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                   <h3>dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Hematologi Onkologi Anak</span>
                   <div class="doc-loc">&#128205; Saharjo</div>
@@ -1358,31 +1556,41 @@
                   <h3>dr. Marlina Tanjung, Sp.A, Subsp.Neo</h3>
                   <span class="doc-role-badge anchor">Subspesialis Neonatologi</span>
                   <div class="doc-loc">&#128205; Taman Mini</div>
+                  <p class="doc-bio">Perawatan bayi baru lahir kritis, prematur, berat badan lahir rendah, dan kelainan bawaan yang memerlukan perawatan intensif di NICU.</p>
                 </div>
               </div>
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="dr. Eric"></div>
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/f5892d8a-926f-4fd5-93d6-8acf6adfa04e?width=600&quality=75&fit=cover&format=webp" alt="dr. Eric Gultom, Sp.A(K)" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
                 <div class="doc-r">
                   <h3>dr. Eric Gultom, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Neonatologi</span>
                   <div class="doc-loc">&#128205; Saharjo</div>
+                  <p class="doc-bio">Subspesialis Neonatologi. Merawat bayi baru lahir, terutama yang lahir prematur atau dengan kondisi medis serius yang menuntut respons cepat.</p>
                 </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/bb46c96c-75f0-4ab5-9e9c-947e06af7dbb?width=600&quality=75&fit=cover&format=webp" alt="dr. Meirdhania Andina, Sp.A" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Meirdhania Andina, Sp.A</h3>
                 <span class="doc-role-badge">Fellow NICU</span>
                 <div class="doc-loc">&#128205; Saharjo</div>
+                  <p class="doc-bio">Pemantauan tumbuh kembang, pencegahan penyakit, dan penanganan kondisi medis anak, dengan keahlian tambahan di perawatan intensif neonatal (NICU).</p>
+              </div>
               </div>
             </div>
             <div class="doc">
-              <div class="doc-r">
+              <div class="doc-lay">
+                <div class="doc-ph"><img src="https://dte49v1irn0nj.cloudfront.net/assets/fe9a956e-5212-4202-b598-b539f0740b95?width=600&quality=75&fit=cover&format=webp" alt="dr. Jeannette Mila Hardiani C, Sp.A, M.Kes" loading="lazy" onerror="this.closest('.doc-ph').classList.add('noimg');this.remove()"></div>
+                <div class="doc-r">
                 <h3>dr. Jeannette Mila Hardiani C, Sp.A, M.Kes</h3>
                 <span class="doc-role-badge">Spesialis Anak (Observasi Pascasalin)</span>
                 <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <p class="doc-bio">Pemantauan tumbuh kembang menyeluruh, imunisasi, dan penanganan penyakit anak berbasis bukti, dengan penekanan pada edukasi nutrisi dan pola asuh.</p>
+              </div>
               </div>
             </div>
           </div>
@@ -1442,7 +1650,7 @@
     <span class="eyebrow">Fasilitas Pendukung</span>
     <h2 class="section-title">Dirancang untuk Kenyamanan Anak</h2>
     <p class="section-subtitle">Lingkungan rumah sakit sering menakutkan bagi anak. Kami berupaya membuat setiap kunjungan terasa seaman dan senyaman mungkin.</p>
-    <div class="fac-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+    <div class="fac-grid">
       <div class="fac" style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center"><h4 style="color:var(--bw-purple);margin-bottom:8px">Dokter yang Memahami Anak</h4><p style="font-size:14px;color:var(--text-muted);line-height:1.6">Menangani pasien anak menuntut lebih dari keahlian medis &mdash; dibutuhkan kesabaran, cara berkomunikasi yang tepat, dan kemampuan membuat anak merasa aman selama pemeriksaan.</p></div>
       <div class="fac" style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center"><h4 style="color:var(--bw-purple);margin-bottom:8px">Subspesialisasi Anak yang Terintegrasi</h4><p style="font-size:14px;color:var(--text-muted);line-height:1.6">Ketika kondisi anak melibatkan lebih dari satu bidang, subspesialis kami berkoordinasi dalam satu alur penanganan &mdash; orang tua tidak perlu mengulang cerita dari awal di setiap poli.</p></div>
       
@@ -1630,25 +1838,50 @@
 </footer>
 
 <script>
+  // SCROLL OFFSET — measured from the actual fixed chrome so it stays correct on every screen size
+  function getScrollOffset() {
+    const header = document.querySelector('.site-header');
+    const subnav = document.querySelector('.sticky-subnav');
+    const toggle = document.querySelector('.subnav-toggle');
+    const subnavH = subnav ? (toggle && getComputedStyle(toggle).display !== 'none' ? toggle.offsetHeight : subnav.offsetHeight) : 0;
+    return (header ? header.offsetHeight : 0) + subnavH + 12;
+  }
+
+  function scrollToEl(el) {
+    if(!el) return;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - getScrollOffset();
+    window.scrollTo({ top: top, behavior: "smooth" });
+  }
+
+  // Keep the active tab visible inside the horizontal scroller on mobile
+  function revealTabBtn(btn) {
+    if(!btn) return;
+    const nav = btn.closest('.tab-nav');
+    if(!nav || nav.scrollWidth <= nav.clientWidth) return;
+    const target = btn.offsetLeft - (nav.clientWidth - btn.offsetWidth) / 2;
+    nav.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+  }
+
   // TABS LOGIC
   function openTab(event, tabId) {
     if(event) event.preventDefault();
     const tabPane = document.getElementById(tabId);
     if(!tabPane) return;
     const cluster = tabPane.closest('.cluster');
-    
+
     // Reset actives within the current cluster
     cluster.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     cluster.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-    
+
     // Set active
+    let activeBtn = null;
     if(event) {
-      event.currentTarget.classList.add('active');
+      activeBtn = event.currentTarget;
     } else {
       // Find button associated with tab if triggered externally
-      const btn = cluster.querySelector(`[onclick*="${tabId}"]`);
-      if(btn) btn.classList.add('active');
+      activeBtn = cluster.querySelector(`[onclick*="${tabId}"]`);
     }
+    if(activeBtn) { activeBtn.classList.add('active'); revealTabBtn(activeBtn); }
     tabPane.classList.add('active');
   }
 
@@ -1672,6 +1905,13 @@
     }
   }
 
+  // Close the mobile category menu when tapping anywhere else
+  document.addEventListener('click', function(e) {
+    if(window.innerWidth > 768) return;
+    if(e.target.closest('.sticky-subnav')) return;
+    closeSubnav();
+  });
+
   // INTERNAL ANCHOR SMOOTH SCROLLING ROUTER
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -1686,13 +1926,7 @@
       
       if(targetEl) {
         e.preventDefault();
-        const headerOffset = window.innerWidth <= 768 ? 120 : 140; // Adjust offset based on screen size
-        const elementPosition = targetEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-           top: offsetPosition,
-           behavior: "smooth"
-        });
+        scrollToEl(targetEl);
       }
     });
   });
@@ -1704,18 +1938,11 @@
       const targetTab = this.getAttribute('data-tab');
       const targetClusterId = this.getAttribute('href');
       
+      closeSubnav();
       if (targetTab) openTab(null, targetTab);
-      
+
       const clusterEl = document.querySelector(targetClusterId);
-      if(clusterEl) {
-        const headerOffset = window.innerWidth <= 768 ? 120 : 140; 
-        const elementPosition = clusterEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
+      scrollToEl(clusterEl);
     });
   });
 </script>
