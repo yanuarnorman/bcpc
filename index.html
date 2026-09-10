@@ -67,6 +67,7 @@
   .hero-bullets{list-style:none;margin:24px 0 36px;display:flex;flex-direction:column;gap:12px;}
   .hero-bullets li{padding:4px 0 4px 32px;position:relative;color:rgba(255,255,255,.95);font-size:15px;font-weight:500}
   .hero-bullets li:before{content:"\2713";position:absolute;left:0;top:4px;color:var(--accent);font-weight:700;background:rgba(201,162,39,0.2);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
 
   /* NEEDS CHIPS (TRIAGE) */
   .needs {background:#fff;border:1px solid var(--border);border-radius:24px;padding:48px 40px;box-shadow:0 12px 40px rgba(94,45,121,.04);margin-top:-60px;position:relative;z-index:5}
@@ -90,30 +91,14 @@
   .matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.02)}
   table.matrix{width:100%;border-collapse:collapse;font-size:14px;min-width:860px}
   table.matrix th{background:var(--bw-purple);color:#fff;padding:16px 14px;text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
-  table.matrix th:first-child{text-align:left;min-width:280px}
+  table.matrix th:first-child{text-align:left;min-width:260px}
   table.matrix td{border-top:1px solid var(--border);text-align:center;color:var(--text-muted)}
   table.matrix tr:nth-child(even) td{background:var(--bg-soft)}
-  
   table.matrix td:first-child{text-align:left;padding:12px 16px;}
-  table.matrix td:first-child a{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:8px 16px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:50px;
-    color:var(--bw-purple-deep);
-    font-weight:600;
-    font-size:13px;
-    text-decoration:none;
-    transition:all 0.25s ease;
-    box-shadow:0 2px 6px rgba(0,0,0,0.02);
-  }
+  table.matrix td:first-child a{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#fff;border:1px solid var(--border);border-radius:50px;color:var(--bw-purple-deep);font-weight:600;font-size:13px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 2px 6px rgba(0,0,0,0.02);}
   table.matrix td:first-child a::after{content:'↓';color:var(--accent);font-weight:800;font-size:14px;transition:transform 0.25s;}
   table.matrix td:first-child a:hover{background:var(--bw-purple);color:#fff;border-color:var(--bw-purple);box-shadow:0 6px 16px rgba(94,45,121,0.15);transform:translateY(-1px);}
   table.matrix td:first-child a:hover::after{transform:translateY(2px);}
-  
   table.matrix td.yes a.y {display:block;padding:14px 12px;color:var(--bw-purple);font-weight:800;font-size:16px;text-decoration:none;transition:all 0.2s;}
   table.matrix td.yes a.y:hover {transform:scale(1.2);background:rgba(94,45,121,0.05);border-radius:8px}
   table.matrix td.na {color:#D1CBD7;padding:14px 12px;font-size:16px;}
@@ -251,7 +236,6 @@
   /* MAPS LOCATION GRID */
   .section-locations {font-family: 'Inter', sans-serif;color: var(--text-dark);line-height: 1.65;max-width: 1188px;margin: 0 auto;padding: 0 24px 80px 24px;}
   .loc-header {text-align: center;max-width: 740px;margin: 0 auto 44px;}
-  .loc-icon {width: 64px;height: 64px;background: var(--bw-purple-soft);border-radius: 20px;display: flex;align-items: center;justify-content: center;margin: 0 auto 20px;box-shadow: 0 8px 24px rgba(94,45,121,0.08);}
   .loc-header h2 {font-family: 'DM Sans', sans-serif;font-size: 32px;color: var(--bw-purple-deep);margin-bottom: 12px;font-weight: 700;}
   .loc-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 24px;}
   .loc-card {background: #fff;border: 1px solid var(--border);border-radius: 24px;overflow: hidden;box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);display: flex;flex-direction: column;align-items: center;padding: 0 0 28px 0;text-align: center;transition: transform .3s, box-shadow .3s;}
@@ -376,7 +360,7 @@
         <p>Lebih dari dua dekade mendampingi tumbuh kembang anak Indonesia, yang didukung dokter anak subspesialis multidisiplin yang bekerja dalam satu alur penanganan.</p>
         <ul class="hero-bullets">
           <li>Subspesialis Kardiologi, Ortopedi, Endokrin, hingga Bedah Anak</li>
-          <li>Layanan preventif, tumbuh kembang, hingga tindakan khusus</li>
+          <li>Layanan preventif, pertumbuhan, hingga tindakan khusus</li>
           <li>Enam lokasi di Jakarta, Depok, dan Tangerang</li>
           <li>Didukung NICU &amp; PICU dengan teknologi terkini</li>
         </ul>
@@ -513,7 +497,7 @@
             <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-dasar" data-tab="tab-dasar-5" class="triage-chip">Hormon &amp; Pertumbuhan (Endokrin)</a></td>
+            <td><a href="#c-dasar" data-tab="tab-dasar-5" class="triage-chip">Hormon &amp; Endokrin</a></td>
             <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
@@ -676,7 +660,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Jadwalkan Imunisasi</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Jadwalkan Imunisasi</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -734,7 +718,7 @@
               <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -804,7 +788,7 @@
               <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -819,7 +803,7 @@
         </div>
         <div class="area-cta" style="margin-top:0; padding-top:0; border:none;">
           <a href="#kontak" class="btn btn-primary">Tanyakan Detail Paket</a>
-          <a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a>
+          <a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a>
         </div>
       </div>
     </div>
@@ -875,7 +859,7 @@
               <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1001,7 +985,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1056,7 +1040,7 @@
               <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1099,7 +1083,7 @@
               <div class="doc-detail-box"><div class="sched-row"><span>Tangerang</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1138,7 +1122,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1226,7 +1210,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1269,7 +1253,7 @@
               <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1322,7 +1306,7 @@
                   <h3>dr. Anisa Rahmadhany, Sp.A, Subsp.Kardio</h3>
                   <span class="doc-role-badge anchor">Subspesialis Kardiologi</span>
                   <div class="doc-loc">&#128205; Saharjo</div>
-                  <p class="doc-bio">Konsultan Jantung Anak lulusan Universitas Indonesia yang menangani penyakit jantung dan pembuluh darah pada bayi, anak, hingga remaja &mdash; mencakup kelainan jantung bawaan, penyakit jantung rematik, aritmia, dan gangguan tekanan darah. Selain praktik klinis, beliau aktif sebagai peneliti kardiologi anak dengan karya yang telah dikutip lebih dari 100 kali oleh sejawat.</p>
+                  <p class="doc-bio">Konsultan Jantung Anak lulusan Universitas Indonesia yang menangani penyakit jantung dan pembuluh darah pada bayi, anak, hingga remaja &mdash; mencakup kelainan jantung bawaan, penyakit jantung rematik, aritmia, dan gangguan tekanan darah.</p>
                 </div>
               </div>
             </div>
@@ -1333,12 +1317,12 @@
                   <h3>Dr. dr. Winda Azwani, Sp.A, Subsp.Kardio</h3>
                   <span class="doc-role-badge anchor">Subspesialis Kardiologi</span>
                   <div class="doc-loc">&#128205; Saharjo</div>
-                  <p class="doc-bio">Subspesialis Kardiologi Anak yang juga menyandang gelar Doktor &mdash; kombinasi praktik klinis dan kedalaman riset yang jarang. Menangani kelainan jantung bawaan, aritmia, hingga gangguan tekanan darah pada bayi, anak, dan remaja. Latar belakang akademisnya memastikan setiap keputusan penanganan berpijak pada penelitian ilmiah terkini.</p>
+                  <p class="doc-bio">Mendalami intervensi dan pemantauan jangka panjang ekokardiografi. Latar belakang akademisnya memastikan setiap keputusan penanganan berpijak pada penelitian ilmiah terkini.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1392,7 +1376,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1418,7 +1402,7 @@
                   <h3>dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Hematologi Onkologi Anak</span>
                   <div class="doc-loc">&#128205; Saharjo</div>
-                  <p class="doc-bio">dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K) adalah Dokter Spesialis Anak Konsultan Hematologi Onkologi yang berdedikasi khusus pada penanganan kasus kanker dan kelainan darah pada anak-anak. Layanan beliau berfokus pada tata laksana komprehensif untuk kanker darah (leukemia) dan kanker padat (seperti kanker otak, tulang, dan otot). Beliau juga menyediakan layanan tindakan kemoterapi anak, edukasi skrining deteksi dini gejala kanker pada anak, serta manajemen nutrisi spesifik bagi pasien anak dalam masa terapi.</p>
+                  <p class="doc-bio">Dokter Spesialis Anak Konsultan Hematologi Onkologi yang berdedikasi khusus pada penanganan kasus kanker dan kelainan darah pada anak-anak. Layanan beliau berfokus pada tata laksana komprehensif untuk kanker darah (leukemia) dan kanker padat (seperti kanker otak, tulang, dan otot). Beliau juga menyediakan layanan tindakan kemoterapi anak, edukasi skrining deteksi dini gejala kanker pada anak, serta manajemen nutrisi spesifik bagi pasien anak dalam masa terapi.</p>
                   <div class="doc-detail-box"><div class="doc-detail-cols" style="grid-template-columns:1fr;">
                     <div><div class="ddl-label">Jadwal Praktik Saharjo</div><div class="sched-row" style="border:none;"><span>Sel, Kam: 16.00-18.00 <br>Sab: 10.00-12.00</span></div></div>
                   </div></div>
@@ -1426,7 +1410,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
@@ -1491,7 +1475,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
         </div>
       </div>
     </div>
