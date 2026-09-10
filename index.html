@@ -53,7 +53,7 @@
   .floating-wa:hover{transform:scale(1.1)}
 
   /* HERO */
-  .hero{background:linear-gradient(135deg,rgba(94,45,121,0.92) 0%,rgba(63,28,84,0.96) 100%),url('https://orthoantasari.brawijayahospital.com/wp-content/uploads/2023/10/RS-Brawijaya-Antasari-Orthopedic-Center.jpg') center/cover no-repeat;color:#fff;padding:110px 0 130px;position:relative;overflow:hidden}
+  .hero{background:linear-gradient(135deg,var(--bw-purple) 0%,var(--bw-purple-deep) 100%);color:#fff;padding:110px 0 130px;position:relative;overflow:hidden}
   .hero:after{content:"";position:absolute;top:-20%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(201,162,39,0.15) 0%,transparent 70%);border-radius:50%;z-index:0}
   .hero-layout{display:flex;gap:48px;align-items:center;}
   .hero-content{flex:1;position:relative;z-index:1}
@@ -87,7 +87,7 @@
   .stat-num{font-family:'DM Sans',sans-serif;font-size:46px;font-weight:800;color:var(--bw-purple);line-height:1;margin-bottom:8px}
   .stat-label{color:var(--text-muted);font-size:14px;font-weight:600}
 
-  /* COVERAGE MATRIX */
+  /* COVERAGE MATRIX (SIMPLIFIED TO CLUSTERS) */
   .matrix-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.02)}
   table.matrix{width:100%;border-collapse:collapse;font-size:14px;min-width:860px}
   table.matrix th{background:var(--bw-purple);color:#fff;padding:16px 14px;text-align:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
@@ -304,6 +304,7 @@
   @media (max-width:576px){
     .doc-lay{flex-direction:column;gap:16px; align-items:center; text-align:center;}
     .doc-r{width:100%;}
+    .tab-btn{width:100%; text-align:center;}
     .brsc-inst__why {grid-template-columns:1fr}
     .brsc-inst__aws {grid-template-columns:repeat(2, 1fr)}
     .brsc-inst__ts {grid-template-columns:1fr}
@@ -360,7 +361,7 @@
         <p>Lebih dari dua dekade mendampingi tumbuh kembang anak Indonesia, yang didukung dokter anak subspesialis multidisiplin yang bekerja dalam satu alur penanganan.</p>
         <ul class="hero-bullets">
           <li>Subspesialis Kardiologi, Ortopedi, Endokrin, hingga Bedah Anak</li>
-          <li>Layanan preventif, pertumbuhan, hingga tindakan khusus</li>
+          <li>Layanan preventif, tumbuh kembang, hingga tindakan khusus</li>
           <li>Enam lokasi di Jakarta, Depok, dan Tangerang</li>
           <li>Didukung NICU &amp; PICU dengan teknologi terkini</li>
         </ul>
@@ -449,7 +450,7 @@
   <div class="container">
     <span class="eyebrow">Peta Keahlian</span>
     <h2 class="section-title">Seluruh Layanan Anak Kami</h2>
-    <p class="section-subtitle">Pilih area layanan spesifik untuk melihat profil dokter, atau klik tanda strip untuk panduan rujukan ke lokasi terdekat melalui layanan pelanggan kami.</p>
+    <p class="section-subtitle">Pilih kelompok area layanan untuk melihat profil dokter, atau klik tanda strip untuk rujukan ke lokasi terdekat melalui layanan pelanggan kami. Detail ketersediaan dokter dapat dilihat di dalam masing-masing tab layanan.</p>
     
     <div class="matrix-wrap">
       <table class="matrix">
@@ -461,137 +462,47 @@
         </thead>
         <tbody>
           <tr>
-            <td><a href="#c-dasar" data-tab="tab-dasar-1" class="triage-chip">Imunisasi &amp; Vaksinasi</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td><a href="#c-dasar" class="triage-chip">Kesehatan Dasar & Pertumbuhan</a></td>
+            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-dasar" data-tab="tab-dasar-2" class="triage-chip">Nutrisi, Infeksi &amp; Alergi</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
+            <td><a href="#c-indera" class="triage-chip">Panca Indera & Kulit Anak</a></td>
+            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-dasar" data-tab="tab-dasar-3" class="triage-chip">Tumbuh Kembang &amp; Saraf</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
+            <td><a href="#c-bedah" class="triage-chip">Bedah & Tulang Anak</a></td>
+            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-dasar" data-tab="tab-dasar-4" class="triage-chip">Screening &amp; MCU Anak</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-          </tr>
-          <tr>
-            <td><a href="#c-dasar" data-tab="tab-dasar-5" class="triage-chip">Hormon &amp; Endokrin</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td><a href="#c-organ" class="triage-chip">Subspesialis Organ Dalam</a></td>
+            <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-dasar" data-tab="tab-dasar-5" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
             <td class="na">&ndash;</td>
           </tr>
           <tr>
-            <td><a href="#c-indera" data-tab="tab-indera-1" class="triage-chip">THT Anak</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-          </tr>
-          <tr>
-            <td><a href="#c-indera" data-tab="tab-indera-2" class="triage-chip">Kulit &amp; Alergi Anak</a></td>
+            <td><a href="#c-nicu" class="triage-chip">Perawatan Kritis (NICU)</a></td>
             <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-          </tr>
-          <tr>
-            <td><a href="#c-indera" data-tab="tab-indera-3" class="triage-chip">Mata Anak</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-          </tr>
-          <tr>
-            <td><a href="#c-indera" data-tab="tab-indera-4" class="triage-chip">Gigi Anak</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-indera" data-tab="tab-indera-4" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-          </tr>
-          <tr>
-            <td><a href="#c-bedah" data-tab="tab-bedah-1" class="triage-chip">Bedah Anak</a></td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-          </tr>
-          <tr>
-            <td><a href="#c-bedah" data-tab="tab-bedah-2" class="triage-chip">Tulang &amp; Gerak Anak (Ortopedi)</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-bedah" data-tab="tab-bedah-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-          </tr>
-          <tr>
-            <td><a href="#c-organ" data-tab="tab-organ-1" class="triage-chip">Jantung Anak</a></td>
-            <td class="yes"><a href="#c-organ" data-tab="tab-organ-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-organ" data-tab="tab-organ-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-          </tr>
-          <tr>
-            <td><a href="#c-organ" data-tab="tab-organ-2" class="triage-chip">Paru &amp; Pernapasan Anak</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-organ" data-tab="tab-organ-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-organ" data-tab="tab-organ-2" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-          </tr>
-          <tr>
-            <td><a href="#c-organ" data-tab="tab-organ-3" class="triage-chip">Hematologi Onkologi Anak</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-organ" data-tab="tab-organ-3" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-            <td class="na">&ndash;</td>
-          </tr>
-          <tr>
-            <td><a href="#c-nicu" data-tab="tab-nicu-1" class="triage-chip">Bayi Baru Lahir (NICU)</a></td>
-            <td class="na">&ndash;</td>
-            <td class="yes"><a href="#c-nicu" data-tab="tab-nicu-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-nicu" data-tab="tab-nicu-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
-            <td class="yes"><a href="#c-nicu" data-tab="tab-nicu-1" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
+            <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
             <td class="na">&ndash;</td>
           </tr>
@@ -660,7 +571,7 @@
               </div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Jadwalkan Imunisasi</a><a href="#cakupan" class="btn btn-back">&#8593; Peta Keahlian</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Jadwalkan Imunisasi</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
         </div>
       </div>
     </div>
@@ -1341,7 +1252,7 @@
           <div class="docs-box">
             <div class="doc">
                 <div class="doc-lay">
-                  <div class="doc-ph"><img src="https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image" alt="Dr. dr. Budi Rahmat" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
+                  <div class="doc-ph"><img src="" alt="Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)" onerror="this.src='https://via.placeholder.com/140x180/E8DEF1/5E2D79?text=No+Image'"></div>
                   <div class="doc-r">
                     <h3>Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)</h3>
                     <span class="doc-role-badge anchor">Konsultan Bedah Jantung Anak &amp; Kongenital</span>
@@ -1487,7 +1398,7 @@
 <div class="brawijaya-grid-wrapper">
   <div class="b-grid">
     <div class="b-card">
-      <div class="video-frame"><iframe src="https://www.youtube.com/embed/mhXdPP1jJH8" title="Kata Dokter: Apa Itu Ikterus Neonatorum" allowfullscreen></iframe></div>
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/mhXdPP1jJH8?start=5" title="Kata Dokter: Apa Itu Ikterus Neonatorum" allowfullscreen></iframe></div>
       <div class="card-content">
         <span class="cat-label">Edukasi Neonatus</span><h3 class="card-title">Kata Dokter: Apa Itu Ikterus Neonatorum (Bayi Kuning)? - dr. Attila Dewanti, Sp.A(K)</h3>
       </div>
@@ -1511,7 +1422,7 @@
       </div>
     </div>
     <div class="b-card">
-      <div class="video-frame"><iframe src="https://www.youtube.com/embed/_ersdpPRAdo" title="Pengalaman THT Anak" allowfullscreen></iframe></div>
+      <div class="video-frame"><iframe src="https://www.youtube.com/embed/_ersdpPRAdo?start=33" title="Pengalaman THT Anak" allowfullscreen></iframe></div>
       <div class="card-content">
         <span class="cat-label">Patient Story</span><h3 class="card-title">Akhirnya Arthur Bisa Nyaman Membersihkan Telinga Bersama dr. Fairuz, Sp.THT-KL</h3>
       </div>
