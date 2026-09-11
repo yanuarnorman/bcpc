@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brawijaya Comprehensive Pediatric Center — Pusat Pelayanan Anak Multispesialis</title>
-<meta name="description" content="Pusat pelayanan anak dengan tim multispesialis terintegrasi. Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia di Jakarta, Depok, dan Tangerang.">
+<title>Brawijaya Comprehensive Pediatric Center (CPC) — Pusat Pelayanan Anak Lengkap</title>
+<meta name="description" content="Pusat pelayanan anak lengkap dengan tim multispesialis terintegrasi. Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia di Jakarta, Depok, dan Tangerang.">
 <link rel="canonical" href="https://yanuarnorman.github.io/bcpc/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
@@ -15,21 +15,21 @@
 <meta property="og:site_name" content="Brawijaya Hospital">
 <meta property="og:locale" content="id_ID">
 <meta property="og:url" content="https://yanuarnorman.github.io/bcpc/">
-<meta property="og:title" content="Brawijaya Comprehensive Pediatric Center — Pusat Pelayanan Anak Multispesialis">
-<meta property="og:description" content="Pusat pelayanan anak dengan tim multispesialis terintegrasi. Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia di Jakarta, Depok, dan Tangerang.">
+<meta property="og:title" content="Brawijaya Comprehensive Pediatric Center (CPC) — Pusat Pelayanan Anak Lengkap">
+<meta property="og:description" content="Pusat pelayanan anak lengkap dengan tim multispesialis terintegrasi. Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia di Jakarta, Depok, dan Tangerang.">
 <meta property="og:image" content="https://yanuarnorman.github.io/bcpc/heroimage.jpeg">
 <meta property="og:image:secure_url" content="https://yanuarnorman.github.io/bcpc/heroimage.jpeg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="687">
-<meta property="og:image:alt" content="Brawijaya Comprehensive Pediatric Center">
+<meta property="og:image:alt" content="Brawijaya Comprehensive Pediatric Center (CPC)">
 
 <!-- SHARE PREVIEW (X / Twitter) -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Brawijaya Comprehensive Pediatric Center — Pusat Pelayanan Anak Multispesialis">
-<meta name="twitter:description" content="Pusat pelayanan anak dengan tim multispesialis terintegrasi. Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia di Jakarta, Depok, dan Tangerang.">
+<meta name="twitter:title" content="Brawijaya Comprehensive Pediatric Center (CPC) — Pusat Pelayanan Anak Lengkap">
+<meta name="twitter:description" content="Pusat pelayanan anak lengkap dengan tim multispesialis terintegrasi. Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia di Jakarta, Depok, dan Tangerang.">
 <meta name="twitter:image" content="https://yanuarnorman.github.io/bcpc/heroimage.jpeg">
-<meta name="twitter:image:alt" content="Brawijaya Comprehensive Pediatric Center">
+<meta name="twitter:image:alt" content="Brawijaya Comprehensive Pediatric Center (CPC)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -141,6 +141,7 @@
   .cluster-header h2 {font-size:32px;color:var(--bw-purple-deep);margin-bottom:12px}
   .cluster-header p {color:var(--text-muted);font-size:16.5px}
 
+  .tab-hint{display:none}
   .tab-nav {display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
   .tab-btn {background:#fff;border:1.5px solid var(--border);color:var(--text-muted);font-size:14.5px;font-weight:600;padding:12px 24px;border-radius:50px;cursor:pointer;transition:all .3s ease;font-family:'Inter', sans-serif;}
   .tab-btn:hover {border-color:var(--bw-purple-light);color:var(--bw-purple);}
@@ -160,7 +161,7 @@
   .svc h4:before{content:"\25B8";color:var(--accent);font-weight:700;margin-top:2px}
   .svc p{font-size:14px;color:var(--text-muted);line-height:1.6;padding-left:22px}
   .loc-badges {display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px dashed var(--border);}
-  .l-badge {font-size:11px;background:var(--bw-purple-soft);color:var(--bw-purple);padding:4px 12px;border-radius:50px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;}
+  .l-badge {text-decoration:none;transition:background .2s ease,color .2s ease;font-size:11px;background:var(--bw-purple-soft);color:var(--bw-purple);padding:4px 12px;border-radius:50px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;}
 
   /* DOCTOR CARDS GRID */
   .docs-title {font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--border);color:var(--bw-purple-deep)}
@@ -190,8 +191,8 @@
   .sched-row span:first-child{font-weight:700;color:var(--bw-purple)}
 
   .area-cta{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:40px;border-top:1px solid var(--border);padding-top:32px;}
-  .area-cta .btn-back{background:#fff;color:var(--bw-purple-deep);border:1.5px solid var(--border);box-shadow:none;transition:all .2s ease;}
-  .area-cta .btn-back:hover{background:var(--bw-purple-soft);border-color:var(--bw-purple);color:var(--bw-purple);transform:translateY(-2px);}
+  .btn-back{background:#fff;color:var(--bw-purple-deep);border:1.5px solid var(--border);box-shadow:none;transition:all .2s ease;}
+  .btn-back:hover{background:var(--bw-purple-soft);border-color:var(--bw-purple);color:var(--bw-purple);transform:translateY(-2px);}
 
   /* MCU BANNER PLACEHOLDER */
   .mcu-banner {background:var(--bw-purple-soft);border:1px solid var(--bw-purple-light);border-radius:24px;padding:40px;text-align:center;margin-top:40px;scroll-margin-top:100px;}
@@ -289,14 +290,24 @@
   .fac h4{color:var(--bw-purple);margin-bottom:8px;font-size:16.5px}
   .fac p{font-size:14px;color:var(--text-muted);line-height:1.6}
 
+  a.l-badge:hover{background:var(--bw-purple);color:#fff}
+  .doc-loc a{color:inherit;text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:2px}
+  .doc-loc a:hover{color:var(--bw-purple);text-decoration-color:var(--bw-purple)}
+  .loc-back{display:flex;justify-content:center;margin-top:36px}
+  .loc-card{scroll-margin-top:150px}
+
+  /* CLOSING BLOCK (CTA + FOOTER JADI SATU) */
+  .closing{background:linear-gradient(135deg,var(--bw-purple),var(--bw-purple-deep));position:relative;overflow:hidden}
+  .closing::before{content:'';position:absolute;top:-25%;left:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(201,162,39,0.16) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+  .closing > *{position:relative;z-index:1}
+
   /* FINAL CTA */
-  .final-cta{background:linear-gradient(135deg,var(--bw-purple),var(--bw-purple-deep));text-align:center;padding:100px 24px;color:#fff;position:relative;overflow:hidden}
-  .final-cta::before{content:'';position:absolute;top:-50%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(201,162,39,0.15) 0%,transparent 70%);border-radius:50%}
+  .final-cta{background:none;text-align:center;padding:100px 24px 80px;color:#fff;position:relative;overflow:visible}
   .final-cta h2{font-size:36px;color:#fff;margin-bottom:20px;max-width:680px;margin-left:auto;margin-right:auto}
   .final-cta p{color:rgba(255,255,255,.9);margin-bottom:40px;font-size:18px;max-width:720px;margin-left:auto;margin-right:auto}
   .final-cta .btn-row{justify-content:center}
   
-  footer{background:#4D2758;color:#fff;text-align:center;padding:64px var(--gutter)}
+  footer{background:none;color:#fff;text-align:center;padding:0 var(--gutter) 56px}
   .footer-brand{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;margin-bottom:24px}
   .footer-logo{height:54px;width:auto;filter:brightness(0) invert(1)}
   .footer-tagline{height:60px;width:auto;display:block}
@@ -406,10 +417,10 @@
     .matrix-legend{display:block}
 
     /* CLUSTER TABS — horizontal scroller with edge padding */
-    .tab-nav {flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; gap:8px; padding:0 var(--gutter) 10px; margin:0 calc(-1 * var(--gutter)) 24px; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none; scroll-snap-type:x proximity;}
-    .tab-nav::-webkit-scrollbar {display:none;}
-    .tab-nav {-webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 26px),transparent 100%); mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 26px),transparent 100%);}
-    .tab-btn {flex:0 0 auto; width:auto; white-space:nowrap; min-height:44px; padding:11px 18px; font-size:13.5px; scroll-snap-align:start;}
+    .tab-hint{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;text-align:left;margin:0 0 10px}
+    .tab-nav {flex-wrap:wrap; overflow:visible; justify-content:flex-start; gap:8px; padding:0; margin:0 0 26px;}
+    .tab-btn {flex:0 1 auto; width:auto; min-height:44px; padding:11px 16px; font-size:13.5px; white-space:normal; text-align:left;}
+    .tab-btn.active{box-shadow:0 6px 16px rgba(94,45,121,.28)}
 
     /* DOCTOR CARDS */
     .doc{padding:20px;border-radius:18px}
@@ -454,11 +465,11 @@
     .loc-btn{width:100%;min-height:48px}
 
     /* FINAL CTA + FOOTER */
-    .final-cta{padding:64px var(--gutter)}
+    .final-cta{padding:64px var(--gutter) 48px}
     .final-cta h2{font-size:clamp(24px,6.4vw,30px)}
     .final-cta p{font-size:16px;margin-bottom:28px}
     .final-cta .btn-row{align-items:stretch}
-    footer{padding:44px var(--gutter) 96px}
+    footer{padding:0 var(--gutter) 92px}
     .footer-brand{gap:14px;margin-bottom:18px}
     .footer-logo{height:38px}
     .footer-tagline{height:40px}
@@ -548,9 +559,9 @@
   <div class="container">
     <div class="hero-layout">
       <div class="hero-content">
-        <div class="hero-breadcrumb">Brawijaya Hospital &nbsp;/&nbsp; <span>Comprehensive Pediatric Center</span></div>
-        <h1>Brawijaya Comprehensive Pediatric Center</h1>
-        <div class="hero-tagline">Pusat Pelayanan Anak dengan Tim Multispesialis Terintegrasi, Berpengalaman Lebih dari 20 Tahun.</div>
+        <div class="hero-breadcrumb">Brawijaya Hospital &nbsp;/&nbsp; <span>Comprehensive Pediatric Center (CPC)</span></div>
+        <h1>Brawijaya Comprehensive Pediatric Center (CPC)</h1>
+        <div class="hero-tagline">Pusat Pelayanan Anak Lengkap dengan Tim Multispesialis Terintegrasi, Berpengalaman Lebih dari 20 Tahun.</div>
         <p>Lebih dari dua dekade mendampingi tumbuh kembang 200.000+ anak Indonesia, yang didukung dokter anak subspesialis multidisiplin yang bekerja dalam satu alur penanganan.</p>
         <ul class="hero-bullets">
           <li>Subspesialis Kardiologi, Ortopedi, Endokrin, hingga Bedah Anak</li>
@@ -598,7 +609,9 @@
           <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-2">Susah makan</a>
           <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-2">Berat badan sulit naik</a>
           <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-5">Tinggi badan tertinggal</a>
-          <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-5">Pubertas dini</a>
+          <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-5">Pubertas dini atau terlambat</a>
+          <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-5">Gangguan hormon</a>
+          <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-5">Haid tidak teratur</a>
         </div>
       </div>
 
@@ -608,6 +621,7 @@
           <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-2">Demam &amp; batuk berulang</a>
           <a href="#c-organ" class="chip triage-chip" data-tab="tab-organ-2">Sesak / asma</a>
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-2">Ruam &amp; alergi kulit</a>
+          <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-2">Jerawat</a>
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-1">Mendengkur / amandel</a>
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-1">Infeksi telinga berulang</a>
           <a href="#c-organ" class="chip triage-chip" data-tab="tab-organ-4">Diare berulang</a>
@@ -721,6 +735,7 @@
     </div>
 
     <!-- TABS NAV -->
+    <div class="tab-hint">Pilih sub-layanan:</div>
     <div class="tab-nav">
       <button class="tab-btn active" onclick="openTab(event, 'tab-dasar-3')">Tumbuh Kembang & Saraf</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-dasar-2')">Nutrisi & Infeksi</button>
@@ -739,7 +754,7 @@
           <div class="svc"><h4>Gangguan Perkembangan Otak Anak</h4><p>Evaluasi perkembangan otak usia dini, termasuk kondisi yang berkaitan dengan kesehatan neuroimun.</p></div>
           <div class="svc"><h4>Kejang &amp; Gangguan Saraf Anak</h4><p>Kejang demam, kejang berulang, dan keluhan saraf lain yang memerlukan evaluasi khusus.</p></div>
           <div class="loc-badges">
-            <span class="l-badge">Antasari</span><span class="l-badge">Depok</span>
+            <a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-depok" class="l-badge">Depok</a>
           </div>
         </div>
         <div>
@@ -751,7 +766,7 @@
                 <div class="doc-r">
                   <h3>dr. Attila Dewanti, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Mendalami perkembangan otak usia dini dan neuroimun. Menjawab pertanyaan kritis: apakah keterlambatan anak wajar atau butuh intervensi.</p>
                 </div>
               </div>
@@ -763,7 +778,7 @@
                 <div class="doc-r">
                   <h3>dr. Lindana Sastra, Sp.A</h3>
                   <span class="doc-role-badge">Spesialis Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Tiga dekade merawat anak dengan pendekatan hangat berorientasi keluarga, dari pencegahan hingga pemantauan jangka panjang.</p>
                 </div>
               </div>
@@ -775,7 +790,7 @@
                 <div class="doc-r">
                   <h3>dr. Alinda Rubiati Wibowo, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Neurologi Anak</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Ahli dalam menangani masalah saraf anak, evaluasi kejang, dan deteksi gangguan fungsi neurologis pada fase perkembangan.</p>
                 </div>
               </div>
@@ -787,7 +802,7 @@
                 <div class="doc-r">
                   <h3>dr. Lestaria Aryanti, Sp.KFR.Ped(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Rehab Anak</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Pemulihan anak berbeda dari orang dewasa &mdash; terapinya harus mengikuti tahap perkembangan, bukan sekadar mengembalikan fungsi. dr. Lestaria adalah Konsultan Rehabilitasi Medik dengan pendalaman pediatrik, lulusan Universitas Indonesia. Menangani pemulihan pasca-cedera dan patah tulang hingga terapi bicara, terapi okupasi, dan terapi memori &mdash; program yang menjadi kunci bagi anak dengan keterlambatan perkembangan.</p>
                 </div>
               </div>
@@ -799,7 +814,7 @@
                 <div class="doc-r">
                   <h3>dr. RR. Amanda Soebadi, M.Med, Sp.A, Subsp.Neuro</h3>
                   <span class="doc-role-badge anchor">Subspesialis Neurologi Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Ahli diagnostik EEG, manajemen kejang, dan penilaian perkembangan saraf anak. Aktif menyusun panduan neurologi anak melalui IDAI.</p>
                 </div>
               </div>
@@ -820,7 +835,7 @@
           <div class="svc"><h4>Anak Susah Makan (Picky Eater)</h4><p>Evaluasi pola makan dan penyebab di baliknya, termasuk faktor medis yang sering terlewat.</p></div>
           <div class="svc"><h4>Diare &amp; Gangguan Pencernaan</h4><p>Diare akut maupun berulang, muntah, sembelit, dan keluhan pencernaan lain pada anak.</p></div>
           <div class="loc-badges">
-            <span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span><span class="l-badge">Taman Mini</span><span class="l-badge">Depok</span>
+            <a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a><a href="#lok-depok" class="l-badge">Depok</a>
           </div>
         </div>
         <div>
@@ -832,7 +847,7 @@
                 <div class="doc-r">
                   <h3>dr. Gladys Rasidy, Sp.A</h3>
                   <span class="doc-role-badge">Spesialis Anak</span>
-                  <div class="doc-loc">&#128205; Antasari &middot; Saharjo &middot; T. Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a> &middot; <a href="#lok-saharjo">Saharjo</a> &middot; <a href="#lok-taman-mini">T. Mini</a></div>
                   <p class="doc-bio">Berfokus mencari akar keluhan berulang: mengapa demam terus kembali, mengapa berat badan tidak kunjung naik. Praktik di 3 lokasi memudahkan akses bagi keluarga.</p>
                 </div>
               </div>
@@ -844,7 +859,7 @@
                 <div class="doc-r">
                   <h3>dr. Yoga Devaera, Sp.A, Subsp.NPM</h3>
                   <span class="doc-role-badge anchor">Subspesialis Nutrisi & Penyakit Metabolik</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Salah satu dari sedikit subspesialis nutrisi dan penyakit metabolik anak di Indonesia. Menangani kondisi metabolik umum maupun langka, serta perencanaan nutrisi untuk mendukung tumbuh kembang.</p>
                 </div>
               </div>
@@ -864,7 +879,8 @@
           <div class="svc"><h4>Pubertas Dini &amp; Pubertas Terlambat</h4><p>Tanda pubertas yang muncul terlalu awal atau belum muncul pada usia yang seharusnya.</p></div>
           <div class="svc"><h4>Obesitas pada Anak</h4><p>Penilaian berat badan berlebih beserta risiko metabolik yang menyertainya.</p></div>
           <div class="svc"><h4>Diabetes &amp; Gangguan Tiroid</h4><p>Penanganan gangguan hormon yang memerlukan pemantauan jangka panjang.</p></div>
-          <div class="loc-badges"><span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span><span class="l-badge">Taman Mini</span></div>
+          <div class="svc"><h4>Gangguan Haid pada Remaja</h4><p>Evaluasi siklus haid yang tidak teratur, terlambat, atau berhenti, termasuk penelusuran penyebab hormonalnya.</p></div>
+          <div class="loc-badges"><a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -875,7 +891,7 @@
                 <div class="doc-r">
                   <h3>dr. Frida Soesanti, M.Sc, Ph.D, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Endokrinologi</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Salah satu dokter-ilmuwan paling dihormati di bidang endokrinologi anak di Indonesia. Dengan pengalaman hampir dua dekade, dr. Frida memadukan ketelitian akademis dan keunggulan klinis untuk menangani kondisi terkait hormon pada anak &mdash; perawakan pendek, pubertas dini, gangguan tiroid, hingga diabetes tipe 1. Beliau memegang posisi kepemimpinan di berbagai organisasi profesi dan konsisten mengadvokasi deteksi dini gangguan endokrin pada anak dan remaja.</p>
                 </div>
               </div>
@@ -887,7 +903,7 @@
                 <div class="doc-r">
                   <h3>Dr. dr. Andi Nanis S., Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Endokrinologi</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Dokter Spesialis Anak dengan subspesialisasi Endokrinologi dan gelar Doktor. Menangani gangguan hormon dan pertumbuhan pada anak &mdash; dari perawakan pendek dan gangguan pubertas hingga kelainan metabolik yang memerlukan pemantauan jangka panjang.</p>
                 </div>
               </div>
@@ -899,7 +915,7 @@
                 <div class="doc-r">
                   <h3>dr. Ivens Zasanovaria, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Endokrinologi</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Merancang strategi penanganan jangka panjang diabetes tipe 1 dan pubertas.</p>
                 </div>
               </div>
@@ -935,7 +951,7 @@
           <div class="svc"><h4>Imunisasi Pengejaran (Catch-Up)</h4><p>Penyusunan ulang jadwal bagi anak yang imunisasinya sempat tertinggal, tanpa perlu mengulang dari awal.</p></div>
           <div class="svc"><h4>Konsultasi Pra-Imunisasi</h4><p>Pemeriksaan kondisi anak sebelum vaksin diberikan, termasuk penjelasan efek samping yang wajar.</p></div>
           <div class="loc-badges">
-            <span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span><span class="l-badge">Duren Tiga</span><span class="l-badge">Taman Mini</span><span class="l-badge">Depok</span><span class="l-badge">Tangerang</span>
+            <a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-duren-tiga" class="l-badge">Duren Tiga</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a><a href="#lok-depok" class="l-badge">Depok</a><a href="#lok-tangerang" class="l-badge">Tangerang</a>
           </div>
         </div>
         <!-- Kolom Kanan: Dokter -->
@@ -1023,6 +1039,7 @@
       <p>Pusat penanganan keluhan umum yang sering mengganggu kenyamanan keseharian anak: dari telinga, hidung, tenggorokan, mata, gigi, hingga kulit sensitif dan alergi.</p>
     </div>
 
+    <div class="tab-hint">Pilih sub-layanan:</div>
     <div class="tab-nav">
       <button class="tab-btn active" onclick="openTab(event, 'tab-indera-1')">THT Anak</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-indera-2')">Kulit & Alergi</button>
@@ -1040,7 +1057,7 @@
           <div class="svc"><h4>Gangguan Pendengaran (Deteksi Dini)</h4><p>Anak terlambat bicara. Pemeriksaan OAE, BERA, dan audiometri anak.</p></div>
           <div class="svc"><h4>Benda Asing THT</h4><p>Ekstraksi aman dengan peralatan endoskopik untuk benda kecil yang masuk telinga/hidung.</p></div>
           <div class="loc-badges">
-            <span class="l-badge">Seluruh Lokasi</span>
+            <a href="#lokasi" class="l-badge">Seluruh Lokasi</a>
           </div>
         </div>
         <div>
@@ -1052,7 +1069,7 @@
                 <div class="doc-r">
                   <h3>dr. Fairuz Balfas, Sp.THT-KL</h3>
                   <span class="doc-role-badge">THT Dewasa &amp; Anak</span>
-                  <div class="doc-loc">&#128205; Antasari &middot; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a> &middot; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Dengan pengalaman 13+ tahun, dikenal punya cara yang lembut dan komunikatif membuat anak lebih kooperatif saat pemeriksaan THT.</p>
                 </div>
               </div>
@@ -1064,7 +1081,7 @@
                 <div class="doc-r">
                   <h3>dr. Tara Candida, Sp.THTBKL</h3>
                   <span class="doc-role-badge">THT Dewasa &amp; Anak</span>
-                  <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-duren-tiga">Duren Tiga</a></div>
                   <p class="doc-bio">Terampil menggunakan peralatan diagnostik terkini dengan pendekatan yang meminimalkan rasa tidak nyaman bagi anak.</p>
                 </div>
               </div>
@@ -1076,7 +1093,7 @@
                 <div class="doc-r">
                   <h3>dr. Fezzan Athama, Sp.THT-KL</h3>
                   <span class="doc-role-badge">THT Umum (FICS)</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Menghadirkan standar bedah THT internasional (FICS) untuk keluhan hidung dan sinus anak di area Depok.</p>
                 </div>
               </div>
@@ -1088,7 +1105,7 @@
                 <div class="doc-r">
                   <h3>dr. Farryanto K., Sp.THT-KL</h3>
                   <span class="doc-role-badge">THT Umum</span>
-                  <div class="doc-loc">&#128205; Tangerang</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-tangerang">Tangerang</a></div>
                   <p class="doc-bio">Pendekatannya cermat dan komunikatif &mdash; memastikan orang tua memahami kondisi anak sebelum memutuskan tindakan.</p>
                 </div>
               </div>
@@ -1101,7 +1118,7 @@
                 <div class="doc-r">
                   <h3>dr. Hamida Hayati Faisal, Sp.THT-BKL</h3>
                   <span class="doc-role-badge">THT Anak</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Menangani infeksi telinga, masalah sinus, dan alergi hidung pada anak, dengan fokus menjaga fungsi pendengaran, penciuman, dan pernapasan tetap optimal.</p>
                 </div>
               </div>
@@ -1113,7 +1130,7 @@
                 <div class="doc-r">
                   <h3>dr. Lidya Sabig, Sp.THT-KL</h3>
                   <span class="doc-role-badge">THT Anak</span>
-                  <div class="doc-loc">&#128205; Saharjo, Duren Tiga, Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a>, <a href="#lok-duren-tiga">Duren Tiga</a>, <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Diagnosis dan penanganan kondisi THT anak, mulai dari infeksi telinga dan masalah sinus hingga gangguan menelan dan suara.</p>
                 </div>
               </div>
@@ -1125,7 +1142,7 @@
                 <div class="doc-r">
                   <h3>Dr. dr. Fauziah Fardizza Sp.THT-BKL(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Laringo Faringologi</span>
-                  <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-duren-tiga">Duren Tiga</a></div>
                   <p class="doc-bio">Konsultan Laring-Faring. Menangani gangguan suara (foniatri) dan gangguan menelan (disfagia), termasuk endoskopi laring dan rehabilitasi suara.</p>
                 </div>
               </div>
@@ -1137,7 +1154,7 @@
                 <div class="doc-r">
                   <h3>dr. Sandhi Ari Susanti, Sp.THT-KL</h3>
                   <span class="doc-role-badge">THT Anak</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Berfokus pada gangguan pendengaran, sinusitis, alergi pernapasan, serta keluhan tenggorokan dan suara pada anak.</p>
                 </div>
               </div>
@@ -1149,7 +1166,7 @@
                 <div class="doc-r">
                   <h3>dr. Yurnita Arifin, Sp.THT-KL</h3>
                   <span class="doc-role-badge">THT Anak</span>
-                  <div class="doc-loc">&#128205; Tangerang</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-tangerang">Tangerang</a></div>
                   <p class="doc-bio">Menangani keluhan telinga, hidung, dan tenggorokan pada anak di Brawijaya Tangerang.</p>
                 </div>
               </div>
@@ -1161,7 +1178,7 @@
                 <div class="doc-r">
                   <h3>dr. Charlene, Sp.THT</h3>
                   <span class="doc-role-badge">Spesialis THT</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Menangani keluhan telinga, hidung, dan tenggorokan pada anak di Brawijaya Antasari.</p>
                 </div>
               </div>
@@ -1181,7 +1198,8 @@
           <div class="svc"><h4>Eksim &amp; Dermatitis Atopik</h4><p>Kulit kering, gatal, dan kemerahan berulang yang mengganggu tidur anak.</p></div>
           <div class="svc"><h4>Biduran (Urtikaria)</h4><p>Bentol gatal yang muncul mendadak, termasuk pencarian faktor pemicunya.</p></div>
           <div class="svc"><h4>Ruam Popok &amp; Infeksi Kulit</h4><p>Ruam yang tidak kunjung membaik dan infeksi kulit yang umum pada bayi.</p></div>
-          <div class="loc-badges"><span class="l-badge">Duren Tiga</span><span class="l-badge">Taman Mini</span></div>
+          <div class="svc"><h4>Jerawat Remaja</h4><p>Penanganan jerawat pada masa pubertas, dari perawatan dasar hingga kasus yang membandel.</p></div>
+          <div class="loc-badges"><a href="#lok-duren-tiga" class="l-badge">Duren Tiga</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1192,7 +1210,7 @@
                 <div class="doc-r">
                   <h3>dr. Keiko Yolanda Gunardi, Sp.DVE</h3>
                   <span class="doc-role-badge">Spesialis Kulit</span>
-                  <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-duren-tiga">Duren Tiga</a></div>
                   <p class="doc-bio">Kompetensi kuat merawat kondisi kulit sensitif dan eksim pada bayi.</p>
                 </div>
               </div>
@@ -1204,7 +1222,7 @@
                 <div class="doc-r">
                   <h3>dr. Vidyani Adiningtyas, Sp.DV</h3>
                   <span class="doc-role-badge">Spesialis Kulit</span>
-                  <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-duren-tiga">Duren Tiga</a></div>
                   <p class="doc-bio">Pendekatan ramah membantu keluarga menerapkan perawatan kulit harian.</p>
                 </div>
               </div>
@@ -1216,7 +1234,7 @@
                 <div class="doc-r">
                   <h3>dr. Rizqi Amalia, Sp.A, Subsp.AI</h3>
                   <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
-                  <div class="doc-loc">&#128205; Antasari &middot; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a> &middot; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Mencari tahu mengapa sistem kekebalan bereaksi berlebihan dan memetakan alergi.</p>
                 </div>
               </div>
@@ -1228,7 +1246,7 @@
                 <div class="doc-r">
                   <h3>dr. Grace N.S. Wardhana, Sp.KK, FINSDV, FAADV</h3>
                   <span class="doc-role-badge anchor">Dermatologi Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Lebih dari 19 tahun praktik klinis dengan spesialisasi dermatologi anak, didukung fellowship FINSDV dan FAADV.</p>
                 </div>
               </div>
@@ -1240,7 +1258,7 @@
                 <div class="doc-r">
                   <h3>dr. Dina Muktiarti, Sp.A, Subsp.AI</h3>
                   <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Keahlian khusus dalam menangani kasus alergi kompleks dan gangguan sistem kekebalan tubuh pada anak.</p>
                 </div>
               </div>
@@ -1260,7 +1278,7 @@
           <div class="svc"><h4>Deteksi Dini Gangguan Penglihatan</h4><p>Pemeriksaan tajam penglihatan untuk menemukan rabun yang belum disadari.</p></div>
           <div class="svc"><h4>Mata Juling (Strabismus)</h4><p>Evaluasi dan penanganan posisi mata yang tidak sejajar.</p></div>
           <div class="svc"><h4>Mata Malas (Ambliopia)</h4><p>Penanganan penurunan fungsi penglihatan pada satu mata yang perlu dikoreksi sejak dini.</p></div>
-          <div class="loc-badges"><span class="l-badge">Depok</span><span class="l-badge">Tangerang</span></div>
+          <div class="loc-badges"><a href="#lok-depok" class="l-badge">Depok</a><a href="#lok-tangerang" class="l-badge">Tangerang</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1271,7 +1289,7 @@
                 <div class="doc-r">
                   <h3>dr. M. Akbar Wicaksana, Sp.M</h3>
                   <span class="doc-role-badge">Spesialis Mata</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Kompetensi unggul mendeteksi kelainan refraksi sedini mungkin guna mencegah mata malas.</p>
                 </div>
               </div>
@@ -1283,7 +1301,7 @@
                 <div class="doc-r">
                   <h3>dr. Puti Ayu Tiara, Sp.M</h3>
                   <span class="doc-role-badge">Spesialis Mata</span>
-                  <div class="doc-loc">&#128205; Tangerang</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-tangerang">Tangerang</a></div>
                   <p class="doc-bio">Pendekatan hangat dan interaktif saat skrining mata balita hingga remaja.</p>
                 </div>
               </div>
@@ -1302,7 +1320,7 @@
           <div class="svc-list-title">Yang Kami Tangani</div>
           <div class="svc"><h4>Pemeriksaan & Karang Gigi</h4><p>Kontrol berkala mencegah kerusakan dan radang gusi.</p></div>
           <div class="svc"><h4>Gigi Berlubang (Karies)</h4><p>Penambalan yang ramah anak (pain-free dentistry) untuk gigi susu dan tetap.</p></div>
-          <div class="loc-badges"><span class="l-badge">Saharjo</span><span class="l-badge">Duren Tiga</span><span class="l-badge">Taman Mini</span><span class="l-badge">Depok</span></div>
+          <div class="loc-badges"><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-duren-tiga" class="l-badge">Duren Tiga</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a><a href="#lok-depok" class="l-badge">Depok</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter Spesialis Gigi Anak (Sp.KGA)</div>
@@ -1350,6 +1368,7 @@
       <p>Kondisi anatomi dan pembedahan pada anak memerlukan teknik khusus yang memperhitungkan struktur tubuh yang masih dalam tahap pertumbuhan awal.</p>
     </div>
 
+    <div class="tab-hint">Pilih sub-layanan:</div>
     <div class="tab-nav">
       <button class="tab-btn active" onclick="openTab(event, 'tab-bedah-1')">Bedah Anak</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-bedah-2')">Ortopedi Anak</button>
@@ -1364,7 +1383,7 @@
           <div class="svc"><h4>Kelainan Bawaan (Kongenital)</h4><p>Penanganan cacat lahir pada saluran cerna dan dinding perut.</p></div>
           <div class="svc"><h4>Bedah Saluran Cerna</h4><p>Usus buntu (apendisitis) anak, hernia, dan penyumbatan usus.</p></div>
           <div class="svc"><h4>Kegawatdaruratan Bedah</h4><p>Kasus saluran cerna yang memerlukan tindakan bedah segera secara presisi.</p></div>
-          <div class="loc-badges"><span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span><span class="l-badge">Duren Tiga</span><span class="l-badge">T. Mini</span><span class="l-badge">Depok</span><span class="l-badge">Tangerang</span></div>
+          <div class="loc-badges"><a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-duren-tiga" class="l-badge">Duren Tiga</a><a href="#lok-taman-mini" class="l-badge">T. Mini</a><a href="#lok-depok" class="l-badge">Depok</a><a href="#lok-tangerang" class="l-badge">Tangerang</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1375,7 +1394,7 @@
                 <div class="doc-r">
                   <h3>dr. Hardian Gunardi, Sp.B, Subsp.Ped(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Menangani spektrum penuh bedah pediatrik, dari kelainan bawaan hingga gawat darurat.</p>
                 </div>
               </div>
@@ -1387,7 +1406,7 @@
                 <div class="doc-r">
                   <h3>Dr. dr. Riana Pauline Tamba, Sp.B, Subsp.Ped(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Keahlian prosedur minimal invasif (laparoskopi), hernia, dan trauma.</p>
                 </div>
               </div>
@@ -1399,7 +1418,7 @@
                 <div class="doc-r">
                   <h3>dr. Wulan Ayudyasari, Sp.B, Subsp.Ped(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Prosedur minimal invasif seperti laparoskopi apendektomi, penanganan hernia, luka infeksi dan trauma, hingga koreksi kelainan bawaan.</p>
                 </div>
               </div>
@@ -1411,7 +1430,7 @@
                 <div class="doc-r">
                   <h3>dr. Alifi Maulidyan, Sp.BA, Subsp.BA DA(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Menangani tindakan bedah anak dari bayi baru lahir hingga remaja &mdash; apendektomi, herniotomi, sirkumsisi, serta bedah saluran cerna dan organ dalam.</p>
                 </div>
               </div>
@@ -1423,7 +1442,7 @@
                 <div class="doc-r">
                   <h3>dr. Dina Perdanasari, Sp.BA</h3>
                   <span class="doc-role-badge">Spesialis Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-duren-tiga">Duren Tiga</a></div>
                   <p class="doc-bio">Bedah anak untuk kelainan bawaan, tumor pada anak, dan kondisi darurat, termasuk koreksi saluran cerna, urologi anak, dan trauma.</p>
                 </div>
               </div>
@@ -1435,7 +1454,7 @@
                 <div class="doc-r">
                   <h3>dr. Rahmayeni Effendi, Sp.BA</h3>
                   <span class="doc-role-badge">Spesialis Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Menangani kondisi bedah bawaan maupun didapat pada anak: kelainan organ dalam, kegawatdaruratan, dan koreksi kelainan fisik tertentu.</p>
                 </div>
               </div>
@@ -1447,7 +1466,7 @@
                 <div class="doc-r">
                   <h3>dr. Fransisca Stefanie, Sp.BA</h3>
                   <span class="doc-role-badge">Spesialis Bedah Anak</span>
-                  <div class="doc-loc">&#128205; Tangerang</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-tangerang">Tangerang</a></div>
                   <p class="doc-bio">Evaluasi dan tindakan bedah anak untuk kelainan bawaan, gangguan saluran cerna dan saluran kemih, benjolan, dan trauma &mdash; dari pemeriksaan awal hingga pemantauan pascaoperasi.</p>
                 </div>
               </div>
@@ -1467,7 +1486,7 @@
           <div class="svc"><h4>Kelainan Bentuk Kaki</h4><p>Kaki O, kaki X, dan gangguan berjalan yang memerlukan evaluasi tulang.</p></div>
           <div class="svc"><h4>Displasia Panggul & Bawaan</h4><p>Kelainan panggul dan deformitas ekstremitas sejak lahir.</p></div>
           <div class="svc"><h4>Patah Tulang Anak</h4><p>Penanganan fraktur dengan mempertimbangkan lempeng pertumbuhan.</p></div>
-          <div class="loc-badges"><span class="l-badge">Saharjo</span><span class="l-badge">Depok</span></div>
+          <div class="loc-badges"><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-depok" class="l-badge">Depok</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1478,7 +1497,7 @@
                 <div class="doc-r">
                   <h3>dr. M. Deryl Ivansyah, Sp.OT, Subsp.A</h3>
                   <span class="doc-role-badge anchor">Subspesialis Ortopedi Anak</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Mendalami rekonstruksi deformitas kaki bengkok dan patah tulang anak, memastikan tulang sembuh selaras pertumbuhannya.</p>
                 </div>
               </div>
@@ -1490,7 +1509,7 @@
                 <div class="doc-r">
                   <h3>dr. Paramita Dyah Lasmana, Sp.OT</h3>
                   <span class="doc-role-badge">Spesialis Bedah Ortopedi</span>
-                  <div class="doc-loc">&#128205; Depok</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-depok">Depok</a></div>
                   <p class="doc-bio">Penanganan cedera fisik, patah tulang, serta keluhan gerak sendi pada anak dengan presisi medis.</p>
                 </div>
               </div>
@@ -1502,7 +1521,7 @@
                 <div class="doc-r">
                   <h3>dr. Widyastuti Retno Annisa, Sp.KFR</h3>
                   <span class="doc-role-badge">Kedokteran Fisik & Rehabilitasi</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Rehabilitasi medik anak untuk gangguan gerak dan fungsi, mendampingi pemulihan pasca cedera maupun tindakan ortopedi.</p>
                 </div>
               </div>
@@ -1522,7 +1541,7 @@
           <div class="svc"><h4>USG Anak &amp; Neonatal</h4><p>Pemeriksaan ultrasonografi untuk bayi dan anak, termasuk USG <em>bedside</em> di ruang rawat dan NICU tanpa perlu memindahkan pasien.</p></div>
           <div class="svc"><h4>Pencitraan Penunjang Bedah &amp; Ortopedi</h4><p>Dukungan pencitraan untuk perencanaan dan evaluasi tindakan bedah maupun kelainan tulang pada anak.</p></div>
           <div class="svc"><h4>Konsultasi Hasil Pencitraan</h4><p>Pembacaan dan penjelasan hasil pemeriksaan bersama dokter yang merawat, agar orang tua memahami langkah berikutnya.</p></div>
-          <div class="loc-badges"><span class="l-badge">Antasari</span></div>
+          <div class="loc-badges"><a href="#lok-antasari" class="l-badge">Antasari</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1533,7 +1552,7 @@
                 <div class="doc-r">
                   <h3>Dr. dr. Evita KB Ifran, Sp.A (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Pencitraan Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Konsultan pencitraan anak dengan fokus pada ultrasonografi <em>bedside</em> untuk perawatan neonatal dan pediatrik. Memimpin inisiatif edukasi klinis nasional NeoPIN.</p>
                 </div>
               </div>
@@ -1558,6 +1577,7 @@
       <p>Layanan diagnostik dan terapeutik lanjutan untuk kondisi spesifik pada organ vital anak yang membutuhkan pengawasan subspesialis konsultan.</p>
     </div>
 
+    <div class="tab-hint">Pilih sub-layanan:</div>
     <div class="tab-nav">
       <button class="tab-btn active" onclick="openTab(event, 'tab-organ-1')">Jantung Anak</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-organ-2')">Pernapasan Anak</button>
@@ -1572,7 +1592,7 @@
           <div class="svc-list-title">Yang Kami Tangani</div>
           <div class="svc"><h4>Penyakit Jantung Bawaan</h4><p>Kelainan struktur sejak lahir, termasuk deteksi dini.</p></div>
           <div class="svc"><h4>Bising Jantung (Murmur)</h4><p>Evaluasi bunyi jantung tidak normal saat pemeriksaan rutin.</p></div>
-          <div class="loc-badges"><span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span></div>
+          <div class="loc-badges"><a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-saharjo" class="l-badge">Saharjo</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1583,7 +1603,7 @@
                 <div class="doc-r">
                   <h3>dr. Sarah Rafika N., Sp.A, Subsp.Kardio</h3>
                   <span class="doc-role-badge anchor">Subspesialis Kardiologi</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Memastikan temuan murmur jantung dievaluasi dengan tepat &mdash; fisiologis atau kelainan yang perlu ditindaklanjuti.</p>
                 </div>
               </div>
@@ -1595,7 +1615,7 @@
                 <div class="doc-r">
                   <h3>dr. Anisa Rahmadhany, Sp.A, Subsp.Kardio</h3>
                   <span class="doc-role-badge anchor">Subspesialis Kardiologi</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Konsultan Jantung Anak lulusan Universitas Indonesia yang menangani penyakit jantung dan pembuluh darah pada bayi, anak, hingga remaja &mdash; mencakup kelainan jantung bawaan, penyakit jantung rematik, aritmia, dan gangguan tekanan darah.</p>
                 </div>
               </div>
@@ -1607,7 +1627,7 @@
                 <div class="doc-r">
                   <h3>Dr. dr. Winda Azwani, Sp.A, Subsp.Kardio</h3>
                   <span class="doc-role-badge anchor">Subspesialis Kardiologi</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Mendalami intervensi dan pemantauan jangka panjang ekokardiografi. Latar belakang akademisnya memastikan setiap keputusan penanganan berpijak pada penelitian ilmiah terkini.</p>
                 </div>
               </div>
@@ -1619,7 +1639,7 @@
                 <div class="doc-r">
                   <h3>Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Bedah Jantung Anak &amp; Kongenital</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Ketika kelainan jantung bawaan memerlukan tindakan bedah, anak tidak perlu dirujuk keluar. Dr. dr. Budi Rahmat adalah Dokter Spesialis Bedah Kardiotoraks dan Vaskular dengan gelar Konsultan di bidang Bedah Jantung Pediatrik &amp; Kongenital, menangani koreksi kelainan struktur jantung pada bayi dan anak. Kehadirannya melengkapi alur penanganan jantung anak di Saharjo: dari diagnosis oleh kardiolog anak hingga tindakan bedah, seluruhnya dalam satu atap.</p>
                 </div>
               </div>
@@ -1637,7 +1657,7 @@
           <div class="svc-list-title">Yang Kami Tangani</div>
           <div class="svc"><h4>Asma pada Anak</h4><p>Diagnosis, pengendalian gejala, dan rencana terapi jangka panjang.</p></div>
           <div class="svc"><h4>Batuk Kronis</h4><p>Berlangsung lebih dari dua minggu dan butuh evaluasi penyebab.</p></div>
-          <div class="loc-badges"><span class="l-badge">Saharjo</span><span class="l-badge">Taman Mini</span></div>
+          <div class="loc-badges"><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1648,7 +1668,7 @@
                 <div class="doc-r">
                   <h3>dr. Rifan Fauzi, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Paru & Pernapasan</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Berfokus pada asma dan batuk kronis agar anak bisa aktif tanpa sesak.</p>
                 </div>
               </div>
@@ -1660,7 +1680,7 @@
                 <div class="doc-r">
                   <h3>dr. Dimas Dwi Saputro, Sp.A, Subsp.Resp</h3>
                   <span class="doc-role-badge anchor">Subspesialis Respirologi</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Mendiagnosis infeksi saluran napas bawah, pneumonia, dan kelainan paru. Mampu melakukan bronkoskopi untuk evaluasi saluran napas langsung.</p>
                 </div>
               </div>
@@ -1672,7 +1692,7 @@
                 <div class="doc-r">
                   <h3>dr. Madeleine Ramdhani Jasin, Sp.A(K), Subsp.Resp</h3>
                   <span class="doc-role-badge anchor">Konsultan Respirologi Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Konsultan respirologi anak yang menangani asma, sesak berulang, dan gangguan pernapasan kronis pada anak.</p>
                 </div>
               </div>
@@ -1692,7 +1712,7 @@
           <div class="svc"><h4>Sembelit &amp; Nyeri Perut</h4><p>Konstipasi, perut kembung, dan nyeri perut berulang pada anak.</p></div>
           <div class="svc"><h4>Nafsu Makan &amp; Berat Badan</h4><p>Nafsu makan menurun dan berat badan turun yang berkaitan dengan masalah saluran cerna.</p></div>
           <div class="svc"><h4>Gangguan Hati &amp; Empedu</h4><p>Kuning pada mata atau kulit, BAB berdarah, dan muntah darah yang memerlukan evaluasi hati, empedu, serta pankreas.</p></div>
-          <div class="loc-badges"><span class="l-badge">Antasari</span><span class="l-badge">Taman Mini</span></div>
+          <div class="loc-badges"><a href="#lok-antasari" class="l-badge">Antasari</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1703,7 +1723,7 @@
                 <div class="doc-r">
                   <h3>dr. Annisa Rahmania Yulman, Sp.A, Subsp.GH (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Gastrohepatologi Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Menangani gangguan saluran cerna, hati, empedu, dan pankreas anak: muntah berulang, diare kronis, konstipasi, nyeri perut, hingga kuning pada mata atau kulit.</p>
                 </div>
               </div>
@@ -1715,7 +1735,7 @@
                 <div class="doc-r">
                   <h3>dr. Barry Army Bakry, Sp. A, Subsp.GH</h3>
                   <span class="doc-role-badge anchor">Subspesialis Gastrohepatologi</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Evaluasi klinis menyeluruh pada anak dengan komplikasi penyakit sistemik dan cerna.</p>
                 </div>
               </div>
@@ -1735,7 +1755,7 @@
           <div class="svc"><h4>Kanker Padat pada Anak</h4><p>Penanganan tumor padat secara terpadu, seperti kanker otak, tulang, otot, dan neuroblastoma.</p></div>
           <div class="svc"><h4>Tindakan Kemoterapi Anak</h4><p>Pemberian kemoterapi yang disesuaikan secara aman (melalui infus, suntikan, maupun obat oral).</p></div>
           <div class="svc"><h4>Kelainan Darah & Deteksi Dini</h4><p>Evaluasi kelainan darah kronis serta skrining edukasi untuk gejala awal keganasan pada anak.</p></div>
-          <div class="loc-badges"><span class="l-badge">Saharjo</span></div>
+          <div class="loc-badges"><a href="#lok-saharjo" class="l-badge">Saharjo</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1746,7 +1766,7 @@
                 <div class="doc-r">
                   <h3>dr. Catur Sapariyanto, Sp.A, Subsp.H.Onk. (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Hematologi Onkologi Anak</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Dokter Spesialis Anak Konsultan Hematologi Onkologi yang berdedikasi khusus pada penanganan kasus kanker dan kelainan darah pada anak-anak. Layanan beliau berfokus pada tata laksana komprehensif untuk kanker darah (leukemia) dan kanker padat (seperti kanker otak, tulang, dan otot). Beliau juga menyediakan layanan tindakan kemoterapi anak, edukasi skrining deteksi dini gejala kanker pada anak, serta manajemen nutrisi spesifik bagi pasien anak dalam masa terapi.</p>
                 </div>
               </div>
@@ -1758,7 +1778,7 @@
                 <div class="doc-r">
                   <h3>dr. Novie A. Chozie, Sp.A (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Hematologi Onkologi Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Ahli kanker anak dan gangguan pendarahan, lulusan FKUI-RSCM. Berperan dalam memajukan perawatan hemofilia dan onkologi anak di tingkat nasional.</p>
                 </div>
               </div>
@@ -1798,7 +1818,7 @@
           <div class="svc-list-title">Yang Kami Tangani</div>
           <div class="svc"><h4>Bayi Prematur &amp; Berat Lahir Rendah</h4><p>Perawatan intensif dan pemantauan fungsi vital di inkubator.</p></div>
           <div class="svc"><h4>Neonatus Kondisi Kritis</h4><p>Evaluasi dan tata laksana darurat berbasis bukti ilmiah.</p></div>
-          <div class="loc-badges"><span class="l-badge">Saharjo</span><span class="l-badge">Duren Tiga</span><span class="l-badge">Taman Mini</span></div>
+          <div class="loc-badges"><a href="#lok-saharjo" class="l-badge">Saharjo</a><a href="#lok-duren-tiga" class="l-badge">Duren Tiga</a><a href="#lok-taman-mini" class="l-badge">Taman Mini</a></div>
         </div>
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
@@ -1809,7 +1829,7 @@
                 <div class="doc-r">
                   <h3>dr. Marlina Tanjung, Sp.A, Subsp.Neo</h3>
                   <span class="doc-role-badge anchor">Subspesialis Neonatologi</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-taman-mini">Taman Mini</a></div>
                   <p class="doc-bio">Perawatan bayi baru lahir kritis, prematur, berat badan lahir rendah, dan kelainan bawaan yang memerlukan perawatan intensif di NICU.</p>
                 </div>
               </div>
@@ -1821,7 +1841,7 @@
                 <div class="doc-r">
                   <h3>dr. Eric Gultom, Sp.A(K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Neonatologi</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Subspesialis Neonatologi. Merawat bayi baru lahir, terutama yang lahir prematur atau dengan kondisi medis serius yang menuntut respons cepat.</p>
                 </div>
               </div>
@@ -1833,7 +1853,7 @@
                 <div class="doc-r">
                   <h3>dr. Meirdhania Andina, Sp.A</h3>
                   <span class="doc-role-badge">Fellow NICU</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-saharjo">Saharjo</a></div>
                   <p class="doc-bio">Pemantauan tumbuh kembang, pencegahan penyakit, dan penanganan kondisi medis anak, dengan keahlian tambahan di perawatan intensif neonatal (NICU).</p>
                 </div>
               </div>
@@ -1845,7 +1865,7 @@
                 <div class="doc-r">
                   <h3>dr. Jeannette Mila Hardiani C, Sp.A, M.Kes</h3>
                   <span class="doc-role-badge">Spesialis Anak (Observasi Pascasalin)</span>
-                  <div class="doc-loc">&#128205; Duren Tiga</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-duren-tiga">Duren Tiga</a></div>
                   <p class="doc-bio">Pemantauan tumbuh kembang menyeluruh, imunisasi, dan penanganan penyakit anak berbasis bukti, dengan penekanan pada edukasi nutrisi dan pola asuh.</p>
                 </div>
               </div>
@@ -1857,7 +1877,7 @@
                 <div class="doc-r">
                   <h3>dr. Johnny Nurman, Sp.A</h3>
                   <span class="doc-role-badge">Spesialis Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-antasari">Antasari</a></div>
                   <p class="doc-bio">Lebih dari 18 tahun pengalaman di Jakarta. Memadukan pemantauan tumbuh kembang, panduan nutrisi, program vaksinasi, dan keahlian perawatan kritis.</p>
                 </div>
               </div>
@@ -1869,7 +1889,7 @@
                 <div class="doc-r">
                   <h3>dr. Arum Gunarsih, Sp.A (K)</h3>
                   <span class="doc-role-badge anchor">Konsultan Neonatologi</span>
-                  <div class="doc-loc">&#128205; Tangerang</div>
+                  <div class="doc-loc">&#128205; <a href="#lok-tangerang">Tangerang</a></div>
                   <p class="doc-bio">Konsultan neonatologi untuk bayi usia 0&ndash;28 hari yang kritis atau berisiko tinggi &mdash; prematur, berat badan lahir rendah, hingga gangguan fungsi organ.</p>
                 </div>
               </div>
@@ -2012,7 +2032,7 @@
 </div>
 
 <!-- MAPS LOKASI -->
-<div class="section-locations">
+<div class="section-locations" id="lokasi">
   <div class="loc-header">
     <div class="loc-icon" style="background:transparent; box-shadow:none;">
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--bw-purple);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -2020,7 +2040,7 @@
     <h2>Lokasi Cabang & Rumah Sakit</h2>
   </div>
   <div class="loc-grid">
-    <div class="loc-card">
+    <div class="loc-card" id="lok-antasari">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0476497129243!2d106.8049320108789!3d-6.257453693704912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f178154d6131%3A0xe7b8b4d2224dd2ff!2sBrawijaya%20Hospital%20-%20Antasari!5e0!3m2!1sen!2sid!4v1781021243684!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
         <div>
@@ -2033,7 +2053,7 @@
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Antasari" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
       </div>
     </div>
-    <div class="loc-card">
+    <div class="loc-card" id="lok-saharjo">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.296532465174!2d106.84533031087862!3d-6.224576793737477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3215b75cf25%3A0xe1fecf66ecaccfe9!2sBrawijaya%20Hospital%20-%20Saharjo!5e0!3m2!1sen!2sid!4v1781021259115!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
         <div>
@@ -2046,7 +2066,7 @@
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Saharjo" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
       </div>
     </div>
-    <div class="loc-card">
+    <div class="loc-card" id="lok-taman-mini">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7965111980693!2d106.87769261087934!3d-6.290455093672298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f31406db8a6f%3A0x36452fd0e564d58b!2sBrawijaya%20Hospital%20-%20Taman%20Mini!5e0!3m2!1sen!2sid!4v1781021278923!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
         <div>
@@ -2059,7 +2079,7 @@
         <a href="https://maps.google.com/?q=Brawijaya+Clinic+Taman+Mini" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
       </div>
     </div>
-    <div class="loc-card">
+    <div class="loc-card" id="lok-duren-tiga">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.079346398817!2d106.83853261087884!3d-6.253276193709037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3ca08d09b6d%3A0x7ef3282dd7f49210!2sBrawijaya%20Hospital%20-%20Duren%20Tiga!5e0!3m2!1sen!2sid!4v1781021302419!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
         <div>
@@ -2072,7 +2092,7 @@
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Duren+Tiga" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
       </div>
     </div>
-    <div class="loc-card">
+    <div class="loc-card" id="lok-depok">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0067385318494!2d106.74046341088005!3d-6.393131193570673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e8b771b6bbd7%3A0x811223612e5c10ef!2sBrawijaya%20Hospital%20-%20Depok!5e0!3m2!1sen!2sid!4v1781021314314!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
         <div>
@@ -2085,7 +2105,7 @@
         <a href="https://maps.google.com/?q=Brawijaya+Hospital+Depok" target="_blank" class="loc-btn">🧭 Lihat di Google Maps</a>
       </div>
     </div>
-    <div class="loc-card">
+    <div class="loc-card" id="lok-tangerang">
       <div class="loc-map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2779853337665!2d106.68092371087874!3d-6.227032793735041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa2d00298dcb%3A0xab0f66fdd045589c!2sBrawijaya%20Hospital%20-%20Tangerang!5e0!3m2!1sen!2sid!4v1781021332090!5m2!1sen!2sid" loading="lazy" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="loc-content">
         <div>
@@ -2099,14 +2119,18 @@
       </div>
     </div>
   </div>
+  <div class="loc-back">
+    <a href="#cakupan" class="btn btn-back">&#8593; Kembali ke Daftar Layanan</a>
+  </div>
 </div>
 
+<div class="closing">
 <!-- FINAL CTA -->
 <section class="final-cta" id="kontak">
-  <h2>Konsultasikan Kesehatan Anak Anda</h2>
+  <h2>Percayakan Kesehatan Anak Anda pada Brawijaya Comprehensive Pediatric Center (CPC)</h2>
+  <p>Pusat pelayanan anak lengkap: satu tim, satu alur penanganan &mdash; dari imunisasi rutin hingga subspesialis dan NICU. 90+ dokter untuk anak di enam lokasi Jakarta, Depok, dan Tangerang, siap mendampingi sejak keluhan pertama.</p>
   <div class="btn-row">
     <a href="https://wa.me/6281514150160?text=Halo%2C%20saya%20lihat%20di%20web%20BCPC%20dan%20ingin%20membuat%20janji%20temu%20di%20Brawijaya%20Comprehensive%20Pediatric%20Center." class="btn btn-white">WhatsApp Reservasi</a>
-    
   </div>
 </section>
 
@@ -2119,6 +2143,7 @@
     <p class="footer-copy">Copyright &copy; 2026 Brawijaya Hospital</p>
   </div>
 </footer>
+</div>
 
 <script>
   // SCROLL OFFSET — measured from the actual fixed chrome so it stays correct on every screen size
