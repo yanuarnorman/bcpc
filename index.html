@@ -301,6 +301,18 @@
   .closing::before{content:'';position:absolute;top:-25%;left:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(201,162,39,0.16) 0%,transparent 70%);border-radius:50%;pointer-events:none}
   .closing > *{position:relative;z-index:1}
 
+  /* POPUP LOKASI */
+  .loc-modal{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:20px}
+  .loc-modal[hidden]{display:none}
+  .loc-modal__backdrop{position:absolute;inset:0;background:rgba(31,20,40,.62)}
+  .loc-modal__panel{position:relative;z-index:1;width:100%;max-width:460px;max-height:86vh;overflow:auto;background:#fff;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:locPop .22s ease}
+  @keyframes locPop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+  .loc-modal__close{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.94);color:var(--bw-purple-deep);font-size:24px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  .loc-modal__close:hover{background:var(--bw-purple);color:#fff}
+  .loc-modal__body .loc-card{border:none;box-shadow:none;border-radius:24px;transform:none;padding-bottom:26px}
+  .loc-modal__body .loc-card:hover{transform:none;box-shadow:none;border-color:transparent}
+  .loc-modal__body .loc-map-container{height:210px}
+
   /* FINAL CTA */
   .final-cta{background:none;text-align:center;padding:100px 24px 80px;color:#fff;position:relative;overflow:visible}
   .final-cta h2{font-size:36px;color:#fff;margin-bottom:20px;max-width:680px;margin-left:auto;margin-right:auto}
@@ -463,6 +475,9 @@
     .loc-content{padding:20px 20px 0}
     .loc-card{padding-bottom:22px;border-radius:20px}
     .loc-btn{width:100%;min-height:48px}
+    .loc-modal{padding:14px}
+    .loc-modal__panel{max-height:88vh;border-radius:20px}
+    .loc-modal__body .loc-map-container{height:180px}
 
     /* FINAL CTA + FOOTER */
     .final-cta{padding:64px var(--gutter) 48px}
@@ -2145,6 +2160,15 @@
 </footer>
 </div>
 
+<!-- POPUP LOKASI -->
+<div class="loc-modal" id="locModal" hidden>
+  <div class="loc-modal__backdrop" data-locclose></div>
+  <div class="loc-modal__panel" role="dialog" aria-modal="true" aria-label="Detail lokasi">
+    <button class="loc-modal__close" type="button" aria-label="Tutup" data-locclose>&times;</button>
+    <div class="loc-modal__body" id="locModalBody"></div>
+  </div>
+</div>
+
 <script>
   // SCROLL OFFSET — measured from the actual fixed chrome so it stays correct on every screen size
   function getScrollOffset() {
@@ -2253,6 +2277,53 @@
       scrollToEl(clusterEl);
     });
   });
+
+  // POPUP LOKASI — label unit membuka kartu lokasi tanpa meninggalkan halaman
+  (function(){
+    var modal=document.getElementById('locModal');
+    var body=document.getElementById('locModalBody');
+    if(!modal||!body) return;
+    var lastFocus=null;
+    function openLoc(id){
+      var card=document.getElementById(id);
+      if(!card) return false;
+      var clone=card.cloneNode(true);
+      clone.removeAttribute('id');
+      var fr=clone.querySelector('iframe');
+      if(fr) fr.setAttribute('loading','eager');
+      body.innerHTML='';
+      body.appendChild(clone);
+      lastFocus=document.activeElement;
+      modal.hidden=false;
+      document.body.style.overflow='hidden';
+      var btn=modal.querySelector('.loc-modal__close');
+      if(btn) btn.focus();
+      return true;
+    }
+    function closeLoc(){
+      modal.hidden=true;
+      body.innerHTML='';
+      document.body.style.overflow='';
+      if(lastFocus&&lastFocus.focus) lastFocus.focus();
+    }
+    document.addEventListener('click', function(e){
+      var link=e.target.closest?e.target.closest('a[href^="#lok-"]'):null;
+      if(link){
+        if(openLoc(link.getAttribute('href').slice(1))){
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        return;
+      }
+      if(e.target.closest&&e.target.closest('[data-locclose]')){
+        e.preventDefault();
+        closeLoc();
+      }
+    }, true);
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape' && !modal.hidden) closeLoc();
+    });
+  })();
 </script>
 
 </body>
