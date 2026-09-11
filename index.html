@@ -32,7 +32,7 @@
 <meta name="twitter:image:alt" content="Brawijaya Comprehensive Pediatric Center">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bw-purple:#5E2D79;--bw-purple-light:#7A4A95;--bw-purple-soft:#F4EEF8;--bw-purple-deep:#3F1C54;
@@ -178,7 +178,10 @@
   .doc-loc{font-size:12px;color:var(--text-muted);font-weight:500}
   .doc-bio{font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:20px;flex-grow:1;}
   
-  .doc-detail-box{background:var(--bg-soft);border-radius:12px;padding:16px;border:1px solid var(--border);margin-top:auto;}
+  .doc-detail-box{margin-top:auto;padding-top:14px}
+  .btn-sched{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:46px;padding:12px 16px;border-radius:12px;border:1.5px solid var(--bw-purple);background:#fff;color:var(--bw-purple);font-family:'Inter',sans-serif;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s ease,color .2s ease}
+  .btn-sched:hover{background:var(--bw-purple);color:#fff}
+  .btn-sched .ic{width:17px;height:17px;flex:0 0 17px;fill:currentColor}
   .doc-detail-cols{display:grid;gap:14px}
   .ddl-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dark);margin-bottom:6px}
   .ddl-text{font-size:13px;line-height:1.5;color:var(--text-muted);margin-bottom:12px;}
@@ -293,8 +296,11 @@
   .final-cta p{color:rgba(255,255,255,.9);margin-bottom:40px;font-size:18px;max-width:720px;margin-left:auto;margin-right:auto}
   .final-cta .btn-row{justify-content:center}
   
-  footer{background:#1F1F1F;color:rgba(255,255,255,.6);text-align:center;padding:40px 24px;font-size:13.5px}
-  .anniversary-badge{display:inline-block;margin-top:16px;padding:6px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:50px;font-size:12px;letter-spacing:0.05em;color:var(--accent)}
+  footer{background:#4D2758;color:#fff;text-align:center;padding:64px var(--gutter)}
+  .footer-brand{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;margin-bottom:24px}
+  .footer-logo{height:54px;width:auto;filter:brightness(0) invert(1)}
+  .footer-tagline{font-family:'Caveat Brush','DM Sans',cursive;font-size:46px;line-height:1;color:#fff;transform:translateY(-2px)}
+  .footer-copy{font-size:13.5px;color:rgba(255,255,255,.72);margin:0}
 
   /* MATRIX LEGEND (mobile only) */
   .matrix-legend{display:none;margin-top:16px;font-size:13px;line-height:1.6;color:var(--text-muted);text-align:center}
@@ -452,7 +458,10 @@
     .final-cta h2{font-size:clamp(24px,6.4vw,30px)}
     .final-cta p{font-size:16px;margin-bottom:28px}
     .final-cta .btn-row{align-items:stretch}
-    footer{padding:32px var(--gutter) 96px}
+    footer{padding:44px var(--gutter) 96px}
+    .footer-brand{gap:14px;margin-bottom:18px}
+    .footer-logo{height:38px}
+    .footer-tagline{font-size:32px}
 
     /* FLOATING WHATSAPP */
     .floating-wa{width:54px;height:54px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 6px 20px rgba(37,211,102,.4)}
@@ -501,6 +510,7 @@
 </style>
 </head>
 <body>
+<svg style="display:none" aria-hidden="true"><symbol id="ic-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol></svg>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -521,10 +531,10 @@
   </button>
   <div class="subnav-inner" id="subnavMenu">
     <a href="#c-dasar" onclick="closeSubnav()">Kesehatan Dasar & Pertumbuhan</a>
-    <a href="#c-indera" onclick="closeSubnav()">Panca Indera & Kulit</a>
+    <a href="#c-indera" onclick="closeSubnav()">THT, Kulit, Alergi, Mata &amp; Gigi</a>
     <a href="#c-bedah" onclick="closeSubnav()">Bedah & Tulang</a>
-    <a href="#c-organ" onclick="closeSubnav()">Subspesialis Organ Dalam</a>
-    <a href="#c-nicu" onclick="closeSubnav()">Perawatan Kritis (NICU)</a>
+    <a href="#c-organ" onclick="closeSubnav()">Organ Dalam</a>
+    <a href="#c-nicu" onclick="closeSubnav()">Perawatan Neonatal (NICU)</a>
   </div>
 </div>
 
@@ -600,7 +610,7 @@
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-2">Ruam &amp; alergi kulit</a>
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-1">Mendengkur / amandel</a>
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-1">Infeksi telinga berulang</a>
-          <a href="#c-dasar" class="chip triage-chip" data-tab="tab-dasar-2">Diare berulang</a>
+          <a href="#c-organ" class="chip triage-chip" data-tab="tab-organ-4">Diare berulang</a>
           <a href="#c-indera" class="chip triage-chip" data-tab="tab-indera-3">Mata juling</a>
         </div>
       </div>
@@ -658,7 +668,7 @@
             <td class="yes"><a href="#c-dasar" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-indera" class="triage-chip">Panca Indera & Kulit Anak</a></td>
+            <td><a href="#c-indera" class="triage-chip">THT, Kulit, Alergi, Mata & Gigi Anak</a></td>
             <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="yes"><a href="#c-indera" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
@@ -676,7 +686,7 @@
             <td class="yes"><a href="#c-bedah" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
           </tr>
           <tr>
-            <td><a href="#c-organ" class="triage-chip">Subspesialis Organ Dalam</a></td>
+            <td><a href="#c-organ" class="triage-chip">Organ Dalam</a></td>
             <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="yes"><a href="#c-organ" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="na">&ndash;</td>
@@ -685,7 +695,7 @@
             <td class="na">&ndash;</td>
           </tr>
           <tr>
-            <td><a href="#c-nicu" class="triage-chip">Perawatan Kritis (NICU)</a></td>
+            <td><a href="#c-nicu" class="triage-chip">Perawatan Neonatal (NICU)</a></td>
             <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
             <td class="yes"><a href="#c-nicu" title="Lihat Layanan" class="y triage-chip">&#10003;</a></td>
@@ -712,86 +722,95 @@
 
     <!-- TABS NAV -->
     <div class="tab-nav">
-      <button class="tab-btn active" onclick="openTab(event, 'tab-dasar-1')">Imunisasi & Vaksinasi</button>
+      <button class="tab-btn active" onclick="openTab(event, 'tab-dasar-3')">Tumbuh Kembang & Saraf</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-dasar-2')">Nutrisi & Infeksi</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab-dasar-3')">Tumbuh Kembang & Saraf</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab-dasar-4')">Screening & MCU</button>
       <button class="tab-btn" onclick="openTab(event, 'tab-dasar-5')">Hormon & Endokrin</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-dasar-4')">Screening & MCU</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-dasar-1')">Imunisasi & Vaksinasi</button>
     </div>
 
     <!-- TAB 1: IMUNISASI -->
-    <div class="tab-pane active" id="tab-dasar-1">
+    <div class="tab-pane active" id="tab-dasar-3">
       <div class="pane-grid">
-        <!-- Kolom Kiri: Layanan -->
         <div>
-          <div class="svc-list-title">Yang Kami Layani</div>
-          <div class="svc"><h4>Imunisasi Dasar Lengkap</h4><p>Seluruh imunisasi wajib sesuai jadwal rekomendasi Ikatan Dokter Anak Indonesia (IDAI), dari bayi baru lahir hingga usia sekolah.</p></div>
-          <div class="svc"><h4>Imunisasi Tambahan &amp; Pilihan</h4><p>Vaksin di luar program dasar yang direkomendasikan sesuai kondisi dan kebutuhan anak.</p></div>
-          <div class="svc"><h4>Imunisasi Pengejaran (Catch-Up)</h4><p>Penyusunan ulang jadwal bagi anak yang imunisasinya sempat tertinggal, tanpa perlu mengulang dari awal.</p></div>
-          <div class="svc"><h4>Konsultasi Pra-Imunisasi</h4><p>Pemeriksaan kondisi anak sebelum vaksin diberikan, termasuk penjelasan efek samping yang wajar.</p></div>
+          <div class="svc-list-title">Yang Kami Tangani</div>
+          <div class="svc"><h4>Pemantauan Pertumbuhan Rutin</h4><p>Evaluasi berkala tinggi, berat, lingkar kepala, dan pencapaian milestone sesuai usia anak.</p></div>
+          <div class="svc"><h4>Keterlambatan Bicara &amp; Perkembangan</h4><p>Anak belum bicara sesuai usia, belum berjalan, atau tertinggal dari tahapan yang seharusnya.</p></div>
+          <div class="svc"><h4>Gangguan Perkembangan Otak Anak</h4><p>Evaluasi perkembangan otak usia dini, termasuk kondisi yang berkaitan dengan kesehatan neuroimun.</p></div>
+          <div class="svc"><h4>Kejang &amp; Gangguan Saraf Anak</h4><p>Kejang demam, kejang berulang, dan keluhan saraf lain yang memerlukan evaluasi khusus.</p></div>
           <div class="loc-badges">
-            <span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span><span class="l-badge">Duren Tiga</span><span class="l-badge">Taman Mini</span><span class="l-badge">Depok</span><span class="l-badge">Tangerang</span>
+            <span class="l-badge">Antasari</span><span class="l-badge">Depok</span>
           </div>
         </div>
-        <!-- Kolom Kanan: Dokter -->
         <div>
-          <div class="docs-title">Dokter Spesialis Anak Umum</div>
+          <div class="docs-title">Dokter yang Menangani</div>
           <div class="docs-box">
             <div class="doc">
-              <div class="doc-r">
-                  <h3>Tim Dokter Anak - Brawijaya Antasari</h3>
-                  <span class="doc-role-badge">Spesialis Anak</span>
-                  <p class="doc-bio">dr. Diah Pramita, Sp.A | dr. Gladys Rasidy, Sp.A | dr. Harsya Pradana Loeis, Sp.A | dr. Harun Arrasyid Rydha Albar, M.Kes, Sp.A | dr. Irma Rochima Puspita, Sp.A | dr. Lindana Sastra, Sp.A | dr. Margareta Komalasari, Sp.A | dr. Natia Anjarsari W, Sp.A | dr. Reza Abdussalam, Sp.A | dr. Sander D. Teddy, Sp.A.</p>
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="AD"><img src="https://dte49v1irn0nj.cloudfront.net/assets/7ef5722a-4b8a-41e2-bb2e-04c1bf26a07d?width=600&quality=75&fit=cover&format=webp" alt="dr. Attila Dewanti, Sp.A(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. Attila Dewanti, Sp.A(K)</h3>
+                  <span class="doc-role-badge anchor">Konsultan Anak</span>
+                  <div class="doc-loc">&#128205; Antasari</div>
+                  <p class="doc-bio">Mendalami perkembangan otak usia dini dan neuroimun. Menjawab pertanyaan kritis: apakah keterlambatan anak wajar atau butuh intervensi.</p>
+                </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Attila%20Dewanti%2C%20Sp.A%28K%29%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
-              <div class="doc-r">
-                  <h3>Tim Dokter Anak - Brawijaya Duren Tiga</h3>
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="LS"><img src="https://dte49v1irn0nj.cloudfront.net/assets/5ca10e74-3042-4cb0-a5db-0cbd9ca24795?width=600&quality=75&fit=cover&format=webp" alt="dr. Lindana Sastra, Sp.A" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. Lindana Sastra, Sp.A</h3>
                   <span class="doc-role-badge">Spesialis Anak</span>
-                  <p class="doc-bio">dr. Ari Prayogo, Sp.A | dr. Nathalia Ningrum, Sp.A, AIFO-K | dr. Dhika Claresta, Sp.A | dr. Nadia Qoriah Firdausy, M.Sc, Sp.A | dr. Ridha Kurnia Tejasari, M.Kes, Sp.A | dr. Karina Faisha, Sp.A | dr. Fitria Mayasari, Sp.A | dr. Febiona Tyfanie, Sp.A | dr. Dyah Istikowati, Sp.A.</p>
+                  <div class="doc-loc">&#128205; Antasari</div>
+                  <p class="doc-bio">Tiga dekade merawat anak dengan pendekatan hangat berorientasi keluarga, dari pencegahan hingga pemantauan jangka panjang.</p>
+                </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Lindana%20Sastra%2C%20Sp.A%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
-              <div class="doc-r">
-                  <h3>Tim Dokter Anak - Brawijaya Taman Mini</h3>
-                  <span class="doc-role-badge">Spesialis Anak</span>
-                  <p class="doc-bio">dr. Gendis, Sp.A | dr. Velanie Frida Batubara, Sp.A | dr. Lucky Yogasatria, Sp.A | dr. Tania Paramita, Sp.A | dr. Rizky Amrullah Nasution, Sp.A | dr. Desrinawati, Sp.A.</p>
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="AW"><img src="https://dte49v1irn0nj.cloudfront.net/assets/0c4b89fc-a18c-4c80-ac6c-9fca9ac06be8?width=600&quality=75&fit=cover&format=webp" alt="dr. Alinda Rubiati Wibowo, Sp.A(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. Alinda Rubiati Wibowo, Sp.A(K)</h3>
+                  <span class="doc-role-badge anchor">Konsultan Neurologi Anak</span>
+                  <div class="doc-loc">&#128205; Depok</div>
+                  <p class="doc-bio">Ahli dalam menangani masalah saraf anak, evaluasi kejang, dan deteksi gangguan fungsi neurologis pada fase perkembangan.</p>
+                </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Alinda%20Rubiati%20Wibowo%2C%20Sp.A%28K%29%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
-              <div class="doc-r">
-                  <h3>Tim Dokter Anak - Brawijaya Saharjo</h3>
-                  <span class="doc-role-badge">Spesialis Anak</span>
-                  <p class="doc-bio">dr. Diana Mustika Chandra, Sp.A | dr. Annisa Nur Aini, Sp.A.</p>
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="LA"><img src="https://dte49v1irn0nj.cloudfront.net/assets/0663c400-4bf5-481b-9592-a2f7e4b4da2b?width=600&quality=75&fit=cover&format=webp" alt="dr. Lestaria Aryanti, Sp.KFR.Ped(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. Lestaria Aryanti, Sp.KFR.Ped(K)</h3>
+                  <span class="doc-role-badge anchor">Konsultan Rehab Anak</span>
+                  <div class="doc-loc">&#128205; Depok</div>
+                  <p class="doc-bio">Pemulihan anak berbeda dari orang dewasa &mdash; terapinya harus mengikuti tahap perkembangan, bukan sekadar mengembalikan fungsi. dr. Lestaria adalah Konsultan Rehabilitasi Medik dengan pendalaman pediatrik, lulusan Universitas Indonesia. Menangani pemulihan pasca-cedera dan patah tulang hingga terapi bicara, terapi okupasi, dan terapi memori &mdash; program yang menjadi kunci bagi anak dengan keterlambatan perkembangan.</p>
+                </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Lestaria%20Aryanti%2C%20Sp.KFR.Ped%28K%29%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
-              <div class="doc-r">
-                  <h3>Tim Dokter Anak - Brawijaya Depok</h3>
-                  <span class="doc-role-badge">Spesialis Anak</span>
-                  <p class="doc-bio">dr. Nadine Shakina Tabit, Sp.A, M.Kes | dr. Ambarsari Sri Nirmaladewi, Sp.A | dr. Dwi Kartika, Sp.A | dr. Indah Dina Maritha, Sp.A | dr. Stephanie Amanda, Sp.A | dr. Baitil Atiq, Sp.A.</p>
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="RS"><img src="https://dte49v1irn0nj.cloudfront.net/assets/3160d82a-dd87-468f-a1dd-c16c4bb57e42?width=600&quality=75&fit=cover&format=webp" alt="dr. RR. Amanda Soebadi, M.Med, Sp.A, Subsp.Neuro" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. RR. Amanda Soebadi, M.Med, Sp.A, Subsp.Neuro</h3>
+                  <span class="doc-role-badge anchor">Subspesialis Neurologi Anak</span>
+                  <div class="doc-loc">&#128205; Antasari</div>
+                  <p class="doc-bio">Ahli diagnostik EEG, manajemen kejang, dan penilaian perkembangan saraf anak. Aktif menyusun panduan neurologi anak melalui IDAI.</p>
+                </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-r">
-                  <h3>Tim Dokter Anak - Brawijaya Tangerang</h3>
-                  <span class="doc-role-badge">Spesialis Anak</span>
-                  <p class="doc-bio">dr. Galih Linggar Astu, Sp.A | dr. Iqbal Alamsah, Sp.A | dr. Lusiana Kartini Ningsih, Sp.A | dr. Masyitha, Sp.A | dr. Nanang Kusdiyan, Sp.A | dr. Pamela Kartoyo, Sp.A | dr. Prima Evita Juwitasari, Sp.A.</p>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20RR.%20Amanda%20Soebadi%2C%20M.Med%2C%20Sp.A%2C%20Subsp.Neuro%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Jadwalkan Imunisasi</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
         </div>
       </div>
     </div>
 
-    <!-- TAB 2: NUTRISI & INFEKSI -->
     <div class="tab-pane" id="tab-dasar-2">
       <div class="pane-grid">
         <div>
@@ -817,19 +836,7 @@
                   <p class="doc-bio">Berfokus mencari akar keluhan berulang: mengapa demam terus kembali, mengapa berat badan tidak kunjung naik. Praktik di 3 lokasi memudahkan akses bagi keluarga.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>3 Lokasi</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="DM"><img src="https://dte49v1irn0nj.cloudfront.net/assets/cf8963da-27a9-4be3-98f1-cb7bc2d2a367?width=600&quality=75&fit=cover&format=webp" alt="dr. Dina Muktiarti, Sp.A, Subsp.AI" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Dina Muktiarti, Sp.A, Subsp.AI</h3>
-                  <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
-                  <p class="doc-bio">Keahlian khusus dalam menangani kasus alergi kompleks dan gangguan sistem kekebalan tubuh pada anak.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Gladys%20Rasidy%2C%20Sp.A%20di%20Brawijaya%20Antasari%20%C2%B7%20Saharjo%20%C2%B7%20T.%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -841,19 +848,7 @@
                   <p class="doc-bio">Salah satu dari sedikit subspesialis nutrisi dan penyakit metabolik anak di Indonesia. Menangani kondisi metabolik umum maupun langka, serta perencanaan nutrisi untuk mendukung tumbuh kembang.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="RA"><img src="https://dte49v1irn0nj.cloudfront.net/assets/20ada649-dc52-4ae1-8ef7-e929b69cbf7a?width=600&quality=75&fit=cover&format=webp" alt="dr. Rizqi Amalia, Sp.A, Subsp.AI" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Rizqi Amalia, Sp.A, Subsp.AI</h3>
-                  <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
-                  <p class="doc-bio">Menangani alergi dan gangguan sistem kekebalan tubuh pada anak, termasuk keluhan berulang yang berkaitan dengan infeksi dan alergi.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Yoga%20Devaera%2C%20Sp.A%2C%20Subsp.NPM%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -861,104 +856,6 @@
       </div>
     </div>
 
-    <!-- TAB 3: TUMBUH KEMBANG & SARAF -->
-    <div class="tab-pane" id="tab-dasar-3">
-      <div class="pane-grid">
-        <div>
-          <div class="svc-list-title">Yang Kami Tangani</div>
-          <div class="svc"><h4>Pemantauan Pertumbuhan Rutin</h4><p>Evaluasi berkala tinggi, berat, lingkar kepala, dan pencapaian milestone sesuai usia anak.</p></div>
-          <div class="svc"><h4>Keterlambatan Bicara &amp; Perkembangan</h4><p>Anak belum bicara sesuai usia, belum berjalan, atau tertinggal dari tahapan yang seharusnya.</p></div>
-          <div class="svc"><h4>Gangguan Perkembangan Otak Anak</h4><p>Evaluasi perkembangan otak usia dini, termasuk kondisi yang berkaitan dengan kesehatan neuroimun.</p></div>
-          <div class="svc"><h4>Kejang &amp; Gangguan Saraf Anak</h4><p>Kejang demam, kejang berulang, dan keluhan saraf lain yang memerlukan evaluasi khusus.</p></div>
-          <div class="loc-badges">
-            <span class="l-badge">Antasari</span><span class="l-badge">Depok</span>
-          </div>
-        </div>
-        <div>
-          <div class="docs-title">Dokter yang Menangani</div>
-          <div class="docs-box">
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="AD"><img src="https://dte49v1irn0nj.cloudfront.net/assets/7ef5722a-4b8a-41e2-bb2e-04c1bf26a07d?width=600&quality=75&fit=cover&format=webp" alt="dr. Attila Dewanti, Sp.A(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Attila Dewanti, Sp.A(K)</h3>
-                  <span class="doc-role-badge anchor">Konsultan Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
-                  <p class="doc-bio">Mendalami perkembangan otak usia dini dan neuroimun. Menjawab pertanyaan kritis: apakah keterlambatan anak wajar atau butuh intervensi.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="LS"><img src="https://dte49v1irn0nj.cloudfront.net/assets/5ca10e74-3042-4cb0-a5db-0cbd9ca24795?width=600&quality=75&fit=cover&format=webp" alt="dr. Lindana Sastra, Sp.A" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Lindana Sastra, Sp.A</h3>
-                  <span class="doc-role-badge">Spesialis Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
-                  <p class="doc-bio">Tiga dekade merawat anak dengan pendekatan hangat berorientasi keluarga, dari pencegahan hingga pemantauan jangka panjang.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Sel, Jum, Sab</span><span>Sel, Jum, Sab <span class="sched-todo">(jam belum ada)</span></span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="AW"><img src="https://dte49v1irn0nj.cloudfront.net/assets/0c4b89fc-a18c-4c80-ac6c-9fca9ac06be8?width=600&quality=75&fit=cover&format=webp" alt="dr. Alinda Rubiati Wibowo, Sp.A(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Alinda Rubiati Wibowo, Sp.A(K)</h3>
-                  <span class="doc-role-badge anchor">Konsultan Neurologi Anak</span>
-                  <div class="doc-loc">&#128205; Depok</div>
-                  <p class="doc-bio">Ahli dalam menangani masalah saraf anak, evaluasi kejang, dan deteksi gangguan fungsi neurologis pada fase perkembangan.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="LA"><img src="https://dte49v1irn0nj.cloudfront.net/assets/0663c400-4bf5-481b-9592-a2f7e4b4da2b?width=600&quality=75&fit=cover&format=webp" alt="dr. Lestaria Aryanti, Sp.KFR.Ped(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Lestaria Aryanti, Sp.KFR.Ped(K)</h3>
-                  <span class="doc-role-badge anchor">Konsultan Rehab Anak</span>
-                  <div class="doc-loc">&#128205; Depok</div>
-                  <p class="doc-bio">Pemulihan anak berbeda dari orang dewasa &mdash; terapinya harus mengikuti tahap perkembangan, bukan sekadar mengembalikan fungsi. dr. Lestaria adalah Konsultan Rehabilitasi Medik dengan pendalaman pediatrik, lulusan Universitas Indonesia. Menangani pemulihan pasca-cedera dan patah tulang hingga terapi bicara, terapi okupasi, dan terapi memori &mdash; program yang menjadi kunci bagi anak dengan keterlambatan perkembangan.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="RS"><img src="https://dte49v1irn0nj.cloudfront.net/assets/3160d82a-dd87-468f-a1dd-c16c4bb57e42?width=600&quality=75&fit=cover&format=webp" alt="dr. RR. Amanda Soebadi, M.Med, Sp.A, Subsp.Neuro" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. RR. Amanda Soebadi, M.Med, Sp.A, Subsp.Neuro</h3>
-                  <span class="doc-role-badge anchor">Subspesialis Neurologi Anak</span>
-                  <div class="doc-loc">&#128205; Antasari</div>
-                  <p class="doc-bio">Ahli diagnostik EEG, manajemen kejang, dan penilaian perkembangan saraf anak. Aktif menyusun panduan neurologi anak melalui IDAI.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-          </div>
-          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4: MCU -->
-    <div class="tab-pane" id="tab-dasar-4">
-      <div class="mcu-banner" id="paket-mcu">
-        <h3>Paket Medical Check-Up (MCU) &amp; Skrining</h3>
-        <p>Deteksi dini adalah perlindungan terbaik. Kami menyediakan berbagai pilihan paket pemeriksaan kesehatan yang disesuaikan dengan tahapan usia si kecil, dari bayi hingga remaja.</p>
-        <div class="mcu-box">
-          [Slot Placeholder: Detail Harga &amp; Layanan Paket MCU Anak akan ditempatkan di sini]
-        </div>
-        <div class="area-cta" style="margin-top:0; padding-top:0; border:none;">
-          <a href="#kontak" class="btn btn-primary">Tanyakan Detail Paket</a>
-          <a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 5: HORMON & ENDOKRIN -->
     <div class="tab-pane" id="tab-dasar-5">
       <div class="pane-grid">
         <div>
@@ -982,7 +879,7 @@
                   <p class="doc-bio">Salah satu dokter-ilmuwan paling dihormati di bidang endokrinologi anak di Indonesia. Dengan pengalaman hampir dua dekade, dr. Frida memadukan ketelitian akademis dan keunggulan klinis untuk menangani kondisi terkait hormon pada anak &mdash; perawakan pendek, pubertas dini, gangguan tiroid, hingga diabetes tipe 1. Beliau memegang posisi kepemimpinan di berbagai organisasi profesi dan konsisten mengadvokasi deteksi dini gangguan endokrin pada anak dan remaja.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Frida%20Soesanti%2C%20M.Sc%2C%20Ph.D%2C%20Sp.A%28K%29%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -994,7 +891,7 @@
                   <p class="doc-bio">Dokter Spesialis Anak dengan subspesialisasi Endokrinologi dan gelar Doktor. Menangani gangguan hormon dan pertumbuhan pada anak &mdash; dari perawakan pendek dan gangguan pubertas hingga kelainan metabolik yang memerlukan pemantauan jangka panjang.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20Dr.%20dr.%20Andi%20Nanis%20S.%2C%20Sp.A%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1006,13 +903,112 @@
                   <p class="doc-bio">Merancang strategi penanganan jangka panjang diabetes tipe 1 dan pubertas.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Ivens%20Zasanovaria%2C%20Sp.A%28K%29%20di%20Brawijaya%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
         </div>
       </div>
     </div>
+
+    <div class="tab-pane" id="tab-dasar-4">
+      <div class="mcu-banner" id="paket-mcu">
+        <h3>Paket Medical Check-Up (MCU) &amp; Skrining</h3>
+        <p>Deteksi dini adalah perlindungan terbaik. Kami menyediakan berbagai pilihan paket pemeriksaan kesehatan yang disesuaikan dengan tahapan usia si kecil, dari bayi hingga remaja.</p>
+        <div class="mcu-box">
+          [Slot Placeholder: Detail Harga &amp; Layanan Paket MCU Anak akan ditempatkan di sini]
+        </div>
+        <div class="area-cta" style="margin-top:0; padding-top:0; border:none;">
+          <a href="#kontak" class="btn btn-primary">Tanyakan Detail Paket</a>
+          <a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-dasar-1">
+      <div class="pane-grid">
+        <!-- Kolom Kiri: Layanan -->
+        <div>
+          <div class="svc-list-title">Yang Kami Layani</div>
+          <div class="svc"><h4>Imunisasi Dasar Lengkap</h4><p>Seluruh imunisasi wajib sesuai jadwal rekomendasi Ikatan Dokter Anak Indonesia (IDAI), dari bayi baru lahir hingga usia sekolah.</p></div>
+          <div class="svc"><h4>Imunisasi Tambahan &amp; Pilihan</h4><p>Vaksin di luar program dasar yang direkomendasikan sesuai kondisi dan kebutuhan anak.</p></div>
+          <div class="svc"><h4>Imunisasi Pengejaran (Catch-Up)</h4><p>Penyusunan ulang jadwal bagi anak yang imunisasinya sempat tertinggal, tanpa perlu mengulang dari awal.</p></div>
+          <div class="svc"><h4>Konsultasi Pra-Imunisasi</h4><p>Pemeriksaan kondisi anak sebelum vaksin diberikan, termasuk penjelasan efek samping yang wajar.</p></div>
+          <div class="loc-badges">
+            <span class="l-badge">Antasari</span><span class="l-badge">Saharjo</span><span class="l-badge">Duren Tiga</span><span class="l-badge">Taman Mini</span><span class="l-badge">Depok</span><span class="l-badge">Tangerang</span>
+          </div>
+        </div>
+        <!-- Kolom Kanan: Dokter -->
+        <div>
+          <div class="docs-title">Dokter Spesialis Anak Umum</div>
+          <div class="docs-box">
+            <div class="doc">
+              <div class="doc-r">
+                  <h3>Tim Dokter Anak - Brawijaya Antasari</h3>
+                  <span class="doc-role-badge">Spesialis Anak</span>
+                  <p class="doc-bio">dr. Diah Pramita, Sp.A | dr. Harsya Pradana Loeis, Sp.A | dr. Harun Arrasyid Rydha Albar, M.Kes, Sp.A | dr. Irma Rochima Puspita, Sp.A | dr. Margareta Komalasari, Sp.A | dr. Natia Anjarsari W, Sp.A | dr. Reza Abdussalam, Sp.A | dr. Sander D. Teddy, Sp.A.</p>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20anak%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-r">
+                  <h3>Tim Dokter Anak - Brawijaya Duren Tiga</h3>
+                  <span class="doc-role-badge">Spesialis Anak</span>
+                  <p class="doc-bio">dr. Ari Prayogo, Sp.A | dr. Nathalia Ningrum, Sp.A, AIFO-K | dr. Dhika Claresta, Sp.A | dr. Nadia Qoriah Firdausy, M.Sc, Sp.A | dr. Ridha Kurnia Tejasari, M.Kes, Sp.A | dr. Karina Faisha, Sp.A | dr. Fitria Mayasari, Sp.A | dr. Febiona Tyfanie, Sp.A | dr. Dyah Istikowati, Sp.A.</p>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20anak%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-r">
+                  <h3>Tim Dokter Anak - Brawijaya Taman Mini</h3>
+                  <span class="doc-role-badge">Spesialis Anak</span>
+                  <p class="doc-bio">dr. Gendis, Sp.A | dr. Velanie Frida Batubara, Sp.A | dr. Lucky Yogasatria, Sp.A | dr. Tania Paramita, Sp.A | dr. Rizky Amrullah Nasution, Sp.A | dr. Desrinawati, Sp.A.</p>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20anak%20di%20Brawijaya%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-r">
+                  <h3>Tim Dokter Anak - Brawijaya Saharjo</h3>
+                  <span class="doc-role-badge">Spesialis Anak</span>
+                  <p class="doc-bio">dr. Diana Mustika Chandra, Sp.A | dr. Annisa Nur Aini, Sp.A.</p>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20anak%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-r">
+                  <h3>Tim Dokter Anak - Brawijaya Depok</h3>
+                  <span class="doc-role-badge">Spesialis Anak</span>
+                  <p class="doc-bio">dr. Nadine Shakina Tabit, Sp.A, M.Kes | dr. Ambarsari Sri Nirmaladewi, Sp.A | dr. Dwi Kartika, Sp.A | dr. Indah Dina Maritha, Sp.A | dr. Stephanie Amanda, Sp.A | dr. Baitil Atiq, Sp.A.</p>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20anak%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-r">
+                  <h3>Tim Dokter Anak - Brawijaya Tangerang</h3>
+                  <span class="doc-role-badge">Spesialis Anak</span>
+                  <p class="doc-bio">dr. Galih Linggar Astu, Sp.A | dr. Iqbal Alamsah, Sp.A | dr. Lusiana Kartini Ningsih, Sp.A | dr. Masyitha, Sp.A | dr. Nanang Kusdiyan, Sp.A | dr. Pamela Kartoyo, Sp.A | dr. Prima Evita Juwitasari, Sp.A.</p>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20anak%20di%20Brawijaya%20Tangerang." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+          </div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Jadwalkan Imunisasi</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- TAB 2: NUTRISI & INFEKSI -->
+
+
+    <!-- TAB 3: TUMBUH KEMBANG & SARAF -->
+
+
+    <!-- TAB 4: MCU -->
+
+
+    <!-- TAB 5: HORMON & ENDOKRIN -->
+
 
   </div>
 </section>
@@ -1023,8 +1019,8 @@
 <section class="cluster" id="c-indera">
   <div class="container">
     <div class="cluster-header">
-      <h2>Panca Indera & Kulit Anak</h2>
-      <p>Pusat penanganan keluhan umum yang sering mengganggu kenyamanan keseharian anak: dari telinga, hidung, tenggorokan, mata, gigi, hingga kulit sensitif.</p>
+      <h2>THT, Kulit, Alergi, Mata &amp; Gigi Anak</h2>
+      <p>Pusat penanganan keluhan umum yang sering mengganggu kenyamanan keseharian anak: dari telinga, hidung, tenggorokan, mata, gigi, hingga kulit sensitif dan alergi.</p>
     </div>
 
     <div class="tab-nav">
@@ -1060,7 +1056,7 @@
                   <p class="doc-bio">Dengan pengalaman 13+ tahun, dikenal punya cara yang lembut dan komunikatif membuat anak lebih kooperatif saat pemeriksaan THT.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span>Sel, Kam 16:00&ndash;18:00</span></div><div class="sched-row"><span>Antasari</span><span>Rab, Jum 09:30&ndash;11:00</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Fairuz%20Balfas%2C%20Sp.THT-KL%20di%20Brawijaya%20Antasari%20%C2%B7%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1072,7 +1068,7 @@
                   <p class="doc-bio">Terampil menggunakan peralatan diagnostik terkini dengan pendekatan yang meminimalkan rasa tidak nyaman bagi anak.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Duren Tiga</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Tara%20Candida%2C%20Sp.THTBKL%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1084,7 +1080,7 @@
                   <p class="doc-bio">Menghadirkan standar bedah THT internasional (FICS) untuk keluhan hidung dan sinus anak di area Depok.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Fezzan%20Athama%2C%20Sp.THT-KL%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1096,7 +1092,7 @@
                   <p class="doc-bio">Pendekatannya cermat dan komunikatif &mdash; memastikan orang tua memahami kondisi anak sebelum memutuskan tindakan.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Tangerang</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Farryanto%20K.%2C%20Sp.THT-KL%20di%20Brawijaya%20Tangerang." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <!-- Smaller entries for the rest to save space -->
             <div class="doc">
@@ -1109,7 +1105,7 @@
                   <p class="doc-bio">Menangani infeksi telinga, masalah sinus, dan alergi hidung pada anak, dengan fokus menjaga fungsi pendengaran, penciuman, dan pernapasan tetap optimal.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Hamida%20Hayati%20Faisal%2C%20Sp.THT-BKL%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1121,7 +1117,7 @@
                   <p class="doc-bio">Diagnosis dan penanganan kondisi THT anak, mulai dari infeksi telinga dan masalah sinus hingga gangguan menelan dan suara.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo, Duren Tiga, Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Lidya%20Sabig%2C%20Sp.THT-KL%20di%20Brawijaya%20Saharjo%2C%20Duren%20Tiga%2C%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1133,7 +1129,7 @@
                   <p class="doc-bio">Konsultan Laring-Faring. Menangani gangguan suara (foniatri) dan gangguan menelan (disfagia), termasuk endoskopi laring dan rehabilitasi suara.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Duren Tiga</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20Dr.%20dr.%20Fauziah%20Fardizza%20Sp.THT-BKL%28K%29%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1145,7 +1141,7 @@
                   <p class="doc-bio">Berfokus pada gangguan pendengaran, sinusitis, alergi pernapasan, serta keluhan tenggorokan dan suara pada anak.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Sandhi%20Ari%20Susanti%2C%20Sp.THT-KL%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1157,7 +1153,7 @@
                   <p class="doc-bio">Menangani keluhan telinga, hidung, dan tenggorokan pada anak di Brawijaya Tangerang.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Tangerang</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Yurnita%20Arifin%2C%20Sp.THT-KL%20di%20Brawijaya%20Tangerang." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1169,7 +1165,7 @@
                   <p class="doc-bio">Menangani keluhan telinga, hidung, dan tenggorokan pada anak di Brawijaya Antasari.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Charlene%2C%20Sp.THT%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1200,7 +1196,7 @@
                   <p class="doc-bio">Kompetensi kuat merawat kondisi kulit sensitif dan eksim pada bayi.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Duren Tiga</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Keiko%20Yolanda%20Gunardi%2C%20Sp.DVE%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1212,19 +1208,19 @@
                   <p class="doc-bio">Pendekatan ramah membantu keluarga menerapkan perawatan kulit harian.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Duren Tiga</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Vidyani%20Adiningtyas%2C%20Sp.DV%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph" data-initials="RA"><img src="https://dte49v1irn0nj.cloudfront.net/assets/20ada649-dc52-4ae1-8ef7-e929b69cbf7a?width=600&quality=75&fit=cover&format=webp" alt="dr. Rizqi Amalia, Sp.A, Subsp.A.I" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-ph" data-initials="RA"><img src="https://dte49v1irn0nj.cloudfront.net/assets/20ada649-dc52-4ae1-8ef7-e929b69cbf7a?width=600&quality=75&fit=cover&format=webp" alt="dr. Rizqi Amalia, Sp.A, Subsp.AI" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
                 <div class="doc-r">
-                  <h3>dr. Rizqi Amalia, Sp.A, Subsp.A.I</h3>
+                  <h3>dr. Rizqi Amalia, Sp.A, Subsp.AI</h3>
                   <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <div class="doc-loc">&#128205; Antasari &middot; Taman Mini</div>
                   <p class="doc-bio">Mencari tahu mengapa sistem kekebalan bereaksi berlebihan dan memetakan alergi.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Rizqi%20Amalia%2C%20Sp.A%2C%20Subsp.AI%20di%20Brawijaya%20Antasari%20atau%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1236,7 +1232,19 @@
                   <p class="doc-bio">Lebih dari 19 tahun praktik klinis dengan spesialisasi dermatologi anak, didukung fellowship FINSDV dan FAADV.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Grace%20N.S.%20Wardhana%2C%20Sp.KK%2C%20FINSDV%2C%20FAADV%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="DM"><img src="https://dte49v1irn0nj.cloudfront.net/assets/cf8963da-27a9-4be3-98f1-cb7bc2d2a367?width=600&quality=75&fit=cover&format=webp" alt="dr. Dina Muktiarti, Sp.A, Subsp.AI" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. Dina Muktiarti, Sp.A, Subsp.AI</h3>
+                  <span class="doc-role-badge anchor">Subspesialis Alergi Imunologi</span>
+                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <p class="doc-bio">Keahlian khusus dalam menangani kasus alergi kompleks dan gangguan sistem kekebalan tubuh pada anak.</p>
+                </div>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Dina%20Muktiarti%2C%20Sp.A%2C%20Subsp.AI%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1267,7 +1275,7 @@
                   <p class="doc-bio">Kompetensi unggul mendeteksi kelainan refraksi sedini mungkin guna mencegah mata malas.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20M.%20Akbar%20Wicaksana%2C%20Sp.M%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1279,7 +1287,7 @@
                   <p class="doc-bio">Pendekatan hangat dan interaktif saat skrining mata balita hingga remaja.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Tangerang</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Puti%20Ayu%20Tiara%2C%20Sp.M%20di%20Brawijaya%20Tangerang." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1305,7 +1313,7 @@
                   <span class="doc-role-badge">Sp.KGA</span>
                   <p class="doc-bio">drg. Nila, Sp.KGA | drg. Tri Julianti, Sp.KGA | drg. Kusuma Pritta, Sp.KGA.</p>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20gigi%20anak%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-r">
@@ -1313,7 +1321,7 @@
                   <span class="doc-role-badge">Sp.KGA</span>
                   <p class="doc-bio">drg. Maryciela E., Sp.KGA | drg. Erni S., Sp.KGA | drg. Ulya A., Sp.KGA.</p>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20gigi%20anak%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-r">
@@ -1321,7 +1329,7 @@
                   <span class="doc-role-badge">Sp.KGA</span>
                   <p class="doc-bio">T.Mini: drg. Yunita, drg. Annisa, drg. Noor. | Depok: drg. Sekar Palupi.</p>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Jadwal per Dokter</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dokter%20gigi%20anak%20di%20Brawijaya%20T.%20Mini%20%26%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1371,7 +1379,7 @@
                   <p class="doc-bio">Menangani spektrum penuh bedah pediatrik, dari kelainan bawaan hingga gawat darurat.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Hardian%20Gunardi%2C%20Sp.B%2C%20Subsp.Ped%28K%29%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1383,7 +1391,7 @@
                   <p class="doc-bio">Keahlian prosedur minimal invasif (laparoskopi), hernia, dan trauma.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20Dr.%20dr.%20Riana%20Pauline%20Tamba%2C%20Sp.B%2C%20Subsp.Ped%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1395,7 +1403,7 @@
                   <p class="doc-bio">Prosedur minimal invasif seperti laparoskopi apendektomi, penanganan hernia, luka infeksi dan trauma, hingga koreksi kelainan bawaan.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Wulan%20Ayudyasari%2C%20Sp.B%2C%20Subsp.Ped%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1407,7 +1415,7 @@
                   <p class="doc-bio">Menangani tindakan bedah anak dari bayi baru lahir hingga remaja &mdash; apendektomi, herniotomi, sirkumsisi, serta bedah saluran cerna dan organ dalam.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Alifi%20Maulidyan%2C%20Sp.BA%2C%20Subsp.BA%20DA%28K%29%20di%20Brawijaya%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1419,7 +1427,7 @@
                   <p class="doc-bio">Bedah anak untuk kelainan bawaan, tumor pada anak, dan kondisi darurat, termasuk koreksi saluran cerna, urologi anak, dan trauma.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Duren Tiga</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Dina%20Perdanasari%2C%20Sp.BA%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1431,7 +1439,7 @@
                   <p class="doc-bio">Menangani kondisi bedah bawaan maupun didapat pada anak: kelainan organ dalam, kegawatdaruratan, dan koreksi kelainan fisik tertentu.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Rahmayeni%20Effendi%2C%20Sp.BA%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1443,7 +1451,7 @@
                   <p class="doc-bio">Evaluasi dan tindakan bedah anak untuk kelainan bawaan, gangguan saluran cerna dan saluran kemih, benjolan, dan trauma &mdash; dari pemeriksaan awal hingga pemantauan pascaoperasi.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Tangerang</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Fransisca%20Stefanie%2C%20Sp.BA%20di%20Brawijaya%20Tangerang." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1474,19 +1482,19 @@
                   <p class="doc-bio">Mendalami rekonstruksi deformitas kaki bengkok dan patah tulang anak, memastikan tulang sembuh selaras pertumbuhannya.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20M.%20Deryl%20Ivansyah%2C%20Sp.OT%2C%20Subsp.A%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
-                <div class="doc-ph" data-initials="P"><img src="https://dte49v1irn0nj.cloudfront.net/assets/272566ce-40dc-4510-b0de-97c66e2f7c8c?width=600&quality=75&fit=cover&format=webp" alt="dr. Paramita, Sp.OT" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-ph" data-initials="P"><img src="https://dte49v1irn0nj.cloudfront.net/assets/272566ce-40dc-4510-b0de-97c66e2f7c8c?width=600&quality=75&fit=cover&format=webp" alt="dr. Paramita Dyah Lasmana, Sp.OT" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
                 <div class="doc-r">
-                  <h3>dr. Paramita, Sp.OT</h3>
+                  <h3>dr. Paramita Dyah Lasmana, Sp.OT</h3>
                   <span class="doc-role-badge">Spesialis Bedah Ortopedi</span>
                   <div class="doc-loc">&#128205; Depok</div>
                   <p class="doc-bio">Penanganan cedera fisik, patah tulang, serta keluhan gerak sendi pada anak dengan presisi medis.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Depok</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Paramita%20Dyah%20Lasmana%2C%20Sp.OT%20di%20Brawijaya%20Depok." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1498,7 +1506,7 @@
                   <p class="doc-bio">Rehabilitasi medik anak untuk gangguan gerak dan fungsi, mendampingi pemulihan pasca cedera maupun tindakan ortopedi.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Widyastuti%20Retno%20Annisa%2C%20Sp.KFR%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1529,7 +1537,7 @@
                   <p class="doc-bio">Konsultan pencitraan anak dengan fokus pada ultrasonografi <em>bedside</em> untuk perawatan neonatal dan pediatrik. Memimpin inisiatif edukasi klinis nasional NeoPIN.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20Dr.%20dr.%20Evita%20KB%20Ifran%2C%20Sp.A%20%28K%29%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1546,14 +1554,15 @@
 <section class="cluster" id="c-organ">
   <div class="container">
     <div class="cluster-header">
-      <h2>Subspesialis Klinis (Organ Dalam)</h2>
+      <h2>Organ Dalam</h2>
       <p>Layanan diagnostik dan terapeutik lanjutan untuk kondisi spesifik pada organ vital anak yang membutuhkan pengawasan subspesialis konsultan.</p>
     </div>
 
     <div class="tab-nav">
       <button class="tab-btn active" onclick="openTab(event, 'tab-organ-1')">Jantung Anak</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab-organ-2')">Paru & Respirologi</button>
-      <button class="tab-btn" onclick="openTab(event, 'tab-organ-3')">Hematologi Onkologi</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-organ-2')">Pernapasan Anak</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-organ-4')">Pencernaan Anak</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-organ-3')">Darah &amp; Onkologi</button>
     </div>
 
     <!-- TAB 1: JANTUNG -->
@@ -1578,7 +1587,7 @@
                   <p class="doc-bio">Memastikan temuan murmur jantung dievaluasi dengan tepat &mdash; fisiologis atau kelainan yang perlu ditindaklanjuti.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Sarah%20Rafika%20N.%2C%20Sp.A%2C%20Subsp.Kardio%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1590,7 +1599,7 @@
                   <p class="doc-bio">Konsultan Jantung Anak lulusan Universitas Indonesia yang menangani penyakit jantung dan pembuluh darah pada bayi, anak, hingga remaja &mdash; mencakup kelainan jantung bawaan, penyakit jantung rematik, aritmia, dan gangguan tekanan darah.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Anisa%20Rahmadhany%2C%20Sp.A%2C%20Subsp.Kardio%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1602,7 +1611,19 @@
                   <p class="doc-bio">Mendalami intervensi dan pemantauan jangka panjang ekokardiografi. Latar belakang akademisnya memastikan setiap keputusan penanganan berpijak pada penelitian ilmiah terkini.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20Dr.%20dr.%20Winda%20Azwani%2C%20Sp.A%2C%20Subsp.Kardio%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="BR"><img src="https://dte49v1irn0nj.cloudfront.net/assets/26530213-5b1d-4e60-b0ba-f26427b27964?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)</h3>
+                  <span class="doc-role-badge anchor">Konsultan Bedah Jantung Anak &amp; Kongenital</span>
+                  <div class="doc-loc">&#128205; Saharjo</div>
+                  <p class="doc-bio">Ketika kelainan jantung bawaan memerlukan tindakan bedah, anak tidak perlu dirujuk keluar. Dr. dr. Budi Rahmat adalah Dokter Spesialis Bedah Kardiotoraks dan Vaskular dengan gelar Konsultan di bidang Bedah Jantung Pediatrik &amp; Kongenital, menangani koreksi kelainan struktur jantung pada bayi dan anak. Kehadirannya melengkapi alur penanganan jantung anak di Saharjo: dari diagnosis oleh kardiolog anak hingga tindakan bedah, seluruhnya dalam satu atap.</p>
+                </div>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20Dr.%20dr.%20Budi%20Rahmat%2C%20Sp.BTKV%2C%20Subsp.JPK%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1610,7 +1631,6 @@
       </div>
     </div>
 
-    <!-- TAB 2: PARU -->
     <div class="tab-pane" id="tab-organ-2">
       <div class="pane-grid">
         <div>
@@ -1622,18 +1642,6 @@
         <div>
           <div class="docs-title">Dokter yang Menangani</div>
           <div class="docs-box">
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="BR"><img src="https://dte49v1irn0nj.cloudfront.net/assets/26530213-5b1d-4e60-b0ba-f26427b27964?width=600&quality=75&fit=cover&format=webp" alt="Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>Dr. dr. Budi Rahmat, Sp.BTKV, Subsp.JPK(K)</h3>
-                  <span class="doc-role-badge anchor">Konsultan Bedah Jantung Anak &amp; Kongenital</span>
-                  <div class="doc-loc">&#128205; Saharjo</div>
-                  <p class="doc-bio">Ketika kelainan jantung bawaan memerlukan tindakan bedah, anak tidak perlu dirujuk keluar. Dr. dr. Budi Rahmat adalah Dokter Spesialis Bedah Kardiotoraks dan Vaskular dengan gelar Konsultan di bidang Bedah Jantung Pediatrik &amp; Kongenital, menangani koreksi kelainan struktur jantung pada bayi dan anak. Kehadirannya melengkapi alur penanganan jantung anak di Saharjo: dari diagnosis oleh kardiolog anak hingga tindakan bedah, seluruhnya dalam satu atap.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
               <div class="doc">
               <div class="doc-lay">
                 <div class="doc-ph" data-initials="RF"><img src="https://dte49v1irn0nj.cloudfront.net/assets/c30319b7-3efa-4c2d-958b-d7f763b64994?width=600&quality=75&fit=cover&format=webp" alt="dr. Rifan Fauzi, Sp.A(K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
@@ -1644,7 +1652,7 @@
                   <p class="doc-bio">Berfokus pada asma dan batuk kronis agar anak bisa aktif tanpa sesak.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Rifan%20Fauzi%2C%20Sp.A%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1656,19 +1664,7 @@
                   <p class="doc-bio">Mendiagnosis infeksi saluran napas bawah, pneumonia, dan kelainan paru. Mampu melakukan bronkoskopi untuk evaluasi saluran napas langsung.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
-            </div>
-            <div class="doc">
-              <div class="doc-lay">
-                <div class="doc-ph" data-initials="BB"><img src="https://dte49v1irn0nj.cloudfront.net/assets/2c86a028-100c-4ab9-a631-3881007b7b51?width=600&quality=75&fit=cover&format=webp" alt="dr. Barry Army Bakry, Sp. A, Subsp.GH" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
-                <div class="doc-r">
-                  <h3>dr. Barry Army Bakry, Sp. A, Subsp.GH</h3>
-                  <span class="doc-role-badge anchor">Subspesialis Gastrohepatologi</span>
-                  <div class="doc-loc">&#128205; Taman Mini</div>
-                  <p class="doc-bio">Evaluasi klinis menyeluruh pada anak dengan komplikasi penyakit sistemik dan cerna.</p>
-                </div>
-              </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Dimas%20Dwi%20Saputro%2C%20Sp.A%2C%20Subsp.Resp%20di%20Brawijaya%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1680,8 +1676,27 @@
                   <p class="doc-bio">Konsultan respirologi anak yang menangani asma, sesak berulang, dan gangguan pernapasan kronis pada anak.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Madeleine%20Ramdhani%20Jasin%2C%20Sp.A%28K%29%2C%20Subsp.Resp%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
+          </div>
+          <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-organ-4">
+      <div class="pane-grid">
+        <div>
+          <div class="svc-list-title">Yang Kami Tangani</div>
+          <div class="svc"><h4>Muntah &amp; Diare Berulang</h4><p>Muntah berulang dan diare kronis yang tidak kunjung membaik dengan penanganan biasa.</p></div>
+          <div class="svc"><h4>Sembelit &amp; Nyeri Perut</h4><p>Konstipasi, perut kembung, dan nyeri perut berulang pada anak.</p></div>
+          <div class="svc"><h4>Nafsu Makan &amp; Berat Badan</h4><p>Nafsu makan menurun dan berat badan turun yang berkaitan dengan masalah saluran cerna.</p></div>
+          <div class="svc"><h4>Gangguan Hati &amp; Empedu</h4><p>Kuning pada mata atau kulit, BAB berdarah, dan muntah darah yang memerlukan evaluasi hati, empedu, serta pankreas.</p></div>
+          <div class="loc-badges"><span class="l-badge">Antasari</span><span class="l-badge">Taman Mini</span></div>
+        </div>
+        <div>
+          <div class="docs-title">Dokter yang Menangani</div>
+          <div class="docs-box">
             <div class="doc">
               <div class="doc-lay">
                 <div class="doc-ph" data-initials="AY"><img src="https://dte49v1irn0nj.cloudfront.net/assets/50de6063-862f-44f1-afc8-3c453f8dcc44?width=600&quality=75&fit=cover&format=webp" alt="dr. Annisa Rahmania Yulman, Sp.A, Subsp.GH (K)" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
@@ -1692,7 +1707,19 @@
                   <p class="doc-bio">Menangani gangguan saluran cerna, hati, empedu, dan pankreas anak: muntah berulang, diare kronis, konstipasi, nyeri perut, hingga kuning pada mata atau kulit.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Annisa%20Rahmania%20Yulman%2C%20Sp.A%2C%20Subsp.GH%20%28K%29%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
+            </div>
+            <div class="doc">
+              <div class="doc-lay">
+                <div class="doc-ph" data-initials="BB"><img src="https://dte49v1irn0nj.cloudfront.net/assets/2c86a028-100c-4ab9-a631-3881007b7b51?width=600&quality=75&fit=cover&format=webp" alt="dr. Barry Army Bakry, Sp. A, Subsp.GH" loading="lazy" onerror="var p=this.closest('.doc-ph');p.classList.add('noimg');p.textContent=p.getAttribute('data-initials')||'';this.remove()"></div>
+                <div class="doc-r">
+                  <h3>dr. Barry Army Bakry, Sp. A, Subsp.GH</h3>
+                  <span class="doc-role-badge anchor">Subspesialis Gastrohepatologi</span>
+                  <div class="doc-loc">&#128205; Taman Mini</div>
+                  <p class="doc-bio">Evaluasi klinis menyeluruh pada anak dengan komplikasi penyakit sistemik dan cerna.</p>
+                </div>
+              </div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Barry%20Army%20Bakry%2C%20Sp.%20A%2C%20Subsp.GH%20di%20Brawijaya%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -1700,7 +1727,6 @@
       </div>
     </div>
 
-    <!-- TAB 3: HEMATOLOGI ONKOLOGI -->
     <div class="tab-pane" id="tab-organ-3">
       <div class="pane-grid">
         <div>
@@ -1724,9 +1750,7 @@
                   <p class="doc-bio">Dokter Spesialis Anak Konsultan Hematologi Onkologi yang berdedikasi khusus pada penanganan kasus kanker dan kelainan darah pada anak-anak. Layanan beliau berfokus pada tata laksana komprehensif untuk kanker darah (leukemia) dan kanker padat (seperti kanker otak, tulang, dan otot). Beliau juga menyediakan layanan tindakan kemoterapi anak, edukasi skrining deteksi dini gejala kanker pada anak, serta manajemen nutrisi spesifik bagi pasien anak dalam masa terapi.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="doc-detail-cols" style="grid-template-columns:1fr;">
-                    <div><div class="ddl-label">Jadwal Praktik Saharjo</div><div class="sched-row" style="border:none;"><span>Sel, Kam: 16.00-18.00 <br>Sab: 10.00-12.00</span></div></div>
-                  </div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Catur%20Sapariyanto%2C%20Sp.A%2C%20Subsp.H.Onk.%20%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1738,13 +1762,21 @@
                   <p class="doc-bio">Ahli kanker anak dan gangguan pendarahan, lulusan FKUI-RSCM. Berperan dalam memajukan perawatan hemofilia dan onkologi anak di tingkat nasional.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Novie%20A.%20Chozie%2C%20Sp.A%20%28K%29%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
         </div>
       </div>
     </div>
+
+
+    <!-- TAB 2: PARU -->
+
+    <!-- TAB 3: HEMATOLOGI ONKOLOGI -->
+
+    <!-- TAB 4: PENCERNAAN -->
+
   </div>
 </section>
 
@@ -1754,7 +1786,7 @@
 <section class="cluster" id="c-nicu" style="border-bottom:none;">
   <div class="container">
     <div class="cluster-header">
-      <h2>Perawatan Kritis (NICU)</h2>
+      <h2>Perawatan Neonatal (NICU)</h2>
       <p>Unit Perawatan Intensif Neonatal khusus menangani kondisi kritis bayi di jam-jam pertama kehidupan dengan standar medis darurat tinggi.</p>
     </div>
     
@@ -1781,7 +1813,7 @@
                   <p class="doc-bio">Perawatan bayi baru lahir kritis, prematur, berat badan lahir rendah, dan kelainan bawaan yang memerlukan perawatan intensif di NICU.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Taman Mini</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Marlina%20Tanjung%2C%20Sp.A%2C%20Subsp.Neo%20di%20Brawijaya%20Taman%20Mini." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1793,7 +1825,7 @@
                   <p class="doc-bio">Subspesialis Neonatologi. Merawat bayi baru lahir, terutama yang lahir prematur atau dengan kondisi medis serius yang menuntut respons cepat.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Eric%20Gultom%2C%20Sp.A%28K%29%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1805,7 +1837,7 @@
                   <p class="doc-bio">Pemantauan tumbuh kembang, pencegahan penyakit, dan penanganan kondisi medis anak, dengan keahlian tambahan di perawatan intensif neonatal (NICU).</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Saharjo</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Meirdhania%20Andina%2C%20Sp.A%20di%20Brawijaya%20Saharjo." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1817,7 +1849,7 @@
                   <p class="doc-bio">Pemantauan tumbuh kembang menyeluruh, imunisasi, dan penanganan penyakit anak berbasis bukti, dengan penekanan pada edukasi nutrisi dan pola asuh.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Duren Tiga</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Jeannette%20Mila%20Hardiani%20C%2C%20Sp.A%2C%20M.Kes%20di%20Brawijaya%20Duren%20Tiga." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1829,7 +1861,7 @@
                   <p class="doc-bio">Lebih dari 18 tahun pengalaman di Jakarta. Memadukan pemantauan tumbuh kembang, panduan nutrisi, program vaksinasi, dan keahlian perawatan kritis.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Antasari</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Johnny%20Nurman%2C%20Sp.A%20di%20Brawijaya%20Antasari." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
             <div class="doc">
               <div class="doc-lay">
@@ -1841,7 +1873,7 @@
                   <p class="doc-bio">Konsultan neonatologi untuk bayi usia 0&ndash;28 hari yang kritis atau berisiko tinggi &mdash; prematur, berat badan lahir rendah, hingga gangguan fungsi organ.</p>
                 </div>
               </div>
-              <div class="doc-detail-box"><div class="sched-row"><span>Tangerang</span><span class="sched-todo">[Lengkapi jadwal]</span></div></div>
+              <div class="doc-detail-box"><a class="btn-sched" href="https://wa.me/6281514150160?text=Halo%2C%20saya%20ingin%20menanyakan%20jadwal%20praktik%20dr.%20Arum%20Gunarsih%2C%20Sp.A%20%28K%29%20di%20Brawijaya%20Tangerang." target="_blank" rel="noopener"><svg class="ic"><use href="#ic-wa"></use></svg>Tanya Jadwal</a></div>
             </div>
           </div>
           <div class="area-cta"><a href="#kontak" class="btn btn-primary">Buat Janji Temu</a><a href="#cakupan" class="btn btn-back">&#8593; Layanan Lainnya</a></div>
@@ -2080,7 +2112,11 @@
 
 <footer>
   <div class="container">
-    <p>Copyright &copy; 2026 Brawijaya Hospital.</p>
+    <div class="footer-brand">
+      <img src="logo.svg" alt="Brawijaya Hospital" class="footer-logo">
+      <span class="footer-tagline">Your Trusted Care</span>
+    </div>
+    <p class="footer-copy">Copyright &copy; 2026 Brawijaya Hospital</p>
   </div>
 </footer>
 
